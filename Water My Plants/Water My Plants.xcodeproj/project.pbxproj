@@ -19,6 +19,7 @@
 		1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */; };
 		1FED49A62408B92500A717D2 /* +Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A52408B92500A717D2 /* +Convenience.swift */; };
 		1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A72408B94B00A717D2 /* PlantController.swift */; };
+		1FED49AC2408BF1800A717D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49AB2408BF1800A717D2 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1FED49A52408B92500A717D2 /* +Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Convenience.swift"; sourceTree = "<group>"; };
 		1FED49A72408B94B00A717D2 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
+		1FED49AB2408BF1800A717D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBEE27A2408A10E000AD0A6 /* ViewController.swift */,
+				1FED49AB2408BF1800A717D2 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FED49AC2408BF1800A717D2 /* LoginViewController.swift in Sources */,
 				1FBEE27B2408A10E000AD0A6 /* ViewController.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
 				1FED49A62408B92500A717D2 /* +Convenience.swift in Sources */,
