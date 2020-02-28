@@ -16,9 +16,10 @@
 		1FED499A2408A7C800A717D2 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FED49992408A7C800A717D2 /* LoginScreen.storyboard */; };
 		1FED499E2408B8D500A717D2 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED499D2408B8D500A717D2 /* PlantModel.swift */; };
 		1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */; };
-		1FED49A62408B92500A717D2 /* +Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A52408B92500A717D2 /* +Convenience.swift */; };
+		1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A52408B92500A717D2 /* Plant+Convenience.swift */; };
 		1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A72408B94B00A717D2 /* PlantController.swift */; };
 		E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */; };
+		E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +34,10 @@
 		1FED49992408A7C800A717D2 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		1FED499D2408B8D500A717D2 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
 		1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		1FED49A52408B92500A717D2 /* +Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Convenience.swift"; sourceTree = "<group>"; };
+		1FED49A52408B92500A717D2 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		1FED49A72408B94B00A717D2 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
+		E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,8 @@
 				E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */,
 				1FED499D2408B8D500A717D2 /* PlantModel.swift */,
 				1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */,
-				1FED49A52408B92500A717D2 /* +Convenience.swift */,
+				1FED49A52408B92500A717D2 /* Plant+Convenience.swift */,
+				E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,8 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBEE27B2408A10E000AD0A6 /* ViewController.swift in Sources */,
+				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
-				1FED49A62408B92500A717D2 /* +Convenience.swift in Sources */,
+				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
