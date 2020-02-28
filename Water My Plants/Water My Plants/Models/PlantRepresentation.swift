@@ -8,9 +8,9 @@
 
 import Foundation
 
-// translation layer for coredata and future JSON endpoint
+// translation layer for coredata and future JSON endpoint ( Node express )
 
-struct PlantRepresentation: Codable {
+struct PlantRepresentation: Codable, Equatable {
     var nickname: String?
     var species: String?
     var id: UUID?
