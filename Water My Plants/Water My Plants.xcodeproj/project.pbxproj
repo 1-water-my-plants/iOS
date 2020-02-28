@@ -13,6 +13,7 @@
 		1FBEE27E2408A10E000AD0A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEE27C2408A10E000AD0A6 /* Main.storyboard */; };
 		1FBEE2802408A112000AD0A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEE27F2408A112000AD0A6 /* Assets.xcassets */; };
 		1FBEE2832408A112000AD0A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */; };
+		1FED499A2408A7C800A717D2 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FED49992408A7C800A717D2 /* LoginScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1FBEE27F2408A112000AD0A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBEE2822408A112000AD0A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBEE2842408A112000AD0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FED49992408A7C800A717D2 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FBDB2092408A77F00ED107B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1FBEE27C2408A10E000AD0A6 /* Main.storyboard */,
+				1FED49992408A7C800A717D2 /* LoginScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		1FBEE26A2408A10E000AD0A6 = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +70,7 @@
 				1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */,
 				1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */,
 				1FBEE27A2408A10E000AD0A6 /* ViewController.swift */,
-				1FBEE27C2408A10E000AD0A6 /* Main.storyboard */,
+				1FBDB2092408A77F00ED107B /* Storyboards */,
 				1FBEE27F2408A112000AD0A6 /* Assets.xcassets */,
 				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
 				1FBEE2842408A112000AD0A6 /* Info.plist */,
@@ -127,6 +138,7 @@
 			files = (
 				1FBEE2832408A112000AD0A6 /* LaunchScreen.storyboard in Resources */,
 				1FBEE2802408A112000AD0A6 /* Assets.xcassets in Resources */,
+				1FED499A2408A7C800A717D2 /* LoginScreen.storyboard in Resources */,
 				1FBEE27E2408A10E000AD0A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
