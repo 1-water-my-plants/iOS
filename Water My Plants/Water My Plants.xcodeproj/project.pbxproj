@@ -15,10 +15,10 @@
 		1FBEE2832408A112000AD0A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */; };
 		1FED499A2408A7C800A717D2 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FED49992408A7C800A717D2 /* LoginScreen.storyboard */; };
 		1FED499E2408B8D500A717D2 /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED499D2408B8D500A717D2 /* PlantModel.swift */; };
-		1FED49A22408B8F100A717D2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A02408B8F100A717D2 /* Model.xcdatamodeld */; };
 		1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */; };
 		1FED49A62408B92500A717D2 /* +Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A52408B92500A717D2 /* +Convenience.swift */; };
 		1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A72408B94B00A717D2 /* PlantController.swift */; };
+		E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +32,10 @@
 		1FBEE2842408A112000AD0A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FED49992408A7C800A717D2 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		1FED499D2408B8D500A717D2 /* PlantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantModel.swift; sourceTree = "<group>"; };
-		1FED49A12408B8F100A717D2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1FED49A52408B92500A717D2 /* +Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+Convenience.swift"; sourceTree = "<group>"; };
 		1FED49A72408B94B00A717D2 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
+		E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 		1FED499F2408B8D900A717D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */,
 				1FED499D2408B8D500A717D2 /* PlantModel.swift */,
-				1FED49A02408B8F100A717D2 /* Model.xcdatamodeld */,
 				1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */,
 				1FED49A52408B92500A717D2 /* +Convenience.swift */,
 			);
@@ -201,8 +201,8 @@
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
 				1FED49A62408B92500A717D2 /* +Convenience.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
-				1FED49A22408B8F100A717D2 /* Model.xcdatamodeld in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
+				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
 				1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */,
 				1FED499E2408B8D500A717D2 /* PlantModel.swift in Sources */,
 			);
@@ -404,13 +404,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1FED49A02408B8F100A717D2 /* Model.xcdatamodeld */ = {
+		E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1FED49A12408B8F100A717D2 /* Model.xcdatamodel */,
+				E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */,
 			);
-			currentVersion = 1FED49A12408B8F100A717D2 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */;
+			path = Plants.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
