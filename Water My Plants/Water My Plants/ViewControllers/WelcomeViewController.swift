@@ -9,11 +9,22 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    @IBOutlet weak var plant1: UIView!
+    @IBOutlet weak var plant2: UIView!
+    @IBOutlet weak var plant3: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundedOutViews()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func roundedOutViews() {
+        plant1.layer.cornerRadius = 15
+        plant2.layer.cornerRadius = 15
+        plant3.layer.cornerRadius = 15
     }
     
 
