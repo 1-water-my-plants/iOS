@@ -7,6 +7,91 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="ZC0-EJ-lyt">
+            <objects>
+                <viewController id="tk4-U9-gdZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="grT-BI-MFj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hayley-maxwell-zib13T_iJEU-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="bvx-eX-PW7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="315"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jel-oy-2ZO">
+                                <rect key="frame" x="20" y="325" width="374" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a new plant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-H1-Tri">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose from below or search by plant name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zss-uZ-Kcl">
+                                        <rect key="frame" x="0.0" y="44" width="374" height="18"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OrW-Et-kA9">
+                                <rect key="frame" x="0.0" y="392" width="414" height="484"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="Search" id="DS1-mX-MKA">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="56" id="AwN-jh-Plw">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AwN-jh-Plw" id="DpU-P4-7zP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Potted Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imy-tC-aZJ">
+                                                    <rect key="frame" x="148" y="14.5" width="118.5" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="imy-tC-aZJ" firstAttribute="centerX" secondItem="DpU-P4-7zP" secondAttribute="centerX" id="DXs-eC-uCr"/>
+                                                <constraint firstItem="imy-tC-aZJ" firstAttribute="centerY" secondItem="DpU-P4-7zP" secondAttribute="centerY" id="Hkb-jG-Ebn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OrW-Et-kA9" firstAttribute="leading" secondItem="GzQ-8z-9k7" secondAttribute="leading" id="EIU-yb-RcC"/>
+                            <constraint firstItem="jel-oy-2ZO" firstAttribute="top" secondItem="GzQ-8z-9k7" secondAttribute="top" constant="237" id="GMn-kI-uui"/>
+                            <constraint firstItem="jel-oy-2ZO" firstAttribute="leading" secondItem="GzQ-8z-9k7" secondAttribute="leading" constant="20" id="H1Z-jO-Ubg"/>
+                            <constraint firstItem="jel-oy-2ZO" firstAttribute="centerX" secondItem="grT-BI-MFj" secondAttribute="centerX" id="LU5-2Q-hBl"/>
+                            <constraint firstAttribute="bottom" secondItem="OrW-Et-kA9" secondAttribute="bottom" constant="20" symbolic="YES" id="SXp-ze-lp3"/>
+                            <constraint firstItem="GzQ-8z-9k7" firstAttribute="bottom" secondItem="bvx-eX-PW7" secondAttribute="bottom" constant="459" id="UN5-jZ-cuK"/>
+                            <constraint firstItem="bvx-eX-PW7" firstAttribute="top" secondItem="GzQ-8z-9k7" secondAttribute="top" id="Vzr-vb-po0"/>
+                            <constraint firstItem="OrW-Et-kA9" firstAttribute="top" secondItem="jel-oy-2ZO" secondAttribute="bottom" constant="5" id="XJU-aB-Os4"/>
+                            <constraint firstItem="bvx-eX-PW7" firstAttribute="leading" secondItem="GzQ-8z-9k7" secondAttribute="leading" id="aHD-jk-IhK"/>
+                            <constraint firstItem="bvx-eX-PW7" firstAttribute="trailing" secondItem="GzQ-8z-9k7" secondAttribute="trailing" id="jqj-7g-3Tg"/>
+                            <constraint firstItem="OrW-Et-kA9" firstAttribute="trailing" secondItem="GzQ-8z-9k7" secondAttribute="trailing" id="rtz-hv-fOb"/>
+                            <constraint firstItem="GzQ-8z-9k7" firstAttribute="trailing" secondItem="jel-oy-2ZO" secondAttribute="trailing" constant="20" id="sCI-UD-zUV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GzQ-8z-9k7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sYU-cl-WAX">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-customer" id="p2S-qn-6ef"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WQ-9d-ADM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628.98550724637687" y="-948.21428571428567"/>
+        </scene>
         <!--Welcome-->
         <scene sceneID="oaj-ak-xTa">
             <objects>
@@ -30,6 +115,9 @@
                                         <rect key="frame" x="21" y="94" width="79" height="34"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <state key="normal" title="Add Plants"/>
+                                        <connections>
+                                            <segue destination="tk4-U9-gdZ" kind="show" identifier="AddNewPlantSegue" id="uhS-nj-XNB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -331,6 +419,7 @@
     <resources>
         <image name="arrow.2.squarepath" catalog="system" width="64" height="44"/>
         <image name="camera" catalog="system" width="64" height="48"/>
+        <image name="hayley-maxwell-zib13T_iJEU-unsplash" width="2400" height="2400"/>
         <image name="homepage" width="3648" height="5472"/>
         <image name="icons8-customer" width="75" height="75"/>
         <image name="plan1" width="150" height="150"/>
