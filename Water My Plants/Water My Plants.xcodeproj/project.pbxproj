@@ -113,7 +113,11 @@
 				E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */,
 				E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */,
 				1F1341102409918000C81B30 /* LoginViewController.swift */,
+
+
 				1F4F3F89240A1CE700899646 /* RegisterViewController.swift */,
+
+
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
