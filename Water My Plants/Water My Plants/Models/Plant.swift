@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 
-//using coreData instead delete later
-
 //struct Plant: Codable, Equatable {
 //    var nickname: String?
 //    var species: String?
@@ -21,4 +19,4 @@ import UIKit
 //    var startingDayOfWeek: String?
 //    var image: String?
 //}
-//
+

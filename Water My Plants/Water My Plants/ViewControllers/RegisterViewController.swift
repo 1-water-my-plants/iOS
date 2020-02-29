@@ -27,21 +27,21 @@ class RegisterViewController: UIViewController {
     }
     
     func addTextFields() {
-        let firstNameTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 390, width: registerView.bounds.size.width - 35, height: 50))
-        self.view.addSubview(firstNameTextField)
-        firstNameTextField.backgroundColor = .white
-        firstNameTextField.borderStyle = .roundedRect
-        firstNameTextField.layer.borderWidth = 0.5
-        firstNameTextField.layer.cornerRadius = 5
-        firstNameTextField.layer.borderColor = UIColor.black.cgColor
+        let userNameTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 390, width: registerView.bounds.size.width - 35, height: 50))
+        self.view.addSubview(userNameTextField)
+        userNameTextField.backgroundColor = .white
+        userNameTextField.borderStyle = .roundedRect
+        userNameTextField.layer.borderWidth = 0.5
+        userNameTextField.layer.cornerRadius = 5
+        userNameTextField.layer.borderColor = UIColor.black.cgColor
         
-        let lastNameTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 498, width: registerView.bounds.size.width - 35, height: 50))
-        self.view.addSubview(lastNameTextField)
-        lastNameTextField.backgroundColor = .white
-        lastNameTextField.borderStyle = .roundedRect
-        lastNameTextField.layer.borderWidth = 0.5
-        lastNameTextField.layer.cornerRadius = 5
-        lastNameTextField.layer.borderColor = UIColor.black.cgColor
+        let passwordTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 498, width: registerView.bounds.size.width - 35, height: 50))
+        self.view.addSubview(passwordTextField)
+        passwordTextField.backgroundColor = .white
+        passwordTextField.borderStyle = .roundedRect
+        passwordTextField.layer.borderWidth = 0.5
+        passwordTextField.layer.cornerRadius = 5
+        passwordTextField.layer.borderColor = UIColor.black.cgColor
         
         let phoneNumberTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 615, width: registerView.bounds.size.width - 35, height: 50))
         self.view.addSubview(phoneNumberTextField)
@@ -51,13 +51,6 @@ class RegisterViewController: UIViewController {
         phoneNumberTextField.layer.cornerRadius = 5
         phoneNumberTextField.layer.borderColor = UIColor.black.cgColor
         
-        let userNameTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 735, width: registerView.bounds.size.width - 35, height: 50))
-        self.view.addSubview(userNameTextField)
-        userNameTextField.backgroundColor = .white
-        userNameTextField.borderStyle = .roundedRect
-        userNameTextField.layer.borderWidth = 0.5
-        userNameTextField.layer.cornerRadius = 5
-        userNameTextField.layer.borderColor = UIColor.black.cgColor
     }
     
     
