@@ -22,9 +22,9 @@ class WelcomeViewController: UIViewController {
     }
     
     func roundedOutViews() {
-        plant1.layer.cornerRadius = 7
-        plant2.layer.cornerRadius = 7
-        plant3.layer.cornerRadius = 7
+        plant1.layer.cornerRadius = 15
+        plant2.layer.cornerRadius = 15
+        plant3.layer.cornerRadius = 15
     }
     
 

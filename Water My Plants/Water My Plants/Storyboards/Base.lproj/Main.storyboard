@@ -59,6 +59,9 @@
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" red="0.94901960780000005" green="0.89411764709999997" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="ADW-q8-nHj" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="WO5-3q-aPs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgu-Xv-9Cq">
                                         <rect key="frame" x="16" y="335" width="375" height="43"/>
@@ -104,7 +107,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkQ-Bj-bmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9128" y="-634"/>
+            <point key="canvasLocation" x="-9278" y="-759"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="4W5-ux-67q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" id="ADW-q8-nHj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5A6-PA-yeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9267" y="-524"/>
         </scene>
     </scenes>
     <resources>

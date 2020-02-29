@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F1341112409918000C81B30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1341102409918000C81B30 /* LoginViewController.swift */; };
 		1F1341132409925600C81B30 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1341122409925600C81B30 /* Dashboard.storyboard */; };
+		1F4F3F88240A1AD300899646 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F3F87240A1AD300899646 /* Register.storyboard */; };
+		1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F3F89240A1CE700899646 /* RegisterViewController.swift */; };
 		1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */; };
 		1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */; };
 		1FBEE27B2408A10E000AD0A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE27A2408A10E000AD0A6 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		1F1341102409918000C81B30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F1341122409925600C81B30 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		1F4F3F87240A1AD300899646 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		1F4F3F89240A1CE700899646 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1FBEE2732408A10E000AD0A6 /* Water My Plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water My Plants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				1FBEE27C2408A10E000AD0A6 /* Main.storyboard */,
+				1F4F3F87240A1AD300899646 /* Register.storyboard */,
 				1F1341122409925600C81B30 /* Dashboard.storyboard */,
+				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -107,6 +113,7 @@
 				E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */,
 				E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */,
 				1F1341102409918000C81B30 /* LoginViewController.swift */,
+				1F4F3F89240A1CE700899646 /* RegisterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -135,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				1FBEE27F2408A112000AD0A6 /* Assets.xcassets */,
-				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				1FBEE2802408A112000AD0A6 /* Assets.xcassets in Resources */,
 				1FBEE27E2408A10E000AD0A6 /* Main.storyboard in Resources */,
 				1F1341132409925600C81B30 /* Dashboard.storyboard in Resources */,
+				1F4F3F88240A1AD300899646 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +228,7 @@
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
 				E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
+				1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
 				1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */,
 				1F1341112409918000C81B30 /* LoginViewController.swift in Sources */,
