@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension Plant {
+extension Plant1 {
     
     var plantRepresentation: PlantRepresentation? {
     guard let nickname = nickname,

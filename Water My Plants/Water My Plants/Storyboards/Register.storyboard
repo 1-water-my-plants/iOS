@@ -89,6 +89,9 @@
                                                 <state key="normal" title="Sign In">
                                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signUpPressed:" destination="PfZ-bA-uKm" eventType="touchUpInside" id="mlS-Xn-kwy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -110,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="registerView" destination="66d-gN-6p5" id="eG7-07-4iQ"/>
+                        <outlet property="signUPButton" destination="bct-8f-uQ1" id="zGv-QK-kZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8F-YJ-wnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

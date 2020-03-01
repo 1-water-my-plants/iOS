@@ -12,11 +12,19 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var registerView: UIView!
     
+    @IBOutlet weak var signUPButton: UIButton!
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         curveRegisterView()
-        addTextFields()
+        view.addSubview(usernameTF)
+        view.addSubview(passwordTF)
+        view.addSubview(phoneTF)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +34,7 @@ class RegisterViewController: UIViewController {
         registerView.layer.cornerCurve = .continuous
     }
     
-    func addTextFields() {
+    lazy var usernameTF: UITextField = {
         let userNameTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 390, width: registerView.bounds.size.width - 35, height: 50))
         self.view.addSubview(userNameTextField)
         userNameTextField.backgroundColor = .white
@@ -34,7 +42,10 @@ class RegisterViewController: UIViewController {
         userNameTextField.layer.borderWidth = 0.5
         userNameTextField.layer.cornerRadius = 5
         userNameTextField.layer.borderColor = UIColor.black.cgColor
-        
+        return userNameTextField
+    }()
+    
+    lazy var passwordTF: UITextField = {
         let passwordTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 498, width: registerView.bounds.size.width - 35, height: 50))
         self.view.addSubview(passwordTextField)
         passwordTextField.backgroundColor = .white
@@ -42,7 +53,10 @@ class RegisterViewController: UIViewController {
         passwordTextField.layer.borderWidth = 0.5
         passwordTextField.layer.cornerRadius = 5
         passwordTextField.layer.borderColor = UIColor.black.cgColor
-        
+        return passwordTextField
+    }()
+    
+    lazy var phoneTF: UITextField = {
         let phoneNumberTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 615, width: registerView.bounds.size.width - 35, height: 50))
         self.view.addSubview(phoneNumberTextField)
         phoneNumberTextField.backgroundColor = .white
@@ -50,8 +64,26 @@ class RegisterViewController: UIViewController {
         phoneNumberTextField.layer.borderWidth = 0.5
         phoneNumberTextField.layer.cornerRadius = 5
         phoneNumberTextField.layer.borderColor = UIColor.black.cgColor
+        return phoneNumberTextField
+        
+    }()
+    
+    @IBAction func signUpPressed(_ sender: Any) {
+        guard let username = self.usernameTF.text, !username.isEmpty,
+            let password = self.passwordTF.text, !password.isEmpty,
+            let phoneNumber = self.phoneTF.text, !phoneNumber.isEmpty else {
+                let alert = UIAlertController(title: "Missing some fields", message: "Please try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+        }
+        
+        //Create a signup form
+        let signUpRequest = SignUpRequest(username: username, password: password, phoneNumber: phoneNumber)
+        
         
     }
+    
     
     
     
