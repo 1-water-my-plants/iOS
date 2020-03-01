@@ -37,7 +37,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: UIButton) {
         guard let username = self.usernameTF.text, !username.isEmpty,
-            let password = self.passwordTF.text, !password.isEmpty else { return }
+            let password = self.passwordTF.text, !password.isEmpty else {
+                let alert = UIAlertController(title: "Missing some fields.", message: "Check your information and try again 😀", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+        }
         
         // create a login request
         let loginRequest = LoginRequest(username: username, password: password)
@@ -49,8 +54,8 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.async {
                 
             if let error = error {
-                let alert = UIAlertController(title: "Error Occured", message: "Check your information and try again", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                let alert = UIAlertController(title: "Error Occured", message: "Check your username and password and try again.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 NSLog("error occured during login: \(error)")
             } else {
