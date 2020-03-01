@@ -12,7 +12,7 @@ import CoreData
 let baseURL = URL(string: "https://plants-e2f55.firebaseio.com/")!
 
 class PlantController {
-    
+    let context = CoreDataStack.shared.container.newBackgroundContext()
     typealias CompletionHandler = (Error?) -> Void
     
     // fetch plants from controller
@@ -40,7 +40,7 @@ class PlantController {
             do {
                 let plantRepresentations = Array(try JSONDecoder().decode([String : PlantRepresentation].self, from: data).values)
                 // update plants
-                try self.updatePlants(with: plantRepresentations)
+                try self.updatePlants(plants: plantRepresentations)
                 DispatchQueue.main.async {
                     completion(nil)
                 }
@@ -55,19 +55,14 @@ class PlantController {
     
      // send plant to server from local changes
     
-    func sendPlantToServer(plant: Plant, completion: @escaping CompletionHandler = {_ in }) {
-        let uuid = plant.id ?? UUID()
-        let requestURL = baseURL.appendingPathComponent(uuid.uuidString).appendingPathExtension("json")
+    func sendPlantToServer(plant: Plant1, completion: @escaping CompletionHandler = {_ in }) {
+        let id = plant.id ?? UUID().uuidString// had to fix a few of your errors, delete later you were close, just in the coreData model the id was supposed to be a string not a UUID
+        let requestURL = baseURL.appendingPathComponent(id).appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
         request.httpMethod = "PUT"
         
         do {
-            guard var representation = plant.plantRepresentation else { completion(NSError())
-            return }
-            representation.id = UUID()
-            plant.id = uuid
-            try CoreDataStack.shared.save(context: CoreDataStack.shared.mainContext) // Save on main context
-            request.httpBody = try JSONEncoder().encode(representation)
+            request.httpBody = try JSONEncoder().encode(plant)
             
         } catch {
             print("Error encoding task \(plant): \(error)")
@@ -92,12 +87,12 @@ class PlantController {
     
     //delete plant
     
-    func deletePlantFromServer(_ plant: Plant, completion: @escaping CompletionHandler = { _ in }) {
+    func deletePlantFromServer(_ plant: Plant1, completion: @escaping CompletionHandler = { _ in }) {
         guard let uuid = plant.id else {
             completion(NSError())
             return
         }
-        let requestURL = baseURL.appendingPathComponent(uuid.uuidString).appendingPathExtension("json")
+        let requestURL = baseURL.appendingPathComponent(uuid).appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
         request.httpMethod = "DELETE"
         
@@ -117,51 +112,61 @@ class PlantController {
     
     
     // update Plants
-    func updatePlants(with representations: [PlantRepresentation]) throws {
-        let plantsWithID = representations.filter { $0.id != nil }
-        let identifierToFetch = plantsWithID.compactMap { UUID(uuidString: $0.id!) }
-        let representationsById = Dictionary(uniqueKeysWithValues: zip(identifierToFetch, plantsWithID))
+    func updatePlants(plants: [PlantRepresentation]) throws {
+        let plantsWithID = plants.filter { $0.id != nil }
+        let identifierToFetch = plantsWithID.compactMap { $0.id }
+        let representationsById = Dictionary(uniqueKeysWithValues: zip(identifierToFetch, plants))
         var plantsToCreate = representationsById
         
-        let fetchRequest: NSFetchRequest<Plant> = Plant.fetchRequest()
+        let fetchRequest: NSFetchRequest<Plant1> = Plant1.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifierToFetch) // NSPredicate is how you filter in CoreData
         
         let context = CoreDataStack.shared.container.newBackgroundContext()
-        
-        context.perform {
-            do {
+        func sync(plants: [PlantRepresentation], completion: @escaping (Error?) -> Void = { _ in}) {
+            
+            NSLog("Sync started")
+            
+            let identifiersToFetch = plants.compactMap { $0.id }
+            let repsByID = Dictionary(uniqueKeysWithValues: zip(identifierToFetch, plants))
+            var plantsToCreate = repsByID
+            
+            let fetchRequest: NSFetchRequest<Plant1> = Plant1.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "identifier in %@", identifierToFetch)
+            
+            let context = CoreDataStack.shared.container.newBackgroundContext()
+            self.context.perform {
+                do {
                     let existingPlants = try context.fetch(fetchRequest)
                     
                     for plant in existingPlants {
                         guard let id = plant.id,
-                        let representation = representationsById[id] else { continue }
-                        self.update(plant: plant, with: representation)
+                            let representation = repsByID[id] else {
+                                continue }
+                        try self.updatePlants(plants: plants)
+                        
                         plantsToCreate.removeValue(forKey: id)
                     }
+                    
                     for representation in plantsToCreate.values {
-                        Task(taskRepresentation: representation, context: context)
+                        _ = Plant1(plantRepresentation: representation, context: context)
                     }
+                    completion(nil)
+                    NSLog("Sync finished")
                 } catch {
-                    print("Error Fetching tasks for UUIDs: \(error)")
+                    return
                 }
-                
-            do {
-               try CoreDataStack.shared.save(context: context)
-            } catch {
-                print("Error saving to Database")
             }
+            try? context.save()
+
             
+        
             }
         }
-        
-        
-    
-    private func update(plant: Plant, with representation: PlantRepresentation) {
-        plant.nickname = representation.nickname
-        plant.species = representation.species
-        plant.h2oFrequencyPerWeek = representation.h2oFrequencyPerWeek
     }
-    
-}
 
+private func update(plant: Plant1, with representation: PlantRepresentation) {
+    plant.nickname = representation.nickname
+    plant.species = representation.species
+    plant.h2oFrequencyPerWeek = representation.h2oFrequencyPerWeek
  
+}

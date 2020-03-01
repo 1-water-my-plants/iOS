@@ -11,23 +11,39 @@ import CoreData
 
 extension Plant1 {
     
-    var plantRepresentation: PlantRepresentation? {
-    guard let nickname = nickname,
-    let species = species,
-    let id = id,
-    let h2oFrequencyPerWeek = h2oFrequencyPerWeek,
-    let time = time,
-    let startingDayOfWeek = startingDayOfWeek,
-    let image = image else { return nil }
-    
-        return PlantRepresentation(nickname: nickname, species: species, id: id, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek, image: image.base64EncodedString())
+    convenience init(nickname: String,
+                     species: String,
+                     id: String = UUID().uuidString,
+                     h2oFrequencyPerWeek: String,
+                     time: Date = Date(),
+                     startingDayOfWeek: String,
+                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(context: context)
         
+        self.nickname = nickname
+        self.species = species
+        self.id = id
+        self.h2oFrequencyPerWeek = h2oFrequencyPerWeek
+        self.time = time
+        self.startingDayOfWeek = startingDayOfWeek
+    }
+    
+    convenience init?(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext) {
+        guard let nickname = plantRepresentation.nickname,
+            let species = plantRepresentation.species,
+            let id = plantRepresentation.id,
+            let h2oFrequencyPerWeek = plantRepresentation.h2oFrequencyPerWeek,
+            let time = plantRepresentation.time,
+            let startingDayOfWeek = plantRepresentation.startingDayOfWeek else { return nil }
+        
+        self.init(nickname: nickname, species: species, id: id, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek)
+    }
 //        @discardableResult convenience init(nickname: String, species: String, id: UUID = UUID(), h2oFrequencyPerWeek: String, time: String, startingDayOfWeek: String, image: Data?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 //            self.init(context: context)
 //            self.nickname = nickname
 //
 //        }
-    }
+    
     
 //    @discardableResult convenience init?(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 //        guard let nickname = plantRepresentation.nickname,

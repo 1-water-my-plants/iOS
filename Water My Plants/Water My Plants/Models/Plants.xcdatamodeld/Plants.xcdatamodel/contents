@@ -2,14 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Plant1" representedClassName="Plant1" syncable="YES" codeGenerationType="class">
         <attribute name="h2oFrequencyPerWeek" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="nickname" optional="YES" attributeType="String"/>
         <attribute name="species" optional="YES" attributeType="String"/>
         <attribute name="startingDayOfWeek" optional="YES" attributeType="String"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Plant1" positionX="-36" positionY="9" width="128" height="148"/>
+        <element name="Plant1" positionX="-36" positionY="9" width="128" height="133"/>
     </elements>
 </model>
