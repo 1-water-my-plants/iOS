@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F073DC5240B2460007FBEC7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DC4240B2460007FBEC7 /* User.swift */; };
+		1F073DC7240B2BAD007FBEC7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DC6240B2BAD007FBEC7 /* Token.swift */; };
+		1F073DC9240B2BFE007FBEC7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DC8240B2BFE007FBEC7 /* Request.swift */; };
+		1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DCA240B3E83007FBEC7 /* LoginController.swift */; };
+		1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DCC240B3E9E007FBEC7 /* APIClient.swift */; };
+		1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */; };
 		1F1341112409918000C81B30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1341102409918000C81B30 /* LoginViewController.swift */; };
 		1F4F3F88240A1AD300899646 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F3F87240A1AD300899646 /* Register.storyboard */; };
 		1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F3F89240A1CE700899646 /* RegisterViewController.swift */; };
@@ -29,6 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F073DC4240B2460007FBEC7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1F073DC6240B2BAD007FBEC7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		1F073DC8240B2BFE007FBEC7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		1F073DCA240B3E83007FBEC7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		1F073DCC240B3E9E007FBEC7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		1F1341102409918000C81B30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F4F3F87240A1AD300899646 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		1F4F3F89240A1CE700899646 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +138,9 @@
 				1FED49A52408B92500A717D2 /* Plant+Convenience.swift */,
 				E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */,
 				E04E80522409016700CFA841 /* Plant.swift */,
+				1F073DC4240B2460007FBEC7 /* User.swift */,
+				1F073DC6240B2BAD007FBEC7 /* Token.swift */,
+				1F073DC8240B2BFE007FBEC7 /* Request.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				1FED49A72408B94B00A717D2 /* PlantController.swift */,
+				1F073DCA240B3E83007FBEC7 /* LoginController.swift */,
+				1F073DCC240B3E9E007FBEC7 /* APIClient.swift */,
+				1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,10 +243,16 @@
 				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
 				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
+				1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
+				1F073DC9240B2BFE007FBEC7 /* Request.swift in Sources */,
+				1F073DC7240B2BAD007FBEC7 /* Token.swift in Sources */,
 				E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */,
+				1F073DC5240B2460007FBEC7 /* User.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
 				1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */,
+				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
+				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
 				1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */,
 				1F1341112409918000C81B30 /* LoginViewController.swift in Sources */,
