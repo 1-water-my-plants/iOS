@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F073DC5240B2460007FBEC7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DC4240B2460007FBEC7 /* User.swift */; };
+		1F073DC7240B2BAD007FBEC7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DC6240B2BAD007FBEC7 /* Token.swift */; };
+		1F073DC9240B2BFE007FBEC7 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DC8240B2BFE007FBEC7 /* Request.swift */; };
+		1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DCA240B3E83007FBEC7 /* LoginController.swift */; };
+		1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DCC240B3E9E007FBEC7 /* APIClient.swift */; };
+		1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */; };
 		1F1341112409918000C81B30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1341102409918000C81B30 /* LoginViewController.swift */; };
-		1F1341132409925600C81B30 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1341122409925600C81B30 /* Dashboard.storyboard */; };
+		1F4F3F88240A1AD300899646 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F3F87240A1AD300899646 /* Register.storyboard */; };
+		1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F3F89240A1CE700899646 /* RegisterViewController.swift */; };
+		1FBAF3C3240AE2DF00BD13EF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */; };
 		1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */; };
 		1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */; };
 		1FBEE27B2408A10E000AD0A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE27A2408A10E000AD0A6 /* ViewController.swift */; };
@@ -27,11 +35,20 @@
 		E04E805D240AA4D100CFA841 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E805C240AA4D100CFA841 /* AddPlantViewController.swift */; };
 		E04E8060240AA53600CFA841 /* NewPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E805F240AA53600CFA841 /* NewPlantsTableViewCell.swift */; };
 		E04E8062240BBA0600CFA841 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E8061240BBA0600CFA841 /* camera.png */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F073DC4240B2460007FBEC7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1F073DC6240B2BAD007FBEC7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		1F073DC8240B2BFE007FBEC7 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		1F073DCA240B3E83007FBEC7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		1F073DCC240B3E9E007FBEC7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		1F1341102409918000C81B30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1F1341122409925600C81B30 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		1F4F3F87240A1AD300899646 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		1F4F3F89240A1CE700899646 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBEE2732408A10E000AD0A6 /* Water My Plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water My Plants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +69,7 @@
 		E04E805C240AA4D100CFA841 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		E04E805F240AA53600CFA841 /* NewPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantsTableViewCell.swift; sourceTree = "<group>"; };
 		E04E8061240BBA0600CFA841 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +87,9 @@
 			isa = PBXGroup;
 			children = (
 				1FBEE27C2408A10E000AD0A6 /* Main.storyboard */,
-				1F1341122409925600C81B30 /* Dashboard.storyboard */,
+				1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */,
+				1F4F3F87240A1AD300899646 /* Register.storyboard */,
+				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -97,7 +117,6 @@
 				1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */,
 				1FED49A92408B95C00A717D2 /* Controllers */,
 				1FED499F2408B8D900A717D2 /* Models */,
-				E04E805E240AA4EE00CFA841 /* Views */,
 				1FED499C2408B86300A717D2 /* ViewControllers */,
 				1FBDB2092408A77F00ED107B /* Storyboards */,
 				1FED49AA2408B98000A717D2 /* Assets */,
@@ -114,7 +133,7 @@
 				E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */,
 				E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */,
 				1F1341102409918000C81B30 /* LoginViewController.swift */,
-				E04E805C240AA4D100CFA841 /* AddPlantViewController.swift */,
+				1F4F3F89240A1CE700899646 /* RegisterViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +146,9 @@
 				1FED49A52408B92500A717D2 /* Plant+Convenience.swift */,
 				E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */,
 				E04E80522409016700CFA841 /* Plant.swift */,
+				1F073DC4240B2460007FBEC7 /* User.swift */,
+				1F073DC6240B2BAD007FBEC7 /* Token.swift */,
+				1F073DC8240B2BFE007FBEC7 /* Request.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				1FED49A72408B94B00A717D2 /* PlantController.swift */,
+				1F073DCA240B3E83007FBEC7 /* LoginController.swift */,
+				1F073DCC240B3E9E007FBEC7 /* APIClient.swift */,
+				1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -145,16 +170,9 @@
 				1FBEE27F2408A112000AD0A6 /* Assets.xcassets */,
 				E04E8061240BBA0600CFA841 /* camera.png */,
 				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
+
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		E04E805E240AA4EE00CFA841 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E04E805F240AA53600CFA841 /* NewPlantsTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,8 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBEE2832408A112000AD0A6 /* LaunchScreen.storyboard in Resources */,
+				1FBAF3C3240AE2DF00BD13EF /* Dashboard.storyboard in Resources */,
 				1FBEE2802408A112000AD0A6 /* Assets.xcassets in Resources */,
 				1FBEE27E2408A10E000AD0A6 /* Main.storyboard in Resources */,
+
 				1F1341132409925600C81B30 /* Dashboard.storyboard in Resources */,
 				E04E8062240BBA0600CFA841 /* camera.png in Resources */,
 			);
@@ -232,17 +252,22 @@
 			files = (
 				1FBEE27B2408A10E000AD0A6 /* ViewController.swift in Sources */,
 				E04E80552409133900CFA841 /* WelcomeViewController.swift in Sources */,
-				E04E805D240AA4D100CFA841 /* AddPlantViewController.swift in Sources */,
 				E04E80532409016700CFA841 /* Plant.swift in Sources */,
 				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
 				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
+				1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
+				1F073DC9240B2BFE007FBEC7 /* Request.swift in Sources */,
+				1F073DC7240B2BAD007FBEC7 /* Token.swift in Sources */,
 				E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */,
+				1F073DC5240B2460007FBEC7 /* User.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
+				1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */,
+				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
+				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
 				1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */,
-				E04E8060240AA53600CFA841 /* NewPlantsTableViewCell.swift in Sources */,
 				1F1341112409918000C81B30 /* LoginViewController.swift in Sources */,
 				E04E805B24094A3A00CFA841 /* MyPlantsTableViewController.swift in Sources */,
 			);

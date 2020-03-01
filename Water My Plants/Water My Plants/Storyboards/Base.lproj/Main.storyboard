@@ -59,6 +59,9 @@
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" red="0.94901960780000005" green="0.89411764709999997" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="ADW-q8-nHj" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="WO5-3q-aPs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgu-Xv-9Cq">
                                         <rect key="frame" x="16" y="335" width="375" height="43"/>
@@ -69,7 +72,7 @@
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="4f7-9u-Fct" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="e2e-Ve-IE3"/>
+                                            <action selector="login:" destination="jE6-V8-UNO" eventType="touchUpInside" id="TCA-03-LCT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-fN-HdY">
@@ -88,8 +91,10 @@
                         <viewLayoutGuide key="safeArea" id="m43-U3-L1t"/>
                     </view>
                     <connections>
-                        <outlet property="createAccountButton" destination="6SZ-fj-q7h" id="bio-fa-DJe"/>
+                        <outlet property="createAccountButton" destination="6SZ-fj-q7h" id="iRJ-pq-Kx4"/>
+                        <outlet property="signInButton" destination="cgu-Xv-9Cq" id="eQ9-sM-jG5"/>
                         <outlet property="signInView" destination="POT-P8-QRa" id="fun-Ql-mqO"/>
+                        <segue destination="4f7-9u-Fct" kind="presentation" identifier="DashboardSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Fpw-CW-Cxi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnb-k5-kz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,7 +109,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkQ-Bj-bmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9128" y="-634"/>
+            <point key="canvasLocation" x="-9257" y="-762"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="4W5-ux-67q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Register" id="ADW-q8-nHj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5A6-PA-yeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9267" y="-524"/>
         </scene>
     </scenes>
     <resources>

@@ -10,15 +10,11 @@ import Foundation
 import UIKit
 
 
-//using coreData instead delete later
+struct Plant: Codable, Equatable {
+    var nickname: String?
+    var species: String?
+    var id: Int
+    var h2oFrequency: String?
+    var image: String?
+}
 
-//struct Plant: Codable, Equatable {
-//    var nickname: String?
-//    var species: String?
-//    var id: UUID?
-//    var h2oFrequencyPerWeek: String?
-//    var time: String?
-//    var startingDayOfWeek: String?
-//    var image: String?
-//}
-//
