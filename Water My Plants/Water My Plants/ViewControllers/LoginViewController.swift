@@ -46,7 +46,12 @@ class LoginViewController: UIViewController {
     
     func login(with loginRequest: LoginRequest) {
         loginController.login(with: loginRequest) { error in
+            DispatchQueue.main.async {
+                
             if let error = error {
+                let alert = UIAlertController(title: "Error Occured", message: "Check your information and try again", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 NSLog("error occured during login: \(error)")
             } else {
                 DispatchQueue.main.async {
@@ -55,7 +60,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
+}
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignUpSegue" {
             guard let vc = segue.destination as? RegisterViewController else { return }
