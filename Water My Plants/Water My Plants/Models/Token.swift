@@ -10,5 +10,5 @@ import Foundation
 
 struct Token: Codable, Equatable  {
     let id: Int?
-    let token: String?
+    let token: String
 }
