@@ -26,6 +26,7 @@
 		E04E805B24094A3A00CFA841 /* MyPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */; };
 		E04E805D240AA4D100CFA841 /* AddPlantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E805C240AA4D100CFA841 /* AddPlantViewController.swift */; };
 		E04E8060240AA53600CFA841 /* NewPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E805F240AA53600CFA841 /* NewPlantsTableViewCell.swift */; };
+		E04E8062240BBA0600CFA841 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E8061240BBA0600CFA841 /* camera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewController.swift; sourceTree = "<group>"; };
 		E04E805C240AA4D100CFA841 /* AddPlantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantViewController.swift; sourceTree = "<group>"; };
 		E04E805F240AA53600CFA841 /* NewPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantsTableViewCell.swift; sourceTree = "<group>"; };
+		E04E8061240BBA0600CFA841 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBEE27F2408A112000AD0A6 /* Assets.xcassets */,
+				E04E8061240BBA0600CFA841 /* camera.png */,
 				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
@@ -216,6 +219,7 @@
 				1FBEE2802408A112000AD0A6 /* Assets.xcassets in Resources */,
 				1FBEE27E2408A10E000AD0A6 /* Main.storyboard in Resources */,
 				1F1341132409925600C81B30 /* Dashboard.storyboard in Resources */,
+				E04E8062240BBA0600CFA841 /* camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
