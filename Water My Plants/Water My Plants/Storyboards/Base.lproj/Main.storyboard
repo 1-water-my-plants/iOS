@@ -60,7 +60,7 @@
                                             <color key="titleColor" red="0.94901960780000005" green="0.89411764709999997" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ADW-q8-nHj" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="WO5-3q-aPs"/>
+                                            <segue destination="Efj-wh-Xig" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="LLi-mN-tjK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgu-Xv-9Cq">
@@ -111,13 +111,13 @@
             </objects>
             <point key="canvasLocation" x="-9257" y="-762"/>
         </scene>
-        <!--Register-->
-        <scene sceneID="4W5-ux-67q">
+        <!--signUp-->
+        <scene sceneID="z7u-Ed-jiH">
             <objects>
-                <viewControllerPlaceholder storyboardName="Register" id="ADW-q8-nHj" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5A6-PA-yeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="signUp" id="Efj-wh-Xig" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spC-Nd-KRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9267" y="-524"/>
+            <point key="canvasLocation" x="-9225" y="-541"/>
         </scene>
     </scenes>
     <resources>
