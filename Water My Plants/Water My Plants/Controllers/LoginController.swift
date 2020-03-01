@@ -35,6 +35,7 @@ class LoginController {
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                print(response.statusCode)
                 return
             }
             
@@ -45,7 +46,8 @@ class LoginController {
             
             do {
                 let user = try decoder.decode(User.self, from: data)
-                self.token = Token(id: Int(user.id), token: user.token ?? "")
+                self.token = Token(id: user.id, token: user.token ?? "")
+                print(self.token)
             } catch {
                 print("Error decoding token: \(error)")
                 completion(error)

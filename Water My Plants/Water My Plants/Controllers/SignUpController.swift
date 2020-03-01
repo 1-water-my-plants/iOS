@@ -35,6 +35,7 @@ class SignUpController {
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 201 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
+                print(response.statusCode)
                 return
             }
             

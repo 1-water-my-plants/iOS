@@ -14,9 +14,9 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var signUPButton: UIButton!
     
+    private let signUpController = SignUpController()
     
-    
-    
+    weak var delegate: LoginViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,10 @@ class RegisterViewController: UIViewController {
         view.addSubview(usernameTF)
         view.addSubview(passwordTF)
         view.addSubview(phoneTF)
-        
+        self.usernameTF.delegate = self
+        self.passwordTF.delegate = self
+        self.phoneTF.delegate = self
+    
 
         // Do any additional setup after loading the view.
     }
@@ -52,6 +55,7 @@ class RegisterViewController: UIViewController {
         passwordTextField.borderStyle = .roundedRect
         passwordTextField.layer.borderWidth = 0.5
         passwordTextField.layer.cornerRadius = 5
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.layer.borderColor = UIColor.black.cgColor
         return passwordTextField
     }()
@@ -81,21 +85,33 @@ class RegisterViewController: UIViewController {
         //Create a signup form
         let signUpRequest = SignUpRequest(username: username, password: password, phoneNumber: phoneNumber)
         
-        
+        // disable the signup button after the sign up request is created
+        self.signUPButton.isEnabled = false
+        signUpController.signUp(with: signUpRequest) { (error) in
+            DispatchQueue.main.async {
+                if let _ = error {
+                    let alert = UIAlertController(title: "Something went wrong ☹️", message: "Please try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    // Enable the sign up button if there was an error
+                    self.signUPButton.isEnabled = true
+                    return
+                } else {
+                    self.delegate?.loginAfterSignUp(with: LoginRequest(username: username, password: password))
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
-    
-    
-    
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = self.view.viewWithTag(textField.tag + 1) {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
-    */
-
 }
