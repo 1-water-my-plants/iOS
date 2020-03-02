@@ -25,7 +25,7 @@ class CoreDataStack {
         return newContainer
     }()
      
-    var mainContext: NSManagedObjectContext {  // created mamaged object context
+    var mainContext: NSManagedObjectContext {  // created managed object context
         return container.viewContext
     }
     

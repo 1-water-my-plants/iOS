@@ -18,3 +18,7 @@ struct Plant: Codable, Equatable {
     var image: String?
 }
 
+struct Fake: Codable {
+    let plant: String
+}
+

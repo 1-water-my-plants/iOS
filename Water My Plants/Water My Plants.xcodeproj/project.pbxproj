@@ -16,6 +16,9 @@
 		1F1341112409918000C81B30 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1341102409918000C81B30 /* LoginViewController.swift */; };
 		1F1A5109240C4ED9007814C7 /* Plant + Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A5108240C4ED9007814C7 /* Plant + Codable.swift */; };
 		1F1A5113240C590A007814C7 /* signUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A5112240C590A007814C7 /* signUp.storyboard */; };
+		1F1A5115240CA0CB007814C7 /* PlantEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A5114240CA0CB007814C7 /* PlantEntries.swift */; };
+		1F1A5117240CA157007814C7 /* FakeDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A5116240CA157007814C7 /* FakeDataController.swift */; };
+		1F1A5119240CA7B4007814C7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A5118240CA7B4007814C7 /* Notification.swift */; };
 		1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F3F89240A1CE700899646 /* RegisterViewController.swift */; };
 		1FBAF3C3240AE2DF00BD13EF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */; };
 		1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */; };
@@ -32,7 +35,6 @@
 		E04E80552409133900CFA841 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80542409133900CFA841 /* WelcomeViewController.swift */; };
 		E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */; };
 		E04E805B24094A3A00CFA841 /* MyPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */; };
-		E04E8062240BBA0600CFA841 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E8061240BBA0600CFA841 /* camera.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,9 @@
 		1F1341102409918000C81B30 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F1A5108240C4ED9007814C7 /* Plant + Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant + Codable.swift"; sourceTree = "<group>"; };
 		1F1A5112240C590A007814C7 /* signUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = signUp.storyboard; sourceTree = "<group>"; };
+		1F1A5114240CA0CB007814C7 /* PlantEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEntries.swift; sourceTree = "<group>"; };
+		1F1A5116240CA157007814C7 /* FakeDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDataController.swift; sourceTree = "<group>"; };
+		1F1A5118240CA7B4007814C7 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		1F4F3F89240A1CE700899646 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBEE2732408A10E000AD0A6 /* Water My Plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water My Plants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,7 +68,6 @@
 		E04E80542409133900CFA841 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsDetailViewController.swift; sourceTree = "<group>"; };
 		E04E805A24094A3A00CFA841 /* MyPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewController.swift; sourceTree = "<group>"; };
-		E04E8061240BBA0600CFA841 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +84,8 @@
 		1FBDB2092408A77F00ED107B /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				1FBEE27C2408A10E000AD0A6 /* Main.storyboard */,
 				1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */,
+				1FBEE27C2408A10E000AD0A6 /* Main.storyboard */,
 				1FBEE2812408A112000AD0A6 /* LaunchScreen.storyboard */,
 				1F1A5112240C590A007814C7 /* signUp.storyboard */,
 			);
@@ -137,6 +141,8 @@
 				E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */,
 				1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */,
 				1FED49A52408B92500A717D2 /* Plant+Convenience.swift */,
+				1F1A5114240CA0CB007814C7 /* PlantEntries.swift */,
+				1F1A5118240CA7B4007814C7 /* Notification.swift */,
 				1F1A5108240C4ED9007814C7 /* Plant + Codable.swift */,
 				E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */,
 				E04E80522409016700CFA841 /* Plant.swift */,
@@ -154,6 +160,7 @@
 				1F073DCA240B3E83007FBEC7 /* LoginController.swift */,
 				1F073DCC240B3E9E007FBEC7 /* APIClient.swift */,
 				1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */,
+				1F1A5116240CA157007814C7 /* FakeDataController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				1FBEE27F2408A112000AD0A6 /* Assets.xcassets */,
-				E04E8061240BBA0600CFA841 /* camera.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -230,7 +236,6 @@
 				1FBAF3C3240AE2DF00BD13EF /* Dashboard.storyboard in Resources */,
 				1FBEE2802408A112000AD0A6 /* Assets.xcassets in Resources */,
 				1FBEE27E2408A10E000AD0A6 /* Main.storyboard in Resources */,
-				E04E8062240BBA0600CFA841 /* camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +249,9 @@
 				E04E80552409133900CFA841 /* WelcomeViewController.swift in Sources */,
 				E04E80532409016700CFA841 /* Plant.swift in Sources */,
 				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
+				1F1A5119240CA7B4007814C7 /* Notification.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
+				1F1A5117240CA157007814C7 /* FakeDataController.swift in Sources */,
 				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
 				1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
@@ -254,6 +261,7 @@
 				1F073DC5240B2460007FBEC7 /* User.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
 				1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */,
+				1F1A5115240CA0CB007814C7 /* PlantEntries.swift in Sources */,
 				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
 				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
