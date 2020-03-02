@@ -9,6 +9,15 @@
 import Foundation
 import CoreData
 
+extension FakeData {
+    convenience init(plant: String,
+                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        self.init(context: context)
+        
+        self.plant = plant
+    }
+}
+
 extension Plant1 {
     
     convenience init(nickname: String,
@@ -38,6 +47,7 @@ extension Plant1 {
         
         self.init(nickname: nickname, species: species, id: id, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek)
     }
+    
 //        @discardableResult convenience init(nickname: String, species: String, id: UUID = UUID(), h2oFrequencyPerWeek: String, time: String, startingDayOfWeek: String, image: Data?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
 //            self.init(context: context)
 //            self.nickname = nickname

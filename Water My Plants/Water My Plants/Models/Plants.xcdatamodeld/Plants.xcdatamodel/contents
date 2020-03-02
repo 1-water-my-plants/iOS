@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FakeData" representedClassName="FakeData" syncable="YES" codeGenerationType="class">
+        <attribute name="plant" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Plant1" representedClassName="Plant1" syncable="YES" codeGenerationType="class">
         <attribute name="h2oFrequencyPerWeek" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
@@ -10,5 +13,6 @@
     </entity>
     <elements>
         <element name="Plant1" positionX="-36" positionY="9" width="128" height="133"/>
+        <element name="FakeData" positionX="-36" positionY="54" width="128" height="58"/>
     </elements>
 </model>
