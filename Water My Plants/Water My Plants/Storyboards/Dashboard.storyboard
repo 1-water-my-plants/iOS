@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add Plant Details View Controller-->
         <scene sceneID="kJZ-KY-b1w">
             <objects>
-                <viewController id="mSc-X4-EIV" sceneMemberID="viewController">
+                <viewController id="mSc-X4-EIV" customClass="AddPlantDetailsViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="str-T2-rxO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwJ-zn-udp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="-946"/>
+            <point key="canvasLocation" x="1878" y="-1065"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="AX1-qn-chz">
@@ -331,15 +331,15 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPlantCell" textLabel="rwH-Eb-e9Z" rowHeight="67" style="IBUITableViewCellStyleDefault" id="gdj-I4-mts">
-                                <rect key="frame" x="0.0" y="346" width="414" height="67"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddPlantCell" textLabel="rwH-Eb-e9Z" rowHeight="100" style="IBUITableViewCellStyleDefault" id="gdj-I4-mts">
+                                <rect key="frame" x="0.0" y="346" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gdj-I4-mts" id="bA8-Xc-K1v">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rwH-Eb-e9Z">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="67"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -348,7 +348,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mSc-X4-EIV" kind="show" id="3T0-Jt-WZa"/>
+                                    <segue destination="mSc-X4-EIV" kind="presentation" identifier="AddPlantDetailsSegue" id="3T0-Jt-WZa"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

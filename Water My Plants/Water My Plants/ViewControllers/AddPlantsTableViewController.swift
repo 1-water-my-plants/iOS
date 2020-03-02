@@ -9,6 +9,8 @@
 import UIKit
 
 class AddPlantsTableViewController: UITableViewController {
+    
+     var CategoryArray = ["Vegetable Garden","Garden Flowers","Potted Plants", "Outdoor Trees", "Bushes", "Vines" ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +31,16 @@ class AddPlantsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return CategoryArray.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlantCell", for: indexPath)
 
-        cell.textLabel?.text = "SalCell"
+        cell.textLabel?.text = self.CategoryArray[indexPath.row]
+        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.textLabel?.textAlignment = .center
 
         return cell
     }
