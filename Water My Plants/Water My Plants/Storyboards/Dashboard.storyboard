@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwJ-zn-udp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997" y="-861"/>
+            <point key="canvasLocation" x="1804" y="-946"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="AX1-qn-chz">
@@ -221,7 +221,7 @@
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="NxJ-dP-k5L" kind="presentation" modalPresentationStyle="fullScreen" id="nTU-0x-X1a"/>
+                                            <segue destination="NxJ-dP-k5L" kind="show" id="nTU-0x-X1a"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -278,14 +278,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyU-Hn-MtT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482.60869565217394" y="-123.21428571428571"/>
+            <point key="canvasLocation" x="480" y="-123"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Plants Table View Controller-->
         <scene sceneID="aFS-lH-Yqk">
             <objects>
-                <tableViewController id="NxJ-dP-k5L" sceneMemberID="viewController">
+                <tableViewController id="NxJ-dP-k5L" customClass="AddPlantsTableViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wrQ-hX-sj9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="cfx-8C-4h9">
@@ -361,7 +361,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dup-tf-wZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663.768115942029" y="-881.25"/>
+            <point key="canvasLocation" x="696" y="-1065"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zt8-GX-O9a">

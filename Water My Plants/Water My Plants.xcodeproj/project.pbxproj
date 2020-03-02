@@ -33,6 +33,7 @@
 		E04E8064240D204600CFA841 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04E8063240D204600CFA841 /* LaunchScreen.storyboard */; };
 		E04E8065240D25A900CFA841 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F3F87240A1AD300899646 /* Register.storyboard */; };
 		E04E8067240D27B600CFA841 /* AddPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8066240D27B600CFA841 /* AddPlantsTableViewController.swift */; };
+		E04E8069240D2B2300CFA841 /* AddPlantDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8068240D2B2300CFA841 /* AddPlantDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		E04E8061240BBA0600CFA841 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		E04E8063240D204600CFA841 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E04E8066240D27B600CFA841 /* AddPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsTableViewController.swift; sourceTree = "<group>"; };
+		E04E8068240D2B2300CFA841 /* AddPlantDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				1F1341102409918000C81B30 /* LoginViewController.swift */,
 				1F4F3F89240A1CE700899646 /* RegisterViewController.swift */,
 				E04E8066240D27B600CFA841 /* AddPlantsTableViewController.swift */,
+				E04E8068240D2B2300CFA841 /* AddPlantDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
 				1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
+				E04E8069240D2B2300CFA841 /* AddPlantDetailsViewController.swift in Sources */,
 				1F073DC9240B2BFE007FBEC7 /* Request.swift in Sources */,
 				1F073DC7240B2BAD007FBEC7 /* Token.swift in Sources */,
 				E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */,

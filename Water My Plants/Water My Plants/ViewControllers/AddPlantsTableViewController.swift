@@ -32,15 +32,15 @@ class AddPlantsTableViewController: UITableViewController {
         return 1
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlantCell", for: indexPath)
+
+        cell.textLabel?.text = "SalCell"
 
         return cell
     }
-    */
+  
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,7 +77,7 @@ class AddPlantsTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -85,6 +85,6 @@ class AddPlantsTableViewController: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+  
 
 }
