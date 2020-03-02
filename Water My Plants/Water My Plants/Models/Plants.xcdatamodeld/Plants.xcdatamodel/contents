@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Plant1" representedClassName="Plant1" syncable="YES" codeGenerationType="class">
+    <entity name="Plant" representedClassName="Plant" syncable="YES" codeGenerationType="class">
         <attribute name="h2oFrequencyPerWeek" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
@@ -10,6 +10,6 @@
         <attribute name="time" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Plant1" positionX="-36" positionY="9" width="128" height="148"/>
+        <element name="Plant" positionX="-36" positionY="9" width="128" height="148"/>
     </elements>
 </model>

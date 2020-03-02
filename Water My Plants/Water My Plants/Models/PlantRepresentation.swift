@@ -13,7 +13,7 @@ import Foundation
 struct PlantRepresentation: Codable, Equatable {
     var nickname: String?
     var species: String?
-    var id: UUID?
+    var id: String?
     var h2oFrequencyPerWeek: String?
     var time: String?
     var startingDayOfWeek: String?

@@ -114,7 +114,7 @@
         <!--Register-->
         <scene sceneID="4W5-ux-67q">
             <objects>
-                <viewControllerPlaceholder storyboardName="Register" id="ADW-q8-nHj" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Register" storyboardName="Register" id="ADW-q8-nHj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5A6-PA-yeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-9267" y="-524"/>

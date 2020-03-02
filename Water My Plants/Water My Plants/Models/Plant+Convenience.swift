@@ -9,7 +9,8 @@
 import Foundation
 import CoreData
 
-extension Plant1 {
+extension Plant {
+ 
     
     var plantRepresentation: PlantRepresentation? {
     guard let nickname = nickname,
@@ -19,36 +20,56 @@ extension Plant1 {
     let time = time,
     let startingDayOfWeek = startingDayOfWeek,
     let image = image else { return nil }
+
+        return PlantRepresentation(nickname: nickname, species: species, id: id.uuidString, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek, image: image.base64EncodedString())
+
+     }
     
-        return PlantRepresentation(nickname: nickname, species: species, id: id, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek, image: image.base64EncodedString())
+    @discardableResult convenience init(nickname: String? = nil, species: String? = nil, id: UUID = UUID(),h2oFrequencyPerWeek: String? = nil, time: String? = nil , startingDayOfWeek: String? = nil, image: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+         self.init(context:context)
+                 self.nickname = nickname
+                 self.species = species
+                 self.id = id
+                 self.h2oFrequencyPerWeek = h2oFrequencyPerWeek
+                 self.time = time
+                 self.startingDayOfWeek = startingDayOfWeek
+//                 self.image = image?.base64EncodedString()
+                self.image = Data(base64Encoded: image)
+
+             }
+    
+    @discardableResult convenience init?(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        guard let nickname = plantRepresentation.nickname,
+            let species = plantRepresentation.species,
+            let identifierString = plantRepresentation.id,
+            let identifier = UUID(uuidString: identifierString),
+            let h2oFrequencyPerWeek = plantRepresentation.h2oFrequencyPerWeek,
+            let time = plantRepresentation.time,
+            let startingDayOfWeek = plantRepresentation.startingDayOfWeek,
+            let imageData = plantRepresentation.image,
+            let image = Data(base64Encoded: imageData) else { return nil }
         
-//        @discardableResult convenience init(nickname: String, species: String, id: UUID = UUID(), h2oFrequencyPerWeek: String, time: String, startingDayOfWeek: String, image: Data?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-//            self.init(context: context)
-//            self.nickname = nickname
-//
-//        }
+        self.init(nickname: plantRepresentation.nickname ?? "buggyNickname",
+                species: plantRepresentation.species ?? "buggySpecies",
+                id: identifier,
+                h2oFrequencyPerWeek: plantRepresentation.h2oFrequencyPerWeek ?? "buggyFrequency",
+                time: plantRepresentation.time,
+                startingDayOfWeek: plantRepresentation.startingDayOfWeek,
+                image: plantRepresentation.image ?? "buggyImage",
+                context: context)
     }
-    
-//    @discardableResult convenience init?(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-//        guard let nickname = plantRepresentation.nickname,
-//            let species = plantRepresentation.species,
-//            let id = plantRepresentation.id,
-//            let h2oFrequencyPerWeek = plantRepresentation.h2oFrequencyPerWeek,
-//            let time = plantRepresentation.time,
-//            let startingDayOfWeek = plantRepresentation.startingDayOfWeek,
-//            let image = plantRepresentation.image else { return }
-//
-//            self.init(nickname: nickname, species: species, id: id.uuidString, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek, image: image)
-//    }
     
 }
 
 
-//delete later
-//var nickname: String?
-//var species: String?
-//var id: String?
-//var h2oFrequencyPerWeek: String?
-//var time: String?
-//var startingDayOfWeek: String?
-//var image: String?
+ 
+//
+//struct PlantRepresentation: Codable {
+//    var nickname: String?
+//    var species: String?
+//    var id: UUID?
+//    var h2oFrequencyPerWeek: String?
+//    var time: String?
+//    var startingDayOfWeek: String?
+//    var image: String?
+//}

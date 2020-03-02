@@ -10,19 +10,20 @@ import Foundation
 import CoreData
 
 class CoreDataStack {
-    static let shared = CoreDataStack()  
+    
+    static let shared = CoreDataStack()
     
     private init() {}
 
-    lazy var container: NSPersistentContainer = {   // create persistent store and persistant store container
-        let newContainer = NSPersistentContainer(name: "Plants")
-        newContainer.loadPersistentStores { (_, error) in
+    lazy var container: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "Plants")
+        container.loadPersistentStores { (_, error) in
             if let error = error {
                 fatalError("Failed to load peristent stores: \(error)")
             }
         }
-        newContainer.viewContext.automaticallyMergesChangesFromParent = true
-        return newContainer
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        return container
     }()
      
     var mainContext: NSManagedObjectContext {  // created mamaged object context
