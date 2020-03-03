@@ -324,7 +324,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Plant Nickname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWU-Nb-DfJ">
-                                            <rect key="frame" x="225" y="35" width="149" height="30"/>
+                                            <rect key="frame" x="105" y="35" width="148.5" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="wCK-79-SIe"/>
                                             </constraints>
@@ -332,11 +332,27 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="MGc-9g-GBl">
+                                            <rect key="frame" x="350" y="2" width="34" height="86"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qj-nf-6Q9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="34" height="45"/>
+                                                    <state key="normal" image="edit"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6RE-xM-cxG">
+                                                    <rect key="frame" x="0.0" y="64" width="34" height="22"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" image="bell"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="MGc-9g-GBl" firstAttribute="top" secondItem="URt-Yj-ZF2" secondAttribute="top" constant="2" id="JWQ-ld-ZVY"/>
                                         <constraint firstItem="WdY-E3-OuT" firstAttribute="leading" secondItem="URt-Yj-ZF2" secondAttribute="leading" constant="10" id="RqS-SZ-dOa"/>
-                                        <constraint firstItem="BWU-Nb-DfJ" firstAttribute="trailing" secondItem="URt-Yj-ZF2" secondAttribute="trailingMargin" constant="-20" id="T6e-hO-UEA"/>
+                                        <constraint firstAttribute="trailing" secondItem="MGc-9g-GBl" secondAttribute="trailing" constant="30" id="TqU-cc-hE7"/>
                                         <constraint firstItem="WdY-E3-OuT" firstAttribute="top" secondItem="URt-Yj-ZF2" secondAttribute="top" constant="5" id="bpd-IA-Y38"/>
+                                        <constraint firstItem="BWU-Nb-DfJ" firstAttribute="leading" secondItem="WdY-E3-OuT" secondAttribute="trailing" constant="20" id="cwg-bO-MWj"/>
                                         <constraint firstItem="BWU-Nb-DfJ" firstAttribute="centerY" secondItem="WdY-E3-OuT" secondAttribute="centerY" id="dl3-jq-rBT"/>
                                         <constraint firstAttribute="bottom" secondItem="WdY-E3-OuT" secondAttribute="bottom" constant="5" id="fjT-9B-Ojf"/>
                                     </constraints>
@@ -583,6 +599,7 @@
     <resources>
         <image name="Jade plant" width="334" height="242"/>
         <image name="Profile page" width="414" height="475"/>
+        <image name="bell" width="25" height="21"/>
         <image name="camera" width="94" height="123"/>
         <image name="edit" width="34" height="45"/>
         <image name="home" width="45" height="36"/>
