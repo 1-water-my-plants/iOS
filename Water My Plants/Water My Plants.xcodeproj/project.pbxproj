@@ -39,6 +39,8 @@
 		E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* CTPicker */; };
 		E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8072240E7D1200CFA841 /* DataSource.swift */; };
 		E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */; };
+		E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */; };
+		E04E807B240EA95300CFA841 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsDetailsViewController.swift; sourceTree = "<group>"; };
 		E04E8072240E7D1200CFA841 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewCell.swift; sourceTree = "<group>"; };
+		E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
+		E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				1F20D39C240E05330008E320 /* SettingsViewController.swift */,
 				E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */,
 				E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */,
+				E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */,
+				E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04E807B240EA95300CFA841 /* NotificationsTableViewCell.swift in Sources */,
 				E04E80552409133900CFA841 /* WelcomeViewController.swift in Sources */,
 				E04E80532409016700CFA841 /* Plant.swift in Sources */,
 				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
@@ -296,6 +303,7 @@
 				E04E806B240E710A00CFA841 /* AddPlantsTableViewController.swift in Sources */,
 				1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */,
 				E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */,
+				E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */,
 				1F1A5115240CA0CB007814C7 /* PlantEntries.swift in Sources */,
 				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
 				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,

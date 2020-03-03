@@ -275,7 +275,7 @@
                                             <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ibQ-Uv-SMU" kind="show" id="efm-6X-AK2"/>
+                                            <segue destination="f3B-pb-cK0" kind="show" id="Xjs-th-9lm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -371,6 +371,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pJ-Vf-k5p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1386.9565217391305" y="-120.53571428571428"/>
+        </scene>
+        <!--Edit Water Notifications-->
+        <scene sceneID="o3s-QE-smu">
+            <objects>
+                <tableViewController id="f3B-pb-cK0" customClass="NotificationsTableViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eLb-kW-NhN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsCell" rowHeight="80" id="mpd-wR-SSi" customClass="NotificationsTableViewCell" customModule="Water_My_Plants" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mpd-wR-SSi" id="4Zu-81-GIO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gYv-Lm-Uct">
+                                            <rect key="frame" x="40" y="13" width="78.5" height="54"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXQ-2R-n51">
+                                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Species" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnO-eI-d8V">
+                                                    <rect key="frame" x="0.0" y="26.5" width="78.5" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YIR-lH-0bA">
+                                            <rect key="frame" x="330" y="24.5" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gYv-Lm-Uct" firstAttribute="leading" secondItem="4Zu-81-GIO" secondAttribute="leadingMargin" constant="20" id="7WJ-Th-KWq"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gYv-Lm-Uct" secondAttribute="bottom" constant="2" id="BlM-LS-seW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YIR-lH-0bA" secondAttribute="trailing" constant="15" id="Zup-uA-qLS"/>
+                                        <constraint firstItem="gYv-Lm-Uct" firstAttribute="top" secondItem="4Zu-81-GIO" secondAttribute="topMargin" constant="2" id="cwM-Jt-R8B"/>
+                                        <constraint firstItem="YIR-lH-0bA" firstAttribute="centerY" secondItem="gYv-Lm-Uct" secondAttribute="centerY" id="xIe-sC-0pP"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f3B-pb-cK0" id="HIE-IP-zhw"/>
+                            <outlet property="delegate" destination="f3B-pb-cK0" id="ouO-Ek-1mr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Water Notifications" id="183-8w-MLL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="profile" id="NoV-LO-hId"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5fX-1s-ufP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1240.5797101449277" y="738.61607142857144"/>
         </scene>
         <!--Profile-->
         <scene sceneID="P6W-gA-bU4">
@@ -560,22 +620,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dup-tf-wZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1243" y="-774"/>
-        </scene>
-        <!--Notifications-->
-        <scene sceneID="93j-Qe-abr">
-            <objects>
-                <viewController id="ibQ-Uv-SMU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LAn-kJ-cDK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="fU3-PX-ljO"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="6fp-qt-y0x"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tdk-FQ-v89" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1241" y="585"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zt8-GX-O9a">
