@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,6 +36,7 @@
 		E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */; };
 		E04E806B240E710A00CFA841 /* AddPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */; };
 		E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */; };
+		E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* CTPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +194,9 @@
 			dependencies = (
 			);
 			name = "Water My Plants";
+			packageProductDependencies = (
+				E04E806F240E78EF00CFA841 /* CTPicker */,
+			);
 			productName = "Water My Plants";
 			productReference = 1FBEE2732408A10E000AD0A6 /* Water My Plants.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +225,9 @@
 				Base,
 			);
 			mainGroup = 1FBEE26A2408A10E000AD0A6;
+			packageReferences = (
+				E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */,
+			);
 			productRefGroup = 1FBEE2742408A10E000AD0A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -470,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StewartLynch/CTPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E04E806F240E78EF00CFA841 /* CTPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */;
+			productName = CTPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */ = {
