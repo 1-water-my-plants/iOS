@@ -9,6 +9,3 @@
 import Foundation
 import CoreData
 
-struct FakeDataEntries: Codable {
-    var plant: String
-}
