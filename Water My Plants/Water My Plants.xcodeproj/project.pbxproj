@@ -38,6 +38,7 @@
 		E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */; };
 		E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* CTPicker */; };
 		E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8072240E7D1200CFA841 /* DataSource.swift */; };
+		E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsTableViewController.swift; sourceTree = "<group>"; };
 		E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsDetailsViewController.swift; sourceTree = "<group>"; };
 		E04E8072240E7D1200CFA841 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */,
 				1FED49A92408B95C00A717D2 /* Controllers */,
 				1FED499F2408B8D900A717D2 /* Models */,
+				E04E8075240EA3D100CFA841 /* CustomView */,
 				1FED499C2408B86300A717D2 /* ViewControllers */,
 				1FBDB2092408A77F00ED107B /* Storyboards */,
 				1FED49AA2408B98000A717D2 /* Assets */,
@@ -187,6 +190,14 @@
 				E04E8072240E7D1200CFA841 /* DataSource.swift */,
 			);
 			path = Utilitites;
+			sourceTree = "<group>";
+		};
+		E04E8075240EA3D100CFA841 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +284,7 @@
 				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
 				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
+				E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */,
 				1F20D3A1240E21420008E320 /* MyPlantsTableViewController.swift in Sources */,
 				1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
