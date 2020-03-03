@@ -504,6 +504,9 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="eaM-Ib-UQG">
                             <color key="tintColor" red="0.25098039220000001" green="0.27058823529999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="homePressed:" destination="NxJ-dP-k5L" id="X0L-2b-WqA"/>
+                            </connections>
                         </barButtonItem>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1SU-Ts-beb">
                             <rect key="frame" x="181" y="0.0" width="52" height="44"/>
