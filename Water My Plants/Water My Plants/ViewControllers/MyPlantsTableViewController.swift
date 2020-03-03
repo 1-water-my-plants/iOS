@@ -14,6 +14,8 @@ class MyPlantsTableViewController: UITableViewController {
     var fakeDataController = FakeDataController()
     
     
+    
+    
     lazy var fetchedResultController: NSFetchedResultsController<FakeData> = {
         let fetchRequest: NSFetchRequest<FakeData> = FakeData.fetchRequest()
         fetchRequest.sortDescriptors = [
@@ -32,17 +34,11 @@ class MyPlantsTableViewController: UITableViewController {
         return frc
     }()
     
-    var fakePlants: [Fake] = [
-        Fake(plant: "Potted Plants"),
-        Fake(plant: "Garden Flowers"),
-        Fake(plant: "Vegetable Garden"),
-        Fake(plant: "Outdoor Trees"),
-        Fake(plant: "Bushes"),
-        Fake(plant: "Vines")
-    ]
-    
-    var newArray: [FakeData] = []
-    
+    var fakePlants: [FakeData] = []
+
+    @IBAction func homePressed(_ sender: Any) {
+//        self.navigationController?
+    }
 
     
     @IBAction func addButtonTapped(_ sender: Any) {
@@ -55,8 +51,7 @@ class MyPlantsTableViewController: UITableViewController {
             guard let plantString = alert.textFields?.first?.text else { return }
             let plants = String(plantString)
             self.fakeDataController.create(plant: plants)
-            
-            print(self.fakePlants.count)
+            self.fakePlants.append(FakeData(plant: plants))
             self.tableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -67,12 +62,11 @@ class MyPlantsTableViewController: UITableViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateViews), name: .plantEntered, object: nil)
         updateViews()
+        self.tableView.reloadData()
     }
     
     @objc func updateViews() {
-        fetchedResultController.fetchedObjects?.forEach({ plant in
-            let plant = plant as FakeData
-        })
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -92,6 +86,7 @@ class MyPlantsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlantCell", for: indexPath)
 
         let plant = fetchedResultController.object(at: indexPath)
+//        self.tableView.reloadData()
         
         cell.textLabel?.text = plant.plant
         
