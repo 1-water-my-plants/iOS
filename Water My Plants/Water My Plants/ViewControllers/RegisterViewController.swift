@@ -90,13 +90,15 @@ class RegisterViewController: UIViewController {
         signUpController.signUp(with: signUpRequest) { (error) in
             DispatchQueue.main.async {
                 if let _ = error {
-                    let alert = UIAlertController(title: "Something went wrong ☹️", message: "Please try again.", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    // Creates an error message that states the username already exist
+                    let alert = UIAlertController(title: "Username already exist.", message: "Try a different username and try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                     // Enable the sign up button if there was an error
                     self.signUPButton.isEnabled = true
                     return
                 } else {
+                    // automatically logs user in after signing up
                     self.delegate?.loginAfterSignUp(with: LoginRequest(username: username, password: password))
                     self.dismiss(animated: true, completion: nil)
                 }
@@ -104,7 +106,7 @@ class RegisterViewController: UIViewController {
         }
     }
 }
-
+// Dismisses keyboard after user presses return
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let nextTextField = self.view.viewWithTag(textField.tag + 1) {
