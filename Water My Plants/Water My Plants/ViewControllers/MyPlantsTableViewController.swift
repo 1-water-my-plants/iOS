@@ -2,60 +2,74 @@
 //  MyPlantsTableViewController.swift
 //  Water My Plants
 //
-//  Created by Sal B Amer on 2/28/20.
+//  Created by Alex Thompson on 3/2/20.
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
 class MyPlantsTableViewController: UITableViewController {
-    
-    
-//    @IBAction func addButtonTapped(_ sender: Any) {
-//        let alert = UIAlertController(title: "Add a plant", message: "Please enter the name of a plant.", preferredStyle: .alert)
-//        alert.addTextField { textField in
-//            textField.placeholder = "Your plant"
-//        }
-//
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            guard let plantString = alert.textFields?.first?.text else { return }
-//            let plants = String(plantString)
-//            self.fakeDataController.create(plant: plants)
-//
-//            print(self.fakePlants.count)
-//            self.tableView.reloadData()
-//        }))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//        self.present(alert, animated: true)
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     
-
+    
+    
+    
+    
+    
+    
+    //    @IBAction func addButtonTapped(_ sender: Any) {
+    //        let alert = UIAlertController(title: "Add a plant", message: "Please enter the name of a plant.", preferredStyle: .alert)
+    //        alert.addTextField { textField in
+    //            textField.placeholder = "Your plant"
+    //        }
+    //
+    //        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+    //            guard let plantString = alert.textFields?.first?.text else { return }
+    //            let plants = String(plantString)
+    //            self.fakeDataController.create(plant: plants)
+    //
+    //            print(self.fakePlants.count)
+    //            self.tableView.reloadData()
+    //        }))
+    //        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+    //        self.present(alert, animated: true)
+    //    }
+    
+    
+    
+    
     // MARK: - Table view data source
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
 
-    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        // configure the cell
-//        return cell
-//    }
-    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
