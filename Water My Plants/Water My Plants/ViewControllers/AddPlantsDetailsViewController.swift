@@ -20,18 +20,18 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
     
     // CT Picker code for trying to select multiple days.. not working
     weak var ctDelegate: CTPickerDelegate?
-    var dayArray:[String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    var dayArray: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 
     
     // IB Outlets
-    @IBOutlet weak var plantSpeciesTextField: UITextField!
-    @IBOutlet weak var plantNicknameTextField: UITextField!
-    @IBOutlet weak var howManyPlantsTextField: UITextField!
-    @IBOutlet weak var h2oFrequencyPerWeekTextLabel: UITextField!
-    @IBOutlet weak var textWaterNotificationsToggleLbl: UILabel!
-    @IBOutlet weak var wateringDaysPerWeek: UITextField!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet private var plantSpeciesTextField: UITextField!
+    @IBOutlet private var plantNicknameTextField: UITextField!
+    @IBOutlet private var howManyPlantsTextField: UITextField!
+    @IBOutlet private var h2oFrequencyPerWeekTextLabel: UITextField!
+    @IBOutlet private var textWaterNotificationsToggleLbl: UILabel!
+    @IBOutlet private var wateringDaysPerWeek: UITextField!
+    @IBOutlet private var imageView: UIImageView!
     // need to add model attribute for totalPlants - Int or String
     
     
@@ -72,11 +72,11 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
             return
         }
         let photoSourcePicker = UIAlertController()
-        let takePhotoAction = UIAlertAction(title: "Take a Picture", style: .default) { (_) in
+        let takePhotoAction = UIAlertAction(title: "Take a Picture", style: .default) { _ in
             self.presentPhotoPicker(sourceType: .camera)
         }
         
-        let choosePhotoAction = UIAlertAction(title: "Choose a Photo", style: .default) { (_) in
+        let choosePhotoAction = UIAlertAction(title: "Choose a Photo", style: .default) { _ in
             self.presentPhotoPicker(sourceType: .photoLibrary)
         }
         
@@ -92,7 +92,7 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = sourceType
-        present(picker,animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
         
     }
     
@@ -159,9 +159,9 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
 //Extension for UI Picker Camera
 
 extension AddPlantsDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image =  info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { fatalError("No Image Returned")}
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { fatalError("No Image Returned")}
         imageView.image = image
         // Plant image is missing from CoreData - Have to add to save photo
     }

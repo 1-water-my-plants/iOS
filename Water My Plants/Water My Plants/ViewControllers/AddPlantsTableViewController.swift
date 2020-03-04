@@ -10,7 +10,7 @@ import UIKit
 
 class AddPlantsTableViewController: UITableViewController {
     
-    var CategoryArray = ["Vegetable Garden","Garden Flowers","Potted Plants", "Outdoor Trees", "Bushes", "Vines" ]
+    var CategoryArray = ["Vegetable Garden", "Garden Flowers", "Potted Plants", "Outdoor Trees", "Bushes", "Vines" ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +78,7 @@ class AddPlantsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

@@ -10,9 +10,9 @@ import UIKit
 
 class MyPlantsTableViewController: UITableViewController {
     
-    @IBOutlet weak var plantView1: UIView!
-    @IBOutlet weak var plantView2: UIView!
-    @IBOutlet weak var plantView3: UIView!
+    @IBOutlet private var plantView1: UIView!
+    @IBOutlet private var plantView2: UIView!
+    @IBOutlet private var plantView3: UIView!
     
     func roundThePhotos() {
         plantView1.layer.cornerRadius = 7
@@ -98,7 +98,7 @@ class MyPlantsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

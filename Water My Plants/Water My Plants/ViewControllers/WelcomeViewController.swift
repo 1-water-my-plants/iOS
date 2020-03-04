@@ -10,9 +10,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    @IBOutlet weak var plant1: UIView!
-    @IBOutlet weak var plant2: UIView!
-    @IBOutlet weak var plant3: UIView!
+    @IBOutlet private var plant1: UIView!
+    @IBOutlet private var plant2: UIView!
+    @IBOutlet private var plant3: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

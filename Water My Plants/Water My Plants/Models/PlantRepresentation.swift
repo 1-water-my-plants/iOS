@@ -20,21 +20,21 @@ struct PlantRepresentation: Codable, Equatable {
     var image: String?
 }
 
-func ==(lhs: PlantRepresentation, rhs: Plant1) -> Bool {
-    return rhs.nickname == lhs.nickname &&
-        rhs.species == rhs.species &&
+func == (lhs: PlantRepresentation, rhs: Plant1) -> Bool {
+    rhs.nickname == lhs.nickname &&
+        rhs.species == lhs.species &&
         rhs.id == lhs.id &&
         rhs.startingDayOfWeek == lhs.startingDayOfWeek
 }
 
-func ==(lhs: Plant1, rhs: PlantRepresentation) -> Bool {
-    return rhs == lhs
+func == (lhs: Plant1, rhs: PlantRepresentation) -> Bool {
+    rhs == lhs
 }
 
-func !=(lhs: PlantRepresentation, rhs: Plant1) -> Bool {
-    return !(rhs == lhs)
+func != (lhs: PlantRepresentation, rhs: Plant1) -> Bool {
+    !(rhs == lhs)
 }
 
-func !=(lhs: Plant1, rhs: PlantRepresentation) -> Bool {
-    return rhs != lhs
+func != (lhs: Plant1, rhs: PlantRepresentation) -> Bool {
+    rhs != lhs
 }
