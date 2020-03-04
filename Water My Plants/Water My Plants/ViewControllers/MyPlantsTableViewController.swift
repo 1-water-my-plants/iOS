@@ -9,9 +9,20 @@
 import UIKit
 
 class MyPlantsTableViewController: UITableViewController {
+    
+    @IBOutlet weak var plantView1: UIView!
+    @IBOutlet weak var plantView2: UIView!
+    @IBOutlet weak var plantView3: UIView!
+    
+    func roundThePhotos() {
+        plantView1.layer.cornerRadius = 7
+        plantView2.layer.cornerRadius = 7
+        plantView3.layer.cornerRadius = 7
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        roundThePhotos()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

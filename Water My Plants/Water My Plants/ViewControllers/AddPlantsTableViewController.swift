@@ -21,6 +21,22 @@ class AddPlantsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+        @IBAction func addButtonTapped(_ sender: Any) {
+            let alert = UIAlertController(title: "Add a plant", message: "Please enter the name of a plant.", preferredStyle: .alert)
+            alert.addTextField { textField in
+                textField.placeholder = "Your plant"
+            }
+            
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                guard let plantString = alert.textFields?.first?.text else { return }
+                let plants = String(plantString)
+                self.CategoryArray.append(plants)
+                self.tableView.reloadData()
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self.present(alert, animated: true)
+        
+    }
 
     // MARK: - Table view data source
 
