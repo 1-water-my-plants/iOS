@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,13 @@
 		E04E80532409016700CFA841 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80522409016700CFA841 /* Plant.swift */; };
 		E04E80552409133900CFA841 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80542409133900CFA841 /* WelcomeViewController.swift */; };
 		E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */; };
+		E04E806B240E710A00CFA841 /* AddPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */; };
+		E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */; };
+		E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* CTPicker */; };
+		E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8072240E7D1200CFA841 /* DataSource.swift */; };
+		E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */; };
+		E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */; };
+		E04E807B240EA95300CFA841 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +73,12 @@
 		E04E80522409016700CFA841 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		E04E80542409133900CFA841 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsDetailViewController.swift; sourceTree = "<group>"; };
+		E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsTableViewController.swift; sourceTree = "<group>"; };
+		E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantsDetailsViewController.swift; sourceTree = "<group>"; };
+		E04E8072240E7D1200CFA841 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewCell.swift; sourceTree = "<group>"; };
+		E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
+		E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,10 +123,12 @@
 		1FBEE2752408A10E000AD0A6 /* Water My Plants */ = {
 			isa = PBXGroup;
 			children = (
+				E04E8071240E7CF400CFA841 /* Utilitites */,
 				1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */,
 				1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */,
 				1FED49A92408B95C00A717D2 /* Controllers */,
 				1FED499F2408B8D900A717D2 /* Models */,
+				E04E8075240EA3D100CFA841 /* CustomView */,
 				1FED499C2408B86300A717D2 /* ViewControllers */,
 				1FBDB2092408A77F00ED107B /* Storyboards */,
 				1FED49AA2408B98000A717D2 /* Assets */,
@@ -130,6 +146,9 @@
 				1F1341102409918000C81B30 /* LoginViewController.swift */,
 				1F4F3F89240A1CE700899646 /* RegisterViewController.swift */,
 				1F20D39C240E05330008E320 /* SettingsViewController.swift */,
+				E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */,
+				E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */,
+				E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -170,6 +189,23 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		E04E8071240E7CF400CFA841 /* Utilitites */ = {
+			isa = PBXGroup;
+			children = (
+				E04E8072240E7D1200CFA841 /* DataSource.swift */,
+			);
+			path = Utilitites;
+			sourceTree = "<group>";
+		};
+		E04E8075240EA3D100CFA841 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */,
+				E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +222,9 @@
 			dependencies = (
 			);
 			name = "Water My Plants";
+			packageProductDependencies = (
+				E04E806F240E78EF00CFA841 /* CTPicker */,
+			);
 			productName = "Water My Plants";
 			productReference = 1FBEE2732408A10E000AD0A6 /* Water My Plants.app */;
 			productType = "com.apple.product-type.application";
@@ -214,6 +253,9 @@
 				Base,
 			);
 			mainGroup = 1FBEE26A2408A10E000AD0A6;
+			packageReferences = (
+				E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */,
+			);
 			productRefGroup = 1FBEE2742408A10E000AD0A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -243,11 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04E807B240EA95300CFA841 /* NotificationsTableViewCell.swift in Sources */,
 				E04E80552409133900CFA841 /* WelcomeViewController.swift in Sources */,
 				E04E80532409016700CFA841 /* Plant.swift in Sources */,
 				E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */,
 				1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */,
 				1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */,
+				E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */,
 				1F20D3A1240E21420008E320 /* MyPlantsTableViewController.swift in Sources */,
 				1F073DCD240B3E9E007FBEC7 /* APIClient.swift in Sources */,
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
@@ -256,7 +300,10 @@
 				E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */,
 				1F073DC5240B2460007FBEC7 /* User.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
+				E04E806B240E710A00CFA841 /* AddPlantsTableViewController.swift in Sources */,
 				1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */,
+				E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */,
+				E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */,
 				1F1A5115240CA0CB007814C7 /* PlantEntries.swift in Sources */,
 				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
 				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,
@@ -264,6 +311,7 @@
 				1F1A5109240C4ED9007814C7 /* Plant + Codable.swift in Sources */,
 				1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */,
 				1F1341112409918000C81B30 /* LoginViewController.swift in Sources */,
+				E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */,
 				1F20D39D240E05330008E320 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +510,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StewartLynch/CTPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E04E806F240E78EF00CFA841 /* CTPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */;
+			productName = CTPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */ = {

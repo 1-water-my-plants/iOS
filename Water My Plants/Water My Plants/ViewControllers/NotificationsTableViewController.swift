@@ -1,28 +1,17 @@
 //
-//  MyPlantsTableViewController.swift
+//  NotificationsTableViewController.swift
 //  Water My Plants
 //
-//  Created by Alex Thompson on 3/2/20.
+//  Created by Sal B Amer on 3/3/20.
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
 import UIKit
 
-class MyPlantsTableViewController: UITableViewController {
-    
-    @IBOutlet weak var plantView1: UIView!
-    @IBOutlet weak var plantView2: UIView!
-    @IBOutlet weak var plantView3: UIView!
-    
-    func roundThePhotos() {
-        plantView1.layer.cornerRadius = 7
-        plantView2.layer.cornerRadius = 7
-        plantView3.layer.cornerRadius = 7
-    }
+class NotificationsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        roundThePhotos()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,37 +19,8 @@ class MyPlantsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-
-    
-
-    
-
-//    @IBAction func addButtonTapped(_ sender: Any) {
-//        let alert = UIAlertController(title: "Add a plant", message: "Please enter the name of a plant.", preferredStyle: .alert)
-//        alert.addTextField { textField in
-//            textField.placeholder = "Your plant"
-//        }
-//
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            guard let plantString = alert.textFields?.first?.text else { return }
-//            let plants = String(plantString)
-//            self.fakeDataController.create(plant: plants)
-//            self.fakePlants.append(FakeData(plant: plants))
-//            self.tableView.reloadData()
-//        }))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//        self.present(alert, animated: true)
-//    }
-
-
-
-    
-    
-    
 
     // MARK: - Table view data source
-    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -76,7 +36,7 @@ class MyPlantsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-
+        // Configure the cell...
 
         return cell
     }
