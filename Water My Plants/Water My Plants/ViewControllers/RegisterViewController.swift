@@ -10,9 +10,9 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    @IBOutlet weak var registerView: UIView!
+    @IBOutlet private var registerView: UIView!
     
-    @IBOutlet weak var signUPButton: UIButton!
+    @IBOutlet private var signUPButton: UIButton!
     
     private let signUpController = SignUpController()
     
@@ -87,7 +87,7 @@ class RegisterViewController: UIViewController {
         
         // disable the signup button after the sign up request is created
         self.signUPButton.isEnabled = false
-        signUpController.signUp(with: signUpRequest) { (error) in
+        signUpController.signUp(with: signUpRequest) { error in
             DispatchQueue.main.async {
                 if let _ = error {
                     // Creates an error message that states the username already exist

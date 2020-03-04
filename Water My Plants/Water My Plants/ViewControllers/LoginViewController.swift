@@ -14,9 +14,9 @@ protocol LoginViewControllerDelegate: AnyObject {
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var signInView: UIView!
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet private var signInView: UIView!
+    @IBOutlet private var signInButton: UIButton!
+    @IBOutlet private var createAccountButton: UIButton!
     
     let loginController = LoginController.shared
     

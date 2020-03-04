@@ -13,11 +13,8 @@ import UIKit
 struct Plant: Codable, Equatable {
     var nickname: String?
     var species: String?
-//    var id: Int / Made string like model Sal 
+//    var id: Int / Made string like model Sal
     var id: String?
     var h2oFrequency: String?
     var image: String?
 }
-
-
-

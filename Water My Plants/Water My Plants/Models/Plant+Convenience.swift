@@ -22,9 +22,9 @@ extension Plant1 {
     
     convenience init(nickname: String,
                      species: String,
-                     id: String = UUID().uuidString,
                      h2oFrequencyPerWeek: String,
                      time: Date = Date(),
+                     id: String = UUID().uuidString,
                      startingDayOfWeek: String,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
@@ -45,7 +45,7 @@ extension Plant1 {
             let time = plantRepresentation.time,
             let startingDayOfWeek = plantRepresentation.startingDayOfWeek else { return nil }
         
-        self.init(nickname: nickname, species: species, id: id, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek)
+        self.init(nickname: nickname, species: species, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, id: id, startingDayOfWeek: startingDayOfWeek)
     }
     
 //        @discardableResult convenience init(nickname: String, species: String, id: UUID = UUID(), h2oFrequencyPerWeek: String, time: String, startingDayOfWeek: String, image: Data?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {

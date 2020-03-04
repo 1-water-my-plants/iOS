@@ -13,6 +13,7 @@ let baseURL = URL(string: "https://plants-e2f55.firebaseio.com/")!
 
 class PlantController {
     let context = CoreDataStack.shared.container.newBackgroundContext()
+    
     typealias CompletionHandler = (Error?) -> Void
     
     // fetch plants from controller
@@ -20,9 +21,9 @@ class PlantController {
         fetchPlantsFromServer()
     }
     
-    func fetchPlantsFromServer(completion: @escaping CompletionHandler =  { _ in }) {
+    func fetchPlantsFromServer(completion: @escaping CompletionHandler = { _ in }) {
         let requestURL = baseURL.appendingPathExtension("json") // can append json instead of using firebase SDK
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
             guard error == nil else {
                 print("Error fetching tasks: \(error!)")
                 DispatchQueue.main.async {
@@ -38,7 +39,7 @@ class PlantController {
                 return
             }
             do {
-                let plantRepresentations = Array(try JSONDecoder().decode([String : PlantRepresentation].self, from: data).values)
+                let plantRepresentations = Array(try JSONDecoder().decode([String: PlantRepresentation].self, from: data).values)
                 // update plants
                 try self.updatePlants(plants: plantRepresentations)
                 DispatchQueue.main.async {
@@ -56,7 +57,7 @@ class PlantController {
      // send plant to server from local changes
     
     func sendPlantToServer(plant: Plant1, completion: @escaping CompletionHandler = {_ in }) {
-        let id = plant.id ?? UUID().uuidString// had to fix a few of your errors, delete later you were close, just in the coreData model the id was supposed to be a string not a UUID
+        let id = plant.id ?? UUID().uuidString
         let requestURL = baseURL.appendingPathComponent(id).appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
         request.httpMethod = "PUT"
@@ -70,8 +71,7 @@ class PlantController {
             return
         }
         //send new plant entry to api
-        
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { _, _, error in
             guard error == nil else {
                 print("Error PUTing taks to server: \(error!)")
                 DispatchQueue.main.async {
@@ -96,7 +96,7 @@ class PlantController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = "DELETE"
         
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
+        URLSession.shared.dataTask(with: request) { _, _, error in
             guard error == nil else {
                 print("Error deleting task: \(error!)")
                 DispatchQueue.main.async {
@@ -127,11 +127,11 @@ class PlantController {
             NSLog("Sync started")
             
             let identifiersToFetch = plants.compactMap { $0.id }
-            let repsByID = Dictionary(uniqueKeysWithValues: zip(identifierToFetch, plants))
+            let repsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, plants))
             var plantsToCreate = repsByID
             
             let fetchRequest: NSFetchRequest<Plant1> = Plant1.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "identifier in %@", identifierToFetch)
+            fetchRequest.predicate = NSPredicate(format: "identifier in %@", identifiersToFetch)
             
             let context = CoreDataStack.shared.container.newBackgroundContext()
             self.context.perform {
