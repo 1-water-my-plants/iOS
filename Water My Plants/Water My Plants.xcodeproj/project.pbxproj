@@ -20,6 +20,7 @@
 		1F20D39D240E05330008E320 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F20D39C240E05330008E320 /* SettingsViewController.swift */; };
 		1F20D3A1240E21420008E320 /* MyPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F20D3A0240E21420008E320 /* MyPlantsTableViewController.swift */; };
 		1F4F3F8A240A1CE700899646 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F3F89240A1CE700899646 /* RegisterViewController.swift */; };
+		1F8FF46A240F6D3C003D8B26 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FF469240F6D3C003D8B26 /* APIController.swift */; };
 		1FBAF3C3240AE2DF00BD13EF /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */; };
 		1FBEE2772408A10E000AD0A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */; };
 		1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 		1F20D39C240E05330008E320 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1F20D3A0240E21420008E320 /* MyPlantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewController.swift; sourceTree = "<group>"; };
 		1F4F3F89240A1CE700899646 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1F8FF469240F6D3C003D8B26 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		1FBAF3C2240AE2DF00BD13EF /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBEE2732408A10E000AD0A6 /* Water My Plants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Water My Plants.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				1F073DCA240B3E83007FBEC7 /* LoginController.swift */,
 				1F073DCC240B3E9E007FBEC7 /* APIClient.swift */,
 				1F073DCE240B3EBE007FBEC7 /* SignUpController.swift */,
+				1F8FF469240F6D3C003D8B26 /* APIController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */,
 				1F073DC9240B2BFE007FBEC7 /* Request.swift in Sources */,
 				1F073DC7240B2BAD007FBEC7 /* Token.swift in Sources */,
+				1F8FF46A240F6D3C003D8B26 /* APIController.swift in Sources */,
 				E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */,
 				1F073DC5240B2460007FBEC7 /* User.swift in Sources */,
 				1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */,
