@@ -85,6 +85,8 @@
 		E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		E08281412410D7A500588CD3 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		E08281432410E88B00588CD3 /* Plants 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plants 2.xcdatamodel"; sourceTree = "<group>"; };
+		E0828144241104E900588CD3 /* Plants 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plants 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,9 +578,11 @@
 		E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E0828144241104E900588CD3 /* Plants 3.xcdatamodel */,
+				E08281432410E88B00588CD3 /* Plants 2.xcdatamodel */,
 				E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */,
 			);
-			currentVersion = E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */;
+			currentVersion = E0828144241104E900588CD3 /* Plants 3.xcdatamodel */;
 			path = Plants.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

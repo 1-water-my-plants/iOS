@@ -125,7 +125,8 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
             !species.isEmpty else { return }
         let nickname = plantNicknameTextField.text
         let waterFrequency = h2oFrequencyPerWeekTextLabel.text
-       
+//        let plantImage = imageView.image
+//        let data = plantImage?.jpegData(compressionQuality: 0.8)
         
         CoreDataStack.shared.mainContext.perform {
             if let plant = self.plant {
@@ -133,9 +134,10 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                 plant.species = species
                 plant.nickname = nickname
                 plant.h2oFrequencyPerWeek = waterFrequency
+//                plant.plantImage = data
                 self.plantController.sendPlantToServer(plant: plant)
             } else {
-                //create new plant
+                //create new plant object
                 let plant = Plant1(nickname: nickname ?? "Unnamed Plant", species: species, h2oFrequencyPerWeek: waterFrequency ?? "2", startingDayOfWeek: "Sunday")
                 self.plantController.sendPlantToServer(plant: plant)
             }

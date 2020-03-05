@@ -10,31 +10,32 @@ import Foundation
 
 // translation layer for coredata and future JSON endpoint ( Node express )
 
-struct PlantRepresentation: Codable, Equatable {
+struct PlantRepresentation: Codable {
     var nickname: String?
     var species: String?
-    var id: String?
+    var identifier: String?
     var h2oFrequencyPerWeek: String?
     var time: Date?
     var startingDayOfWeek: String?
-    var image: String?
+    var plantImage: String?
 }
 
-func == (lhs: PlantRepresentation, rhs: Plant1) -> Bool {
-    rhs.nickname == lhs.nickname &&
-        rhs.species == lhs.species &&
-        rhs.id == lhs.id &&
-        rhs.startingDayOfWeek == lhs.startingDayOfWeek
-}
-
-func == (lhs: Plant1, rhs: PlantRepresentation) -> Bool {
-    rhs == lhs
-}
-
-func != (lhs: PlantRepresentation, rhs: Plant1) -> Bool {
-    !(rhs == lhs)
-}
-
-func != (lhs: Plant1, rhs: PlantRepresentation) -> Bool {
-    rhs != lhs
-}
+// Disabled for testing Sal
+//func ==(lhs: PlantRepresentation, rhs: Plant1) -> Bool {
+//    return rhs.nickname == lhs.nickname &&
+//        rhs.species == rhs.species &&
+//        rhs.identifier == lhs.identifier &&
+//        rhs.startingDayOfWeek == lhs.startingDayOfWeek
+//}
+//
+//func ==(lhs: Plant1, rhs: PlantRepresentation) -> Bool {
+//    return rhs == lhs
+//}
+//
+//func !=(lhs: PlantRepresentation, rhs: Plant1) -> Bool {
+//    return !(rhs == lhs)
+//}
+//
+//func !=(lhs: Plant1, rhs: PlantRepresentation) -> Bool {
+//    return rhs != lhs
+//}

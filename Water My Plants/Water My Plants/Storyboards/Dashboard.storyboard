@@ -80,10 +80,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="254" translatesAutoresizingMaskIntoConstraints="NO" id="813-1j-YoW">
-                                <rect key="frame" x="20" y="451" width="327" height="31.333333333333314"/>
+                                <rect key="frame" x="20" y="451.33333333333331" width="335" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-O6-J5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="22.333333333333332" height="31.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="22.333333333333332" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22.333333333333332" id="BZR-1V-27r"/>
                                         </constraints>
@@ -92,7 +92,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFl-Fl-RlO">
-                                        <rect key="frame" x="276.33333333333331" y="0.0" width="52.666666666666686" height="31.333333333333332"/>
+                                        <rect key="frame" x="276.33333333333331" y="0.0" width="60.666666666666686" height="31"/>
                                         <connections>
                                             <action selector="textWaterNotficationsToggle:" destination="mSc-X4-EIV" eventType="valueChanged" id="1if-nh-0BX"/>
                                         </connections>
@@ -122,7 +122,7 @@
                                     <action selector="takePhotoBtnWasPressed:" destination="mSc-X4-EIV" eventType="touchUpInside" id="B5m-6g-ggH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What date(s) time(s) does your plant need watering?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EH-qG-8pZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What day does your plant need watering?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EH-qG-8pZ">
                                 <rect key="frame" x="20" y="490.33333333333331" width="335" height="20.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.666666666666629" id="FRU-IM-o3t"/>
@@ -154,23 +154,21 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="813-1j-YoW" firstAttribute="top" secondItem="str-T2-rxO" secondAttribute="top" constant="451" id="1Ad-GK-nbF"/>
                             <constraint firstItem="WPr-lk-IOU" firstAttribute="centerY" secondItem="m2b-OA-s0s" secondAttribute="centerY" id="1PP-g4-LMM"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="nKL-Ql-O3B" secondAttribute="trailing" constant="20" id="2La-h1-nVn"/>
                             <constraint firstAttribute="bottom" secondItem="WPr-lk-IOU" secondAttribute="bottom" constant="117" id="2dq-LC-xyo"/>
-                            <constraint firstItem="813-1j-YoW" firstAttribute="centerX" secondItem="BUD-d5-ugW" secondAttribute="centerX" id="71z-X6-bhN"/>
                             <constraint firstItem="BUD-d5-ugW" firstAttribute="top" secondItem="7EH-qG-8pZ" secondAttribute="bottom" constant="8" symbolic="YES" id="8Sz-Qm-fOS"/>
                             <constraint firstItem="Daq-sw-7WX" firstAttribute="top" secondItem="p4h-EJ-SZa" secondAttribute="bottom" constant="37.5" id="9Fj-GH-du6"/>
                             <constraint firstItem="QtR-MZ-fK7" firstAttribute="top" secondItem="KMA-zb-5Um" secondAttribute="bottom" constant="7.6666666666666856" id="Ams-9G-pEW"/>
                             <constraint firstItem="7EH-qG-8pZ" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="Bc1-8I-mUn"/>
                             <constraint firstItem="m2b-OA-s0s" firstAttribute="top" secondItem="BUD-d5-ugW" secondAttribute="bottom" constant="21" id="BeO-bq-BfZ"/>
                             <constraint firstItem="Daq-sw-7WX" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="C4e-8P-9Bk"/>
+                            <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="813-1j-YoW" secondAttribute="trailing" constant="20" id="C66-rH-8Dg"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="BUD-d5-ugW" secondAttribute="trailing" constant="24" id="D7B-GK-u2K"/>
                             <constraint firstItem="zL7-D0-EJ2" firstAttribute="top" secondItem="6Kk-k5-7K0" secondAttribute="top" id="FK4-5Z-k5Y"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="WPr-lk-IOU" secondAttribute="trailing" id="Fwe-xA-xTR"/>
                             <constraint firstItem="QtR-MZ-fK7" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="GVk-3I-JzI"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="7EH-qG-8pZ" secondAttribute="trailing" constant="20" id="JHn-DL-WfM"/>
-                            <constraint firstItem="7EH-qG-8pZ" firstAttribute="top" secondItem="813-1j-YoW" secondAttribute="bottom" constant="8" id="JhK-Le-aEM"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="Daq-sw-7WX" secondAttribute="trailing" constant="20" id="L0W-X2-IDi"/>
                             <constraint firstItem="KMA-zb-5Um" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="LCw-je-4cw"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="KMA-zb-5Um" secondAttribute="trailing" constant="20" id="NGu-me-qRF"/>
@@ -178,7 +176,9 @@
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="h9N-fE-XTh" secondAttribute="trailing" constant="20" id="Szv-6d-irp"/>
                             <constraint firstItem="KMA-zb-5Um" firstAttribute="top" secondItem="nKL-Ql-O3B" secondAttribute="bottom" constant="7.6666666666666288" id="Wph-8z-0AL"/>
                             <constraint firstItem="zL7-D0-EJ2" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="XXa-df-cJS"/>
+                            <constraint firstItem="813-1j-YoW" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="bgV-ME-wcu"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="QtR-MZ-fK7" secondAttribute="trailing" constant="20" id="bw6-wO-hdX"/>
+                            <constraint firstItem="813-1j-YoW" firstAttribute="top" secondItem="h9N-fE-XTh" secondAttribute="bottom" constant="8" symbolic="YES" id="caW-h7-FkA"/>
                             <constraint firstItem="BUD-d5-ugW" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="16" id="dTV-Xl-4f0"/>
                             <constraint firstItem="h9N-fE-XTh" firstAttribute="top" secondItem="QtR-MZ-fK7" secondAttribute="bottom" constant="7.6666666666666856" id="eNy-db-53s"/>
                             <constraint firstItem="p4h-EJ-SZa" firstAttribute="centerX" secondItem="Daq-sw-7WX" secondAttribute="centerX" id="ebj-ZC-b9q"/>
@@ -186,7 +186,6 @@
                             <constraint firstItem="m2b-OA-s0s" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="140" id="gQi-bH-J0u"/>
                             <constraint firstItem="nKL-Ql-O3B" firstAttribute="top" secondItem="zL7-D0-EJ2" secondAttribute="bottom" constant="7.6666666666666572" id="gbk-7o-AKI"/>
                             <constraint firstItem="WPr-lk-IOU" firstAttribute="centerX" secondItem="m2b-OA-s0s" secondAttribute="centerX" id="jQX-KY-ocp"/>
-                            <constraint firstItem="813-1j-YoW" firstAttribute="leading" secondItem="7EH-qG-8pZ" secondAttribute="leading" id="kvI-Ob-Iz4"/>
                             <constraint firstItem="WPr-lk-IOU" firstAttribute="top" secondItem="BUD-d5-ugW" secondAttribute="bottom" constant="8" id="lRe-v3-Hjr"/>
                             <constraint firstItem="Daq-sw-7WX" firstAttribute="top" secondItem="WPr-lk-IOU" secondAttribute="bottom" constant="23" id="nra-tF-tgJ"/>
                             <constraint firstItem="nKL-Ql-O3B" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="sI0-5c-ABw"/>
@@ -605,7 +604,6 @@
         <!--Add Plants Table View Controller-->
         <scene sceneID="aFS-lH-Yqk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dup-tf-wZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="NxJ-dP-k5L" customClass="AddPlantsTableViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wrQ-hX-sj9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -671,13 +669,13 @@
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1SU-Ts-beb">
                             <rect key="frame" x="153.66666666666666" y="0.0" width="68" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <color key="tintColor" red="0.25098039220000001" green="0.27058823529999998" blue="0.32691189057123282" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" image="edit">
+                            <state key="normal" image="plus" catalog="system">
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </state>
                             <connections>
-                                <segue destination="mSc-X4-EIV" kind="show" id="FOE-PS-l2w"/>
+                                <segue destination="mSc-X4-EIV" kind="show" identifier="AddPlantDetailSegue" id="FOE-PS-l2w"/>
                             </connections>
                         </button>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="profile" id="23Q-0K-KMR">
@@ -687,7 +685,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="z3T-CW-MQo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="NxJ-dP-k5L" eventType="valueChanged" id="qGd-xE-aHA"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dup-tf-wZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1242.4000000000001" y="-774.38423645320199"/>
         </scene>
@@ -722,12 +727,13 @@
         <image name="plan1" width="106" height="114"/>
         <image name="plant 3" width="106" height="114"/>
         <image name="plant2" width="106" height="114"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="profile" width="45" height="55"/>
         <image name="your plants 2" width="90" height="100"/>
         <image name="your plants3" width="90" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eFQ-fJ-Hsf"/>
+        <segue reference="0hB-fv-mNa"/>
         <segue reference="FOE-PS-l2w"/>
     </inferredMetricsTieBreakers>
 </document>
