@@ -10,15 +10,18 @@ import UIKit
 import CTPicker
 
 class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTPickerDelegate {
-    var plantController: PlantController!
     
+    var plantController: PlantController!
+    var plant1: Plant?
+    var apiController: APIController?
+    let notificationExtension = LocalNotifications()
+   
     var plant: Plant1? {
         didSet {
             updateViews()
         }
     }
-    var plant1: Plant?
-    var apiController: APIController?
+
     
     // CT Picker code for trying to select multiple days.. not working
     weak var ctDelegate: CTPickerDelegate?
@@ -125,7 +128,8 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
             !species.isEmpty else { return }
         let nickname = plantNicknameTextField.text
         let waterFrequency = h2oFrequencyPerWeekTextLabel.text
-       
+//        let plantImage = imageView.image
+//        let data = plantImage?.jpegData(compressionQuality: 0.8)
         
         CoreDataStack.shared.mainContext.perform {
             if let plant = self.plant {
@@ -133,11 +137,18 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                 plant.species = species
                 plant.nickname = nickname
                 plant.h2oFrequencyPerWeek = waterFrequency
+//                plant.plantImage = data
+                plant.time = Date()
                 self.plantController.sendPlantToServer(plant: plant)
             } else {
-                //create new plant
+                //create new plant object
                 let plant = Plant1(nickname: nickname ?? "Unnamed Plant", species: species, h2oFrequencyPerWeek: waterFrequency ?? "2", startingDayOfWeek: "Sunday")
                 self.plantController.sendPlantToServer(plant: plant)
+            }
+            self.notificationExtension.requestAuthorizationStatus { success in
+                if success == true {
+                    self.notificationExtension.scheduleDailyReminderNotification(name: self.plant?.nickname ?? "House Plant", times: self.plant?.time ?? Date(), calendar: Calendar.current)
+                }
             }
         }
  // Use persistent Store coordinator2

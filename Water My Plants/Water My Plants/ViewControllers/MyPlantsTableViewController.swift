@@ -7,56 +7,54 @@
 //
 
 import UIKit
+import CoreData
 
 class MyPlantsTableViewController: UITableViewController {
     
-    @IBOutlet private var plantView1: UIView!
-    @IBOutlet private var plantView2: UIView!
-    @IBOutlet private var plantView3: UIView!
+    let plantController = PlantController()
+    
+    @IBOutlet weak var plantView1: UIImageView!
+    @IBOutlet weak var plantView2: UIImageView!
+    @IBOutlet weak var plantView3: UIImageView!
+    
+    /// Fetch results
+    lazy var fetchedResultsController: NSFetchedResultsController<Plant1> = {
+        let fetchRequest: NSFetchRequest<Plant1> = Plant1.fetchRequest()
+        // must sort the fetch request otherwise crash
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "nickname", ascending: true),
+            NSSortDescriptor(key: "species", ascending: true)
+        ]
+        let moc = CoreDataStack.shared.mainContext
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: "nickname",
+                                             cacheName: nil)
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+    }()
+    
     
     func roundThePhotos() {
-        plantView1.layer.cornerRadius = 7
-        plantView2.layer.cornerRadius = 7
-        plantView3.layer.cornerRadius = 7
+        plantView1.layer.cornerRadius = 15
+        plantView2.layer.cornerRadius = 15
+        plantView3.layer.cornerRadius = 15
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         roundThePhotos()
+        tableView.reloadData()
+        self.tableView.rowHeight = 100;
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
-    
-
-    
-
-//    @IBAction func addButtonTapped(_ sender: Any) {
-//        let alert = UIAlertController(title: "Add a plant", message: "Please enter the name of a plant.", preferredStyle: .alert)
-//        alert.addTextField { textField in
-//            textField.placeholder = "Your plant"
-//        }
-//
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-//            guard let plantString = alert.textFields?.first?.text else { return }
-//            let plants = String(plantString)
-//            self.fakeDataController.create(plant: plants)
-//            self.fakePlants.append(FakeData(plant: plants))
-//            self.tableView.reloadData()
-//        }))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-//        self.present(alert, animated: true)
-//    }
-
-
-
-    
-    
     
 
     // MARK: - Table view data source
@@ -64,23 +62,27 @@ class MyPlantsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return fetchedResultsController.sections?.count ?? 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
-    /*
+  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlantsCell2", for: indexPath) as? MyPlantsTableViewCell else { return UITableViewCell() }
+        cell.plant = fetchedResultsController.object(at: indexPath)
+//        let plant = fetchedResultsController.object(at: indexPath)
         return cell
     }
-    */
+    
+    // Forced to use this due to contraints bug
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100;
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -90,17 +92,28 @@ class MyPlantsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            let task = fetchedResultsController.object(at: indexPath)
+            plantController.deletePlantFromServer(task) { (error) in
+                guard error == nil else {
+                    print("Error Deleting task from server: \(error!)")
+                    return
+                }
+                let moc = CoreDataStack.shared.mainContext
+                moc.delete(task)
+                
+                do {
+                    try moc.save()
+                } catch {
+                    moc.reset()
+                    print("Error saving deleted task: \(error)")
+                }
+                
+            }
+             
         }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -127,4 +140,55 @@ class MyPlantsTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension MyPlantsTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange sectionInfo: NSFetchedResultsSectionInfo,
+                    atSectionIndex sectionIndex: Int,
+                    for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            tableView.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+        case .delete:
+            tableView.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
+        default:
+            break
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .update:
+            guard let indexPath = indexPath else { return }
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        case .move:
+            guard let oldIndexPath = indexPath,
+                let newIndexPath = newIndexPath else { return }
+            tableView.deleteRows(at: [oldIndexPath], with: .automatic)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        @unknown default:
+            break
+
+        }
+    }
 }

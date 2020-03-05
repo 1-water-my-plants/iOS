@@ -14,7 +14,7 @@ extension Plant1: Encodable {
         
         try container.encode(nickname, forKey: .nickname)
         try container.encode(species, forKey: .species)
-        try container.encode(id, forKey: .id)
+        try container.encode(identifier, forKey: .identifier)
         try container.encode(h2oFrequencyPerWeek, forKey: .h2oFrequencyPerWeek)
         try container.encode(time, forKey: .time)
         try container.encode(startingDayOfWeek, forKey: .startingDayOfWeek)
@@ -22,7 +22,7 @@ extension Plant1: Encodable {
     enum CodingKeys: String, CodingKey {
         case nickname
         case species
-        case id
+        case identifier
         case h2oFrequencyPerWeek
         case time
         case startingDayOfWeek
