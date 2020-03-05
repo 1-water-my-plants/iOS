@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CTPicker",
+        "repositoryURL": "https://github.com/StewartLynch/CTPicker.git",
+        "state": {
+          "branch": null,
+          "revision": "d0cde92e0c122c98393e57001d2f0133d325956e",
+          "version": "1.6.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

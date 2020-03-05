@@ -79,17 +79,17 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="254" translatesAutoresizingMaskIntoConstraints="NO" id="813-1j-YoW">
-                                <rect key="frame" x="20" y="451" width="325.33333333333331" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="254" translatesAutoresizingMaskIntoConstraints="NO" id="813-1j-YoW">
+                                <rect key="frame" x="20" y="453.33333333333331" width="335" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-O6-J5i">
-                                        <rect key="frame" x="0.0" y="0.0" width="22.333333333333332" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFl-Fl-RlO">
-                                        <rect key="frame" x="276.33333333333331" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="286" y="0.0" width="51" height="31"/>
                                         <connections>
                                             <action selector="textWaterNotficationsToggle:" destination="mSc-X4-EIV" eventType="valueChanged" id="1if-nh-0BX"/>
                                         </connections>
@@ -145,6 +145,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="nKL-Ql-O3B" secondAttribute="trailing" constant="20" id="2La-h1-nVn"/>
+                            <constraint firstItem="813-1j-YoW" firstAttribute="top" secondItem="h9N-fE-XTh" secondAttribute="bottom" constant="10" id="4kF-a1-zlM"/>
                             <constraint firstItem="BUD-d5-ugW" firstAttribute="top" secondItem="7EH-qG-8pZ" secondAttribute="bottom" constant="8" symbolic="YES" id="8Sz-Qm-fOS"/>
                             <constraint firstItem="QtR-MZ-fK7" firstAttribute="top" secondItem="KMA-zb-5Um" secondAttribute="bottom" constant="7.6666666666666856" id="Ams-9G-pEW"/>
                             <constraint firstItem="7EH-qG-8pZ" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="Bc1-8I-mUn"/>
@@ -167,10 +168,12 @@
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="bottom" secondItem="Daq-sw-7WX" secondAttribute="bottom" constant="30" id="fij-NM-Zez"/>
                             <constraint firstItem="nKL-Ql-O3B" firstAttribute="top" secondItem="zL7-D0-EJ2" secondAttribute="bottom" constant="7.6666666666666572" id="gbk-7o-AKI"/>
                             <constraint firstItem="WPr-lk-IOU" firstAttribute="top" secondItem="BUD-d5-ugW" secondAttribute="bottom" constant="8" id="lRe-v3-Hjr"/>
+                            <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="813-1j-YoW" secondAttribute="trailing" constant="20" id="nBa-gB-2vo"/>
                             <constraint firstItem="Daq-sw-7WX" firstAttribute="top" secondItem="WPr-lk-IOU" secondAttribute="bottom" constant="23" id="nra-tF-tgJ"/>
                             <constraint firstItem="nKL-Ql-O3B" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="sI0-5c-ABw"/>
                             <constraint firstItem="6Kk-k5-7K0" firstAttribute="trailing" secondItem="zL7-D0-EJ2" secondAttribute="trailing" constant="20" id="tPE-UE-RYe"/>
                             <constraint firstItem="h9N-fE-XTh" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="yBd-ok-8FF"/>
+                            <constraint firstItem="813-1j-YoW" firstAttribute="leading" secondItem="6Kk-k5-7K0" secondAttribute="leading" constant="20" id="zh5-vL-CVa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Kk-k5-7K0"/>
                     </view>
@@ -631,7 +634,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mSc-X4-EIV" kind="show" id="LtJ-iY-9wt"/>
+                                    <segue destination="mSc-X4-EIV" kind="show" identifier="AddPlantDetailCell" id="LtJ-iY-9wt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

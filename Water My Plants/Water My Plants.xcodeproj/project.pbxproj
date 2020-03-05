@@ -79,6 +79,8 @@
 		E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewCell.swift; sourceTree = "<group>"; };
 		E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		E04E807C240F7B6A00CFA841 /* Plants 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plants 2.xcdatamodel"; sourceTree = "<group>"; };
+		E04E807D240F85E300CFA841 /* Plants 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plants 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -534,9 +536,11 @@
 		E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E04E807D240F85E300CFA841 /* Plants 3.xcdatamodel */,
+				E04E807C240F7B6A00CFA841 /* Plants 2.xcdatamodel */,
 				E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */,
 			);
-			currentVersion = E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */;
+			currentVersion = E04E807D240F85E300CFA841 /* Plants 3.xcdatamodel */;
 			path = Plants.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

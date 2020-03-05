@@ -111,7 +111,7 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                 plant.h2oFrequencyPerWeek = waterFrequency
                 self.plantController.sendPlantToServer(plant: plant)
             } else {
-                //create new plant
+                //create new plant object
                 let plant = Plant1(nickname: nickname ?? "Unnamed Plant", species: species, h2oFrequencyPerWeek: waterFrequency ?? "2", startingDayOfWeek: "Sunday")
                 self.plantController.sendPlantToServer(plant: plant)
             }

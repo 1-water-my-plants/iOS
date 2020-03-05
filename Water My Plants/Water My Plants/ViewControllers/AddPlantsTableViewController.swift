@@ -10,6 +10,8 @@ import UIKit
 
 class AddPlantsTableViewController: UITableViewController {
     
+    var plantController = PlantController()
+    
     var CategoryArray = ["Vegetable Garden","Garden Flowers","Potted Plants", "Outdoor Trees", "Bushes", "Vines" ]
 
     override func viewDidLoad() {
@@ -102,8 +104,10 @@ class AddPlantsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddPlantDetailCell" {
+            guard let AddPlantVC = segue.destination as? AddPlantsDetailsViewController else { return }
+            AddPlantVC.plantController = plantController
+        }
     }
  
 

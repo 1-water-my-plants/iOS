@@ -9,43 +9,54 @@
 import Foundation
 import CoreData
 
-extension FakeData {
-    convenience init(plant: String,
-                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        self.init(context: context)
-        
-        self.plant = plant
-    }
-}
+//extension FakeData {
+//    convenience init(plant: String,
+//                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+//        self.init(context: context)
+//
+//        self.plant = plant
+//    }
+//}
 
 extension Plant1 {
     
-    convenience init(nickname: String,
-                     species: String,
-                     id: String = UUID().uuidString,
+    var plantRepresentation: PlantRepresentation? {
+        guard let nickname = nickname,
+        let species = species,
+        let identifier = identifier,
+        let h2oFrequencyPerWeek = h2oFrequencyPerWeek,
+        let time = time,
+        let startingDayOfWeek = startingDayOfWeek else { return nil }
+        
+        return PlantRepresentation(nickname: nickname, species: species, identifier: identifier.uuidString, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek)
+    }
+    
+    @discardableResult convenience init(nickname: String?,
+                     species: String?,
+                     identifier: UUID = UUID(),
                      h2oFrequencyPerWeek: String,
                      time: Date = Date(),
                      startingDayOfWeek: String,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
-        
         self.nickname = nickname
         self.species = species
-        self.id = id
+        self.identifier = identifier
         self.h2oFrequencyPerWeek = h2oFrequencyPerWeek
         self.time = time
         self.startingDayOfWeek = startingDayOfWeek
     }
     
-    convenience init?(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext) {
+    @discardableResult convenience init?(plantRepresentation: PlantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         guard let nickname = plantRepresentation.nickname,
             let species = plantRepresentation.species,
-            let id = plantRepresentation.id,
+            let identifierString = plantRepresentation.identifier,
+            let identifier = UUID(uuidString: identifierString),
             let h2oFrequencyPerWeek = plantRepresentation.h2oFrequencyPerWeek,
             let time = plantRepresentation.time,
             let startingDayOfWeek = plantRepresentation.startingDayOfWeek else { return nil }
         
-        self.init(nickname: nickname, species: species, id: id, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek)
+        self.init(nickname: nickname, species: species, identifier: identifier, h2oFrequencyPerWeek: h2oFrequencyPerWeek, time: time, startingDayOfWeek: startingDayOfWeek)
     }
     
 //        @discardableResult convenience init(nickname: String, species: String, id: UUID = UUID(), h2oFrequencyPerWeek: String, time: String, startingDayOfWeek: String, image: Data?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
