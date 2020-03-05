@@ -17,6 +17,8 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
             updateViews()
         }
     }
+    var plant1: Plant?
+    var apiController: APIController?
     
     // CT Picker code for trying to select multiple days.. not working
     weak var ctDelegate: CTPickerDelegate?
@@ -43,6 +45,28 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
          
     }
     
+//    @IBAction func saveButtonTapped(_ sender: Any) {
+//        guard let nickname = self.plantNicknameTextField.text, !nickname.isEmpty,
+//            let species = self.plantSpeciesTextField.text, !species.isEmpty,
+//            let image = self.h2oFrequencyPerWeekTextLabel,
+//            let h2ofrequencyString = self.wateringDaysPerWeek.text, !h2ofrequencyString.isEmpty,
+//            let h2ofrequency = Int(h2ofrequencyString),
+//            let numberOfPlants = self.howManyPlantsTextField.text, !numberOfPlants.isEmpty else {
+//                let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+//                return
+//                
+//        }
+//        
+//        navigationController?.popViewController(animated: true)
+//        self.apiController?.addPlant(nickname: nickname, species: species, h2oFrequency: h2ofrequency, image: image, user_id: 3, completion: { result in
+//            switch result {
+//                
+//            }
+//        })
+//    }
+//    
   
 
  // UpdateView

@@ -46,7 +46,10 @@ class LoginController {
             
             do {
                 let user = try decoder.decode(User.self, from: data)
-                self.token = Token(id: user.id, token: user.token ?? "")
+                self.token = Token(id: user.id,
+                                   token: user.token ?? "",
+                                   message: user.message,
+                                   user_id: user.user_id)
                 print(self.token!)
             } catch {
                 print("Error decoding token: \(error)")

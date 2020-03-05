@@ -11,10 +11,10 @@ import UIKit
 
 
 struct Plant: Codable, Equatable {
-    var nickname: String?
-    var species: String?
-    var user_id: String?
-    var h2oFrequency: String?
+    var id: Int
+    var nickname: String
+    var species: String
+    var h2oFrequency: Int
     var image: String?
-    var id: String?
+    var user_id: Int
 }
