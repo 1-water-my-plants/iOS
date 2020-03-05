@@ -11,7 +11,7 @@ import CoreData
 
 class MyPlantsTableViewController: UITableViewController {
     
-    private let plantController = PlantController()
+    let plantController = PlantController()
     
     @IBOutlet weak var plantView1: UIImageView!
     @IBOutlet weak var plantView2: UIImageView!
@@ -130,17 +130,15 @@ class MyPlantsTableViewController: UITableViewController {
     }
     */
 
- 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- if segue.identifier == "notificationsSegueMyPlants" {
-            guard let NotifPlantVC = segue.destination as? NotificationsTableViewController else { return }
-            NotifPlantVC.plantController = plantController
-        }
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-
+    */
 
 }
 
