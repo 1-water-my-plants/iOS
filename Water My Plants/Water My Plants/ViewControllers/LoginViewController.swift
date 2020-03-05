@@ -13,7 +13,6 @@ protocol LoginViewControllerDelegate: AnyObject {
 }
 
 class LoginViewController: UIViewController {
-    
     @IBOutlet private var signInView: UIView!
     @IBOutlet private var signInButton: UIButton!
     @IBOutlet private var createAccountButton: UIButton!
@@ -23,6 +22,8 @@ class LoginViewController: UIViewController {
     func roundRegisterButton() {
         createAccountButton.layer.cornerRadius = 5
     }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,11 @@ class LoginViewController: UIViewController {
                 NSLog("error occured during login: \(error)")
             } else {
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "DashboardSegue", sender: nil)
+                    let alert = UIAlertController(title: "\(self.loginController.token?.message ?? "")", message: "Welcome", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "👍", style: .default, handler: { _ in self.performSegue(withIdentifier: "DashboardSegue", sender: nil)
+                        
+                    }))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
         }

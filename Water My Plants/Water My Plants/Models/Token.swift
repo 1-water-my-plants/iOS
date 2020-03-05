@@ -11,4 +11,6 @@ import Foundation
 struct Token: Codable, Equatable {
     let id: Int?
     let token: String
+    let message: String
+    let user_id: Int?
 }

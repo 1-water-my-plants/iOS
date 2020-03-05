@@ -10,32 +10,44 @@ import UIKit
 
 class AddPlantsTableViewController: UITableViewController {
     
-    var CategoryArray = ["Vegetable Garden", "Garden Flowers", "Potted Plants", "Outdoor Trees", "Bushes", "Vines" ]
+    let apiController = APIController()
+    let loginController = LoginController.shared
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData), name: .plantDidSaveNotification, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if loginController.token?.token != nil {
+            apiController.fetchAllPlants { result in
+                if let createdPlants = try? result.get() {
+                    DispatchQueue.main.async {
+                        self.apiController.plants = createdPlants
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
         @IBAction func addButtonTapped(_ sender: Any) {
-            let alert = UIAlertController(title: "Add a plant", message: "Please enter the name of a plant.", preferredStyle: .alert)
-            alert.addTextField { textField in
-                textField.placeholder = "Your plant"
-            }
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                guard let plantString = alert.textFields?.first?.text else { return }
-                let plants = String(plantString)
-                self.CategoryArray.append(plants)
-                self.tableView.reloadData()
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-            self.present(alert, animated: true)
         
+    }
+    
+    @objc func onDidReceiveData(_ notification: Notification) {
+        if loginController.token?.token != nil {
+            apiController.fetchAllPlants { result in
+                if let createdPlants = try? result.get() {
+                    DispatchQueue.main.async {
+                        self.apiController.plants = createdPlants
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -47,17 +59,21 @@ class AddPlantsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return CategoryArray.count
+        print(apiController.plants.count)
+        return apiController.plants.count
+        
     }
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlantCell", for: indexPath)
-
+        
+        let plant: Plant
+        plant = apiController.plants[indexPath.row]
+        
+        cell.textLabel?.text = plant.nickname.capitalized
         // Configure the cell...
-        cell.textLabel?.text = self.CategoryArray[indexPath.row]
-        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        cell.textLabel?.textAlignment = .center
+       
         return cell
     }
    
@@ -102,8 +118,13 @@ class AddPlantsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddPlantVC" {
+            guard let plantVC = segue.destination as?
+            AddPlantsDetailsViewController,
+                let indexPath = tableView.indexPathForSelectedRow?.first else { return }
+            plantVC.apiController = apiController
+            plantVC.plant1 = apiController.plants[indexPath]
+        }
     }
  
 

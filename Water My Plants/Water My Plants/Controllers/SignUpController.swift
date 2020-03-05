@@ -12,7 +12,7 @@ class SignUpController {
     typealias CompletionHandler = (Error?) -> Void
     
     private let baseURL = URL(string: "https://webpt9-water-my-plants.herokuapp.com/api")!
-    
+    var token: Token?
     //Create function for signUp
     func signUp(with signupData: SignUpRequest, completion: @escaping CompletionHandler) {
         let signUpURL = baseURL.appendingPathComponent("/auth/register")
@@ -39,12 +39,20 @@ class SignUpController {
                 return
             }
             
-            if let error = error {
-                completion(error)
-                return
-            }
+            if let error = error { completion(error); return }
+            guard let data = data else { completion(NSError()); return }
             
-            guard let _ = data else {
+            let decoder = JSONDecoder()
+            
+            do {
+                let user = try decoder.decode(User.self, from: data)
+                self.token = Token(id: user.id,
+                                   token: user.token ?? "",
+                                   message: user.message,
+                                   user_id: user.user_id)
+                print(self.token!)
+            } catch {
+                print("Error decoding token \(error)")
                 completion(error)
                 return
             }

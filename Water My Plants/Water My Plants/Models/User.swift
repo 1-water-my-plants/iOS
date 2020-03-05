@@ -13,6 +13,7 @@ struct User: Codable, Equatable {
     let username: String?
     let password: String?
     let phoneNumber: String?
-    let message: String?
+    let message: String
     let token: String?
+    let user_id: Int?
 }

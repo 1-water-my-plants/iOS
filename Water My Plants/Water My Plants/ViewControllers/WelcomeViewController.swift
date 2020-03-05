@@ -13,6 +13,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet private var plant1: UIView!
     @IBOutlet private var plant2: UIView!
     @IBOutlet private var plant3: UIView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
