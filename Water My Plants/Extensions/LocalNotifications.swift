@@ -41,8 +41,8 @@ class LocalNotifications: NSObject, UNUserNotificationCenterDelegate {
         let dateComponents = calendar.dateComponents([.hour, .minute], from: times)
         
         let content = UNMutableNotificationContent()
-        content.title = "It's time to water \(name)."
-        content.body = "It's \(time)! \(name) is getting thirsty."
+        content.title = "It's time to feed \(name)."
+        content.body = "It's \(time)! \(name) needs to be watered."
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: "PlantIdentifier", content: content, trigger: trigger)
