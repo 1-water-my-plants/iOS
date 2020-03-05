@@ -43,6 +43,7 @@
 		E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */; };
 		E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */; };
 		E04E807B240EA95300CFA841 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */; };
+		E08281422410D7A500588CD3 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08281412410D7A500588CD3 /* LocalNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsTableViewCell.swift; sourceTree = "<group>"; };
 		E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		E08281412410D7A500588CD3 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				E04E8072240E7D1200CFA841 /* DataSource.swift */,
+				E08281412410D7A500588CD3 /* LocalNotifications.swift */,
 			);
 			path = Utilitites;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */,
 				1F1A5115240CA0CB007814C7 /* PlantEntries.swift in Sources */,
 				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
+				E08281422410D7A500588CD3 /* LocalNotifications.swift in Sources */,
 				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
 				1F1A5109240C4ED9007814C7 /* Plant + Codable.swift in Sources */,
