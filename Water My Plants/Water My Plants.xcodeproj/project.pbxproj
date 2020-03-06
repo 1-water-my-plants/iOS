@@ -30,7 +30,6 @@
 		1FED49A42408B8FE00A717D2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */; };
 		1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A52408B92500A717D2 /* Plant+Convenience.swift */; };
 		1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A72408B94B00A717D2 /* PlantController.swift */; };
-		BA485A519348E21E74261860 /* Pods_Water_My_Plants.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44A8B7EBAA1319BAF557817B /* Pods_Water_My_Plants.framework */; };
 		E00A0366241137A400C531FE /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A0365241137A400C531FE /* ClassifierViewController.swift */; };
 		E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */; };
 		E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */; };
@@ -39,7 +38,7 @@
 		E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */; };
 		E04E806B240E710A00CFA841 /* AddPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */; };
 		E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */; };
-		E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* CTPicker */; };
+		E04E8070240E78EF00CFA841 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* SwiftPackageProductDependency */; };
 		E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8072240E7D1200CFA841 /* DataSource.swift */; };
 		E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */; };
 		E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */; };
@@ -73,8 +72,6 @@
 		1FED49A32408B8FE00A717D2 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1FED49A52408B92500A717D2 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		1FED49A72408B94B00A717D2 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
-		44A8B7EBAA1319BAF557817B /* Pods_Water_My_Plants.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Water_My_Plants.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46A929128588D8975DE418D8 /* Pods-Water My Plants.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water My Plants.release.xcconfig"; path = "Target Support Files/Pods-Water My Plants/Pods-Water My Plants.release.xcconfig"; sourceTree = "<group>"; };
 		E00A0365241137A400C531FE /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
 		E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
 		E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
@@ -90,7 +87,6 @@
 		E08281412410D7A500588CD3 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		E08281432410E88B00588CD3 /* Plants 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plants 2.xcdatamodel"; sourceTree = "<group>"; };
 		E0828144241104E900588CD3 /* Plants 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Plants 3.xcdatamodel"; sourceTree = "<group>"; };
-		FB4F5713D07FE710C2AE79B5 /* Pods-Water My Plants.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Water My Plants.debug.xcconfig"; path = "Target Support Files/Pods-Water My Plants/Pods-Water My Plants.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,22 +94,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */,
-				BA485A519348E21E74261860 /* Pods_Water_My_Plants.framework in Frameworks */,
+				E04E8070240E78EF00CFA841 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1AC397705C5FB4538D9811D6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44A8B7EBAA1319BAF557817B /* Pods_Water_My_Plants.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1F61D9D3241079DC00AC9FA2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +127,6 @@
 				1F61D9D3241079DC00AC9FA2 /* Extensions */,
 				1FBEE2742408A10E000AD0A6 /* Products */,
 				2BE5BB9291C7774111B40AA6 /* Pods */,
-				1AC397705C5FB4538D9811D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,8 +211,6 @@
 		2BE5BB9291C7774111B40AA6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FB4F5713D07FE710C2AE79B5 /* Pods-Water My Plants.debug.xcconfig */,
-				46A929128588D8975DE418D8 /* Pods-Water My Plants.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -256,7 +240,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FBEE2872408A112000AD0A6 /* Build configuration list for PBXNativeTarget "Water My Plants" */;
 			buildPhases = (
-				1E02D382D09C5050886FF209 /* [CP] Check Pods Manifest.lock */,
 				1FBEE26F2408A10E000AD0A6 /* Sources */,
 				1FBEE2702408A10E000AD0A6 /* Frameworks */,
 				1FBEE2712408A10E000AD0A6 /* Resources */,
@@ -268,7 +251,7 @@
 			);
 			name = "Water My Plants";
 			packageProductDependencies = (
-				E04E806F240E78EF00CFA841 /* CTPicker */,
+				E04E806F240E78EF00CFA841 /* SwiftPackageProductDependency */,
 			);
 			productName = "Water My Plants";
 			productReference = 1FBEE2732408A10E000AD0A6 /* Water My Plants.app */;
@@ -299,7 +282,7 @@
 			);
 			mainGroup = 1FBEE26A2408A10E000AD0A6;
 			packageReferences = (
-				E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */,
+				E04E806E240E78EF00CFA841 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 1FBEE2742408A10E000AD0A6 /* Products */;
 			projectDirPath = "";
@@ -326,28 +309,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E02D382D09C5050886FF209 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Water My Plants-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1F8FF468240F5CB0003D8B26 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,17 +506,18 @@
 		};
 		1FBEE2882408A112000AD0A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB4F5713D07FE710C2AE79B5 /* Pods-Water My Plants.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Water My Plants/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.WaterMyPlants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = WaterMyPlantsDistribution;
@@ -566,17 +528,18 @@
 		};
 		1FBEE2892408A112000AD0A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46A929128588D8975DE418D8 /* Pods-Water My Plants.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = "Water My Plants/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.WaterMyPlants;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = WaterMyPlantsDistribution;
@@ -609,7 +572,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */ = {
+		E04E806E240E78EF00CFA841 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StewartLynch/CTPicker.git";
 			requirement = {
@@ -620,9 +583,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E04E806F240E78EF00CFA841 /* CTPicker */ = {
+		E04E806F240E78EF00CFA841 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */;
+			package = E04E806E240E78EF00CFA841 /* RemoteSwiftPackageReference */;
 			productName = CTPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
