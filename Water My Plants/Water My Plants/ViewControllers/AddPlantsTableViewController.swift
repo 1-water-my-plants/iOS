@@ -54,6 +54,7 @@ class AddPlantsTableViewController: UITableViewController {
         super.viewDidLoad()
 //        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData), name: .plantDidSaveNotification, object: nil)
         tableView.reloadData()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {

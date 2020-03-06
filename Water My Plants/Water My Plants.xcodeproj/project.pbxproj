@@ -32,6 +32,7 @@
 		1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A72408B94B00A717D2 /* PlantController.swift */; };
 		E00A0366241137A400C531FE /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A0365241137A400C531FE /* ClassifierViewController.swift */; };
 		E00F1EFC24129246000E36D1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E00F1EFB24129246000E36D1 /* Lottie */; };
+		E00F1F032412A660000E36D1 /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F1F022412A660000E36D1 /* UNService.swift */; };
 		E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */; };
 		E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */; };
 		E04E80532409016700CFA841 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80522409016700CFA841 /* Plant.swift */; };
@@ -74,6 +75,7 @@
 		1FED49A52408B92500A717D2 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		1FED49A72408B94B00A717D2 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		E00A0365241137A400C531FE /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
+		E00F1F022412A660000E36D1 /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
 		E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
 		E04E80522409016700CFA841 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E08281412410D7A500588CD3 /* LocalNotifications.swift */,
+				E00F1F022412A660000E36D1 /* UNService.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				1F1341112409918000C81B30 /* LoginViewController.swift in Sources */,
 				E00A0366241137A400C531FE /* ClassifierViewController.swift in Sources */,
 				E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */,
+				E00F1F032412A660000E36D1 /* UNService.swift in Sources */,
 				1F20D39D240E05330008E320 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

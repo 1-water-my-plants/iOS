@@ -42,7 +42,7 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UNService.shared.authorize()
         ctDelegate = self
         wateringDaysPerWeek.delegate = self
          
@@ -139,17 +139,22 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                 plant.h2oFrequencyPerWeek = waterFrequency
 //                plant.plantImage = data
                 plant.time = Date()
-                self.plantController.sendPlantToServer(plant: plant)
+//                self.plantController.sendPlantToServer(plant: plant)
             } else {
                 //create new plant object
                 let plant = Plant1(nickname: nickname ?? "Unnamed Plant", species: species, h2oFrequencyPerWeek: waterFrequency ?? "2", startingDayOfWeek: "Sunday")
-                self.plantController.sendPlantToServer(plant: plant)
+//                self.plantController.sendPlantToServer(plant: plant)
             }
-            self.notificationExtension.requestAuthorizationStatus { success in
-                if success == true {
-                    self.notificationExtension.scheduleDailyReminderNotification(name: self.plant?.nickname ?? "House Plant", times: self.plant?.time ?? Date(), calendar: Calendar.current)
-                }
-            }
+            
+                // Added notifications every 60 seconds for Demo Only
+                var components = DateComponents()
+                components.second = 0
+                UNService.shared.dateRequest(with: components)
+//            self.notificationExtension.requestAuthorizationStatus { success in
+//                if success == true {
+//                    self.notificationExtension.scheduleDailyReminderNotification(name: self.plant?.nickname ?? "House Plant", times: self.plant?.time ?? Date(), calendar: Calendar.current)
+//                }
+//            }
         }
  // Use persistent Store coordinator2
         do {
