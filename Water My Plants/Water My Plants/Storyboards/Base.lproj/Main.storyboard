@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jE6-V8-UNO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Qq-WC-1tx">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,17 +7,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Animation View Controller-->
         <scene sceneID="vwC-C9-UmG">
             <objects>
-                <viewController id="2Qq-WC-1tx" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="2Qq-WC-1tx" customClass="AnimationViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4t-r5-KyT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1C-lG-Mh8">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1C-lG-Mh8" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water My Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clq-wv-3KL">
+                                        <rect key="frame" x="40" y="484.66666666666663" width="295" height="49.333333333333371"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="clq-wv-3KL" secondAttribute="bottom" constant="200" id="atc-vu-jJg"/>
+                                    <constraint firstAttribute="trailing" secondItem="clq-wv-3KL" secondAttribute="trailing" constant="40" id="fMA-Th-laW"/>
+                                    <constraint firstItem="clq-wv-3KL" firstAttribute="leading" secondItem="p1C-lG-Mh8" secondAttribute="leading" constant="40" id="jTM-v0-ZPn"/>
+                                    <constraint firstItem="clq-wv-3KL" firstAttribute="centerX" secondItem="p1C-lG-Mh8" secondAttribute="centerX" id="xAw-pH-ltv"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -29,15 +43,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4io-yN-h0c"/>
                     </view>
+                    <connections>
+                        <outlet property="animationView" destination="p1C-lG-Mh8" id="WNk-wH-gmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTl-Wk-p6f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10846" y="-635"/>
+            <point key="canvasLocation" x="-10847.200000000001" y="-635.46798029556658"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="1FF-1m-5MQ">
             <objects>
-                <viewController id="jE6-V8-UNO" customClass="LoginViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewSegue" modalPresentationStyle="fullScreen" id="jE6-V8-UNO" customClass="LoginViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jaw-LO-whG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,13 +70,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="POT-P8-QRa">
-                                <rect key="frame" x="0.0" y="260" width="375" height="552"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POT-P8-QRa">
+                                <rect key="frame" x="-1.6666666666666572" y="260" width="378.33333333333326" height="552"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Water My Plants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-o9-GAq">
-                                        <rect key="frame" x="89" y="23" width="236" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water My Plants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qce-o9-GAq">
+                                        <rect key="frame" x="20" y="20" width="338.33333333333331" height="41"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -78,10 +93,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-fj-q7h">
-                                        <rect key="frame" x="12" y="476" width="351" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SZ-fj-q7h">
+                                        <rect key="frame" x="0.0" y="455" width="375" height="43"/>
                                         <color key="backgroundColor" red="0.25098039220000001" green="0.27058823529999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="TW2-B9-BoZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" red="0.94901960780000005" green="0.89411764709999997" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,21 +107,23 @@
                                             <segue destination="Efj-wh-Xig" kind="presentation" identifier="SignUpSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="LLi-mN-tjK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-fN-HdY">
-                                        <rect key="frame" x="16" y="411" width="218" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-fN-HdY">
+                                        <rect key="frame" x="80.333333333333343" y="407" width="218.00000000000003" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Forgot username/password?">
                                             <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgu-Xv-9Cq">
-                                        <rect key="frame" x="0.0" y="335" width="375" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgu-Xv-9Cq">
+                                        <rect key="frame" x="0.0" y="359" width="375" height="43"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="6k6-32-fxp"/>
+                                            <constraint firstAttribute="width" constant="375" id="DEE-0l-hcM"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Sign In">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="login:" destination="jE6-V8-UNO" eventType="touchUpInside" id="TCA-03-LCT"/>
@@ -112,11 +131,31 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qce-o9-GAq" secondAttribute="trailing" constant="20" id="2s9-Ee-I6b"/>
+                                    <constraint firstItem="cgu-Xv-9Cq" firstAttribute="centerX" secondItem="6SZ-fj-q7h" secondAttribute="centerX" id="5Dd-fo-ecH"/>
+                                    <constraint firstItem="6SZ-fj-q7h" firstAttribute="top" secondItem="8Ii-fN-HdY" secondAttribute="bottom" constant="15" id="5xl-63-D2C"/>
+                                    <constraint firstAttribute="bottom" secondItem="cgu-Xv-9Cq" secondAttribute="bottom" constant="150" id="Hc8-OK-bMs"/>
+                                    <constraint firstItem="cgu-Xv-9Cq" firstAttribute="leading" secondItem="POT-P8-QRa" secondAttribute="leading" id="Ns8-II-CT4"/>
+                                    <constraint firstItem="8Ii-fN-HdY" firstAttribute="top" secondItem="cgu-Xv-9Cq" secondAttribute="bottom" constant="5" id="Oga-HC-rBO"/>
+                                    <constraint firstItem="8Ii-fN-HdY" firstAttribute="centerX" secondItem="POT-P8-QRa" secondAttribute="centerX" id="Wcr-r8-ZEJ"/>
+                                    <constraint firstItem="Qce-o9-GAq" firstAttribute="leading" secondItem="POT-P8-QRa" secondAttribute="leading" constant="20" id="mfg-rW-AL7"/>
+                                    <constraint firstAttribute="trailing" secondItem="cgu-Xv-9Cq" secondAttribute="trailing" constant="3.3333333333332575" id="prn-nW-Cif"/>
+                                    <constraint firstItem="6SZ-fj-q7h" firstAttribute="leading" secondItem="POT-P8-QRa" secondAttribute="leading" id="rFX-oA-1mA"/>
+                                    <constraint firstItem="Qce-o9-GAq" firstAttribute="top" secondItem="POT-P8-QRa" secondAttribute="top" constant="20" id="yPK-7I-VYB"/>
+                                    <constraint firstItem="Qce-o9-GAq" firstAttribute="centerX" secondItem="POT-P8-QRa" secondAttribute="centerX" id="ykf-Ah-XIr"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="POT-P8-QRa" firstAttribute="top" secondItem="m43-U3-L1t" secondAttribute="top" constant="216" id="Wyn-HG-JRE"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="POT-P8-QRa" secondAttribute="bottom" constant="-34" id="ZXk-LK-GcS"/>
+                            <constraint firstItem="POT-P8-QRa" firstAttribute="centerX" secondItem="Jaw-LO-whG" secondAttribute="centerX" id="nLp-g0-O9r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="m43-U3-L1t"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cRD-di-D8O"/>
                     <connections>
                         <outlet property="createAccountButton" destination="6SZ-fj-q7h" id="iRJ-pq-Kx4"/>
                         <outlet property="signInButton" destination="cgu-Xv-9Cq" id="eQ9-sM-jG5"/>
@@ -126,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnb-k5-kz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9994.3999999999996" y="-634.72906403940885"/>
+            <point key="canvasLocation" x="-9868" y="-635"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="r0z-DL-lgy">
@@ -136,7 +175,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkQ-Bj-bmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9257" y="-762"/>
+            <point key="canvasLocation" x="-8315.2000000000007" y="-762.5615763546798"/>
         </scene>
         <!--signUp-->
         <scene sceneID="z7u-Ed-jiH">
@@ -144,7 +183,7 @@
                 <viewControllerPlaceholder storyboardName="signUp" id="Efj-wh-Xig" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spC-Nd-KRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9225" y="-541"/>
+            <point key="canvasLocation" x="-8284" y="-541.62561576354688"/>
         </scene>
     </scenes>
     <resources>
