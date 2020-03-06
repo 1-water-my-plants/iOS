@@ -15,7 +15,7 @@ class LocalNotifications: NSObject, UNUserNotificationCenterDelegate {
     var plantController: PlantController?
     
     func getAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) {
-        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
             DispatchQueue.main.async {
                 completion(settings.authorizationStatus)
             }
@@ -23,7 +23,7 @@ class LocalNotifications: NSObject, UNUserNotificationCenterDelegate {
     }
     
     func requestAuthorizationStatus(completion: @escaping (Bool) -> Void) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             if let error = error {
                 NSLog("Error requesting authorization for local notifications: \(error)")
             }
@@ -49,7 +49,7 @@ class LocalNotifications: NSObject, UNUserNotificationCenterDelegate {
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         
-        center.add(request) { (error) in
+        center.add(request) { error in
             if let error = error {
                 print("There was an error scheduling a notification: \(error)")
                 return

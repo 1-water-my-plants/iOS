@@ -37,7 +37,7 @@ class MyPlantsTableViewCell: UITableViewCell {
     private func updateViews() {
         guard let plant = plant else { return }
         plantNickname.text = plant.nickname
-        // add image here 
+        // add image here
         
     }
     

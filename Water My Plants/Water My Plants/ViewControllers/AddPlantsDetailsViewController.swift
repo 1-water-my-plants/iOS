@@ -59,17 +59,17 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
 //                alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
 //                self.present(alert, animated: true, completion: nil)
 //                return
-//                
+//
 //        }
-//        
+//
 //        navigationController?.popViewController(animated: true)
 //        self.apiController?.addPlant(nickname: nickname, species: species, h2oFrequency: h2ofrequency, image: image, user_id: 3, completion: { result in
 //            switch result {
-//                
+//
 //            }
 //        })
 //    }
-//    
+//
   
 
  // UpdateView

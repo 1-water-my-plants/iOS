@@ -15,11 +15,12 @@ class APIController {
     private let baseURL = URL(string: "https://webpt9-water-my-plants.herokuapp.com/api")!
     var plants: [Plant] = []
     var token: Token?
+    var user: User?
     var loginController = LoginController.shared
     
     func fetchAllPlants(completion: @escaping (Result<[Plant], NetworkError>) -> Void) {
-    
-        let requestURL = baseURL.appendingPathComponent("/3/plants")
+        let requestURL = baseURL.appendingPathComponent("/\(loginController.token?.user_id)/plants")
+        print("Token: \(loginController.token?.user_id)")
         var request = URLRequest(url: requestURL)
         
         request.httpMethod = HTTPMethod.get.rawValue
@@ -59,7 +60,7 @@ class APIController {
                   image: String,
                   user_id: Int,
                   completion: @escaping (Result<Plant, NetworkError>) -> Void) {
-        let requestURL = baseURL.appendingPathComponent("/\(token?.user_id ?? 1)/plants")
+        let requestURL = baseURL.appendingPathComponent("/\(loginController.token?.user_id)/plants")
         var request = URLRequest(url: requestURL)
         
         request.httpMethod = HTTPMethod.post.rawValue
@@ -127,7 +128,7 @@ class APIController {
         
         self.plants[index] = updatedPlant
         
-        let requestURL = baseURL.appendingPathComponent("/\(token?.user_id ?? 1)/\(id)")
+        let requestURL = baseURL.appendingPathComponent("/\(loginController.token?.user_id)\(id)")
         var request = URLRequest(url: requestURL)
         
         request.httpMethod = HTTPMethod.put.rawValue

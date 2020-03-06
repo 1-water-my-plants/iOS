@@ -19,9 +19,9 @@ class PlantController {
         fetchPlantsFromServer()
     }
     
-    func fetchPlantsFromServer(completion: @escaping CompletionHandler =  { _ in }) {
+    func fetchPlantsFromServer(completion: @escaping CompletionHandler = { _ in }) {
         let requestURL = baseURL.appendingPathExtension("json") // can append json instead of using firebase SDK
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
             guard error == nil else {
                 print("Error fetching tasks: \(error!)")
                 DispatchQueue.main.async {
@@ -37,7 +37,7 @@ class PlantController {
                 return
             }
             do {
-                let plantRepresentations = Array(try JSONDecoder().decode([String : PlantRepresentation].self, from: data).values)
+                let plantRepresentations = Array(try JSONDecoder().decode([String: PlantRepresentation].self, from: data).values)
                 // update plants
                 try self.updatePlants(with: plantRepresentations)
                 DispatchQueue.main.async {
@@ -75,7 +75,7 @@ class PlantController {
         }
         //send new plant entry to api
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { _, _, error in
             guard error == nil else {
                 print("Error PUTing taks to server: \(error!)")
                 DispatchQueue.main.async {
@@ -100,7 +100,7 @@ class PlantController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = "DELETE"
         
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
+        URLSession.shared.dataTask(with: request) { _, _, error in
             guard error == nil else {
                 print("Error deleting task: \(error!)")
                 DispatchQueue.main.async {
@@ -146,7 +146,7 @@ class PlantController {
                 }
                 do {
                     try CoreDataStack.shared.save(context: context)
-                } catch  {
+                } catch {
                     print("error saving to Database")
                 }
             }

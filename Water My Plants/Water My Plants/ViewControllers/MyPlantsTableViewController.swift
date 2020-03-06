@@ -12,10 +12,14 @@ import CoreData
 class MyPlantsTableViewController: UITableViewController {
     
     let plantController = PlantController()
+    let apiController = APIController()
+    let loginController = LoginController.shared
+    var plant: Plant?
     
-    @IBOutlet weak var plantView1: UIImageView!
-    @IBOutlet weak var plantView2: UIImageView!
-    @IBOutlet weak var plantView3: UIImageView!
+    @IBOutlet private var plantView1: UIImageView!
+    @IBOutlet private var plantView2: UIImageView!
+    @IBOutlet private var plantView3: UIImageView!
+    
     
     /// Fetch results
     lazy var fetchedResultsController: NSFetchedResultsController<Plant1> = {
@@ -31,7 +35,12 @@ class MyPlantsTableViewController: UITableViewController {
                                              sectionNameKeyPath: "nickname",
                                              cacheName: nil)
         frc.delegate = self
-        try! frc.performFetch()
+        do {
+            try frc.performFetch()
+        } catch {
+            print("Error fetching CoreDataStack: \(error)")
+        }
+        
         return frc
     }()
     
@@ -46,13 +55,22 @@ class MyPlantsTableViewController: UITableViewController {
         super.viewDidLoad()
         roundThePhotos()
         tableView.reloadData()
-        self.tableView.rowHeight = 100;
+        self.tableView.rowHeight = 100
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        if loginController.token?.token != nil {
+            apiController.fetchAllPlants { result in
+                if let createdPlants = try? result.get() {
+                    DispatchQueue.main.async {
+                        self.apiController.plants = createdPlants
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 
     
@@ -62,25 +80,32 @@ class MyPlantsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return fetchedResultsController.sections?.count ?? 1
+//        return fetchedResultsController.sections?.count ?? 1
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+//        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        return apiController.plants.count
     }
 
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlantsCell2", for: indexPath) as? MyPlantsTableViewCell else { return UITableViewCell() }
-        cell.plant = fetchedResultsController.object(at: indexPath)
+        let plant: Plant?
+        plant = apiController.plants[indexPath.row]
+        
+        cell.plantNickname.text = plant?.nickname
+        
+//        cell.plant = fetchedResultsController.object(at: indexPath)
 //        let plant = fetchedResultsController.object(at: indexPath)
         return cell
     }
     
     // Forced to use this due to contraints bug
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100;
+        100
     }
  
 
@@ -95,7 +120,7 @@ class MyPlantsTableViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = fetchedResultsController.object(at: indexPath)
-            plantController.deletePlantFromServer(task) { (error) in
+            plantController.deletePlantFromServer(task) { error in
                 guard error == nil else {
                     print("Error Deleting task from server: \(error!)")
                     return

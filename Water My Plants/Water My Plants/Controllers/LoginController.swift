@@ -45,11 +45,16 @@ class LoginController {
             let decoder = JSONDecoder()
             
             do {
+                let jsonPayload = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+                let userJSON = jsonPayload!["user"] as? [String: Any]
+                
+                let userID = userJSON!["id"] as? Int
+                
                 let user = try decoder.decode(User.self, from: data)
                 self.token = Token(id: user.id,
                                    token: user.token ?? "",
                                    message: user.message,
-                                   user_id: user.user_id)
+                                   user_id: userID ?? 1)
                 print(self.token!)
             } catch {
                 print("Error decoding token: \(error)")

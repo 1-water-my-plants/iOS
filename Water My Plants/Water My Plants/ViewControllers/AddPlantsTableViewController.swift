@@ -16,7 +16,7 @@ class AddPlantsTableViewController: UITableViewController {
     private let plantController = PlantController()
     
     
-    /// Fetch results
+    /// Fetch results   //fo
     lazy var fetchedResultsController: NSFetchedResultsController<Plant1> = {
         let fetchRequest: NSFetchRequest<Plant1> = Plant1.fetchRequest()
         // must sort the fetch request otherwise crash
@@ -30,7 +30,12 @@ class AddPlantsTableViewController: UITableViewController {
                                              sectionNameKeyPath: "nickname",
                                              cacheName: nil)
         frc.delegate = self
-        try! frc.performFetch()
+        do {
+            try frc.performFetch()
+        } catch {
+            print("Error fetching CoreDataStack: \(error)")
+        }
+        
         return frc
     }()
     
@@ -39,7 +44,7 @@ class AddPlantsTableViewController: UITableViewController {
     
     // Pull to refresh
     @IBAction func refresh(_ sender: Any) {
-        plantController.fetchPlantsFromServer { (_) in
+        plantController.fetchPlantsFromServer { _ in
             self.refreshControl?.endRefreshing()
         }
     }
@@ -90,27 +95,25 @@ class AddPlantsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return fetchedResultsController.sections?.count ?? 1
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
 //        print(apiController.plants.count)
 //        return apiController.plants.count
-        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        return apiController.plants.count
     }
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlantCell", for: indexPath)
         
-//        let plant: Plant
-//        plant = apiController.plants[indexPath.row]
-//
-//        cell.textLabel?.text = plant.nickname.capitalized
-        // Configure the cell...
-        let plant = fetchedResultsController.object(at: indexPath)
-        cell.textLabel?.text = plant.species
+        let plant: Plant
+        plant = apiController.plants[indexPath.row]
+
+        cell.textLabel?.text = plant.nickname.capitalized
+
        
         return cell
     }
@@ -129,7 +132,7 @@ class AddPlantsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let task = fetchedResultsController.object(at: indexPath)
-            plantController.deletePlantFromServer(task) { (error) in
+            plantController.deletePlantFromServer(task) { error in
                 guard error == nil else {
                     print("Error Deleting task from server: \(error!)")
                     return

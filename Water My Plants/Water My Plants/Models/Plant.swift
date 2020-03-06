@@ -16,5 +16,5 @@ struct Plant: Codable, Equatable {
     var species: String
     var h2oFrequency: Int
     var image: String?
-    var user_id: Int
+    var user_id: Int?
 }
