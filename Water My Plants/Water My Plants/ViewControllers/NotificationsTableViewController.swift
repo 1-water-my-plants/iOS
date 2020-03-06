@@ -12,6 +12,9 @@ class NotificationsTableViewController: UITableViewController {
     
     let notificationExtensions = LocalNotifications()
     let plantController = PlantController()
+    let apiController = APIController()
+    let loginController = LoginController.shared
+    var plant: Plant?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,20 @@ class NotificationsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if loginController.token?.token != nil {
+            apiController.fetchAllPlants { result in
+                if let createdPlants = try? result.get() {
+                    DispatchQueue.main.async {
+                        self.apiController.plants = createdPlants
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -32,18 +49,23 @@ class NotificationsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return apiController.plants.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationsCell", for: indexPath) as? NotificationsTableViewCell else { return UITableViewCell() }
+        let plant: Plant?
+        plant = apiController.plants[indexPath.row]
+        
+        cell.speciesLabel.text = plant?.species
+        cell.nicknameLabel.text = plant?.nickname
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

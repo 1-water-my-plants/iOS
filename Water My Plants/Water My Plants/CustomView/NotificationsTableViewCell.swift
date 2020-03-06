@@ -10,6 +10,9 @@ import UIKit
 
 class NotificationsTableViewCell: UITableViewCell {
 
+    @IBOutlet var speciesLabel: UILabel!
+    @IBOutlet var nicknameLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
