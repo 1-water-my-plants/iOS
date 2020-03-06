@@ -31,6 +31,11 @@
 		1FED49A62408B92500A717D2 /* Plant+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A52408B92500A717D2 /* Plant+Convenience.swift */; };
 		1FED49A82408B94B00A717D2 /* PlantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED49A72408B94B00A717D2 /* PlantController.swift */; };
 		E00A0366241137A400C531FE /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00A0365241137A400C531FE /* ClassifierViewController.swift */; };
+		E00F1EFC24129246000E36D1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E00F1EFB24129246000E36D1 /* Lottie */; };
+		E00F1F032412A660000E36D1 /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F1F022412A660000E36D1 /* UNService.swift */; };
+		E00F1F052412A961000E36D1 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F1F042412A961000E36D1 /* AnimationViewController.swift */; };
+		E00F1F072412AAB5000E36D1 /* grow.json in Resources */ = {isa = PBXBuildFile; fileRef = E00F1F062412AAB4000E36D1 /* grow.json */; };
+		E00F1F0B2412AF83000E36D1 /* xButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00F1F0A2412AF83000E36D1 /* xButton.swift */; };
 		E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E04E804D2408D5E800CFA841 /* Plants.xcdatamodeld */; };
 		E04E80512408DF5C00CFA841 /* PlantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */; };
 		E04E80532409016700CFA841 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E80522409016700CFA841 /* Plant.swift */; };
@@ -38,7 +43,7 @@
 		E04E8059240949FD00CFA841 /* MyPlantsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8058240949FD00CFA841 /* MyPlantsDetailViewController.swift */; };
 		E04E806B240E710A00CFA841 /* AddPlantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */; };
 		E04E806D240E754600CFA841 /* AddPlantsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */; };
-		E04E8070240E78EF00CFA841 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* SwiftPackageProductDependency */; };
+		E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */ = {isa = PBXBuildFile; productRef = E04E806F240E78EF00CFA841 /* CTPicker */; };
 		E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8072240E7D1200CFA841 /* DataSource.swift */; };
 		E04E8077240EA43800CFA841 /* MyPlantsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */; };
 		E04E8079240EA91700CFA841 /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */; };
@@ -73,6 +78,10 @@
 		1FED49A52408B92500A717D2 /* Plant+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Plant+Convenience.swift"; sourceTree = "<group>"; };
 		1FED49A72408B94B00A717D2 /* PlantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantController.swift; sourceTree = "<group>"; };
 		E00A0365241137A400C531FE /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
+		E00F1F022412A660000E36D1 /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
+		E00F1F042412A961000E36D1 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		E00F1F062412AAB4000E36D1 /* grow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grow.json; sourceTree = "<group>"; };
+		E00F1F0A2412AF83000E36D1 /* xButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xButton.swift; sourceTree = "<group>"; };
 		E04E804E2408D5E800CFA841 /* Plants.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plants.xcdatamodel; sourceTree = "<group>"; };
 		E04E80502408DF5C00CFA841 /* PlantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantRepresentation.swift; sourceTree = "<group>"; };
 		E04E80522409016700CFA841 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
@@ -94,7 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E04E8070240E78EF00CFA841 /* BuildFile in Frameworks */,
+				E04E8070240E78EF00CFA841 /* CTPicker in Frameworks */,
+				E00F1EFC24129246000E36D1 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				E08281412410D7A500588CD3 /* LocalNotifications.swift */,
+				E00F1F022412A660000E36D1 /* UNService.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +152,7 @@
 		1FBEE2752408A10E000AD0A6 /* Water My Plants */ = {
 			isa = PBXGroup;
 			children = (
+				E00F1F062412AAB4000E36D1 /* grow.json */,
 				E04E8071240E7CF400CFA841 /* Utilitites */,
 				1FBEE2762408A10E000AD0A6 /* AppDelegate.swift */,
 				1FBEE2782408A10E000AD0A6 /* SceneDelegate.swift */,
@@ -167,6 +179,7 @@
 				E04E806A240E710A00CFA841 /* AddPlantsTableViewController.swift */,
 				E04E806C240E754600CFA841 /* AddPlantsDetailsViewController.swift */,
 				E04E8078240EA91700CFA841 /* NotificationsTableViewController.swift */,
+				E00F1F042412A961000E36D1 /* AnimationViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -229,6 +242,7 @@
 				E04E8076240EA43800CFA841 /* MyPlantsTableViewCell.swift */,
 				E04E807A240EA95300CFA841 /* NotificationsTableViewCell.swift */,
 				E00A0365241137A400C531FE /* ClassifierViewController.swift */,
+				E00F1F0A2412AF83000E36D1 /* xButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -251,7 +265,8 @@
 			);
 			name = "Water My Plants";
 			packageProductDependencies = (
-				E04E806F240E78EF00CFA841 /* SwiftPackageProductDependency */,
+				E04E806F240E78EF00CFA841 /* CTPicker */,
+				E00F1EFB24129246000E36D1 /* Lottie */,
 			);
 			productName = "Water My Plants";
 			productReference = 1FBEE2732408A10E000AD0A6 /* Water My Plants.app */;
@@ -282,7 +297,8 @@
 			);
 			mainGroup = 1FBEE26A2408A10E000AD0A6;
 			packageReferences = (
-				E04E806E240E78EF00CFA841 /* RemoteSwiftPackageReference */,
+				E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */,
+				E00F1EFA24129246000E36D1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 1FBEE2742408A10E000AD0A6 /* Products */;
 			projectDirPath = "";
@@ -298,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E00F1F072412AAB5000E36D1 /* grow.json in Resources */,
 				1F1A5113240C590A007814C7 /* signUp.storyboard in Resources */,
 				1FBEE2832408A112000AD0A6 /* LaunchScreen.storyboard in Resources */,
 				1FBAF3C3240AE2DF00BD13EF /* Dashboard.storyboard in Resources */,
@@ -358,12 +375,15 @@
 				1F073DCB240B3E83007FBEC7 /* LoginController.swift in Sources */,
 				E08281422410D7A500588CD3 /* LocalNotifications.swift in Sources */,
 				1F073DCF240B3EBE007FBEC7 /* SignUpController.swift in Sources */,
+				E00F1F052412A961000E36D1 /* AnimationViewController.swift in Sources */,
 				E04E804F2408D5E800CFA841 /* Plants.xcdatamodeld in Sources */,
 				1F1A5109240C4ED9007814C7 /* Plant + Codable.swift in Sources */,
 				1FBEE2792408A10E000AD0A6 /* SceneDelegate.swift in Sources */,
 				1F1341112409918000C81B30 /* LoginViewController.swift in Sources */,
 				E00A0366241137A400C531FE /* ClassifierViewController.swift in Sources */,
 				E04E8073240E7D1200CFA841 /* DataSource.swift in Sources */,
+				E00F1F032412A660000E36D1 /* UNService.swift in Sources */,
+				E00F1F0B2412AF83000E36D1 /* xButton.swift in Sources */,
 				1F20D39D240E05330008E320 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,7 +592,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E04E806E240E78EF00CFA841 /* RemoteSwiftPackageReference */ = {
+		E00F1EFA24129246000E36D1 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.6;
+			};
+		};
+		E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StewartLynch/CTPicker.git";
 			requirement = {
@@ -583,9 +611,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E04E806F240E78EF00CFA841 /* SwiftPackageProductDependency */ = {
+		E00F1EFB24129246000E36D1 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E04E806E240E78EF00CFA841 /* RemoteSwiftPackageReference */;
+			package = E00F1EFA24129246000E36D1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		E04E806F240E78EF00CFA841 /* CTPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E04E806E240E78EF00CFA841 /* XCRemoteSwiftPackageReference "CTPicker" */;
 			productName = CTPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
