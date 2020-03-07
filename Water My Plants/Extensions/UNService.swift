@@ -11,7 +11,7 @@ import UserNotifications
 
 class UNService: NSObject {
     
-    private override init() {}
+    override private init() {}
     static let shared = UNService()
     
     
@@ -19,7 +19,7 @@ class UNService: NSObject {
     
     func authorize() {
         let options: UNAuthorizationOptions = [.alert, .badge, .sound, .carPlay]
-        unCenter.requestAuthorization(options: options) { (granted, error) in
+        unCenter.requestAuthorization(options: options) { granted, error in
             print(error ?? "No UN auth error")
             guard granted else {
                 print("USER DENIED ACCESs")
@@ -96,4 +96,3 @@ extension UNService: UNUserNotificationCenterDelegate {
         completionHandler(options)
     }
 }
-

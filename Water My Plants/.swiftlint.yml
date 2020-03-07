@@ -42,10 +42,10 @@ opt_in_rules:
   - let_var_whitespace
   - modifier_order
   - multiline_arguments
-  - multiline_parameters
+ # - multiline_parameters
   - operator_usage_whitespace
   - overridden_super_call
-  - private_outlet
+ # - private_outlet
   - prohibited_super_call
   - redundant_nil_coalescing
   #- static_operator

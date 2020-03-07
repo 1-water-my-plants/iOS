@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 class MyPlantsTableViewController: UITableViewController {
     
     let plantController = PlantController()
@@ -119,24 +120,11 @@ class MyPlantsTableViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let task = fetchedResultsController.object(at: indexPath)
-            plantController.deletePlantFromServer(task) { error in
-                guard error == nil else {
-                    print("Error Deleting task from server: \(error!)")
-                    return
+            apiController.deletePlant { _ in
+                DispatchQueue.main.async {
+                    
                 }
-                let moc = CoreDataStack.shared.mainContext
-                moc.delete(task)
-                
-                do {
-                    try moc.save()
-                } catch {
-                    moc.reset()
-                    print("Error saving deleted task: \(error)")
-                }
-                
             }
-             
         }
     }
 
@@ -155,17 +143,21 @@ class MyPlantsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
+    
+//     MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "EditPlantSegue" {
+            if let MyPlantsVC = segue.description as? UINavigationController,
+                let editVC = MyPlantsVC.topViewController as? EditPlantViewController {
+                editVC.apiController = self.apiController
+                editVC.plant = plant
+            }
+        }
     }
-    */
-
 }
+
 
 extension MyPlantsTableViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

@@ -110,8 +110,11 @@ class AddPlantsTableViewController: UITableViewController {
         
         let plant: Plant
         plant = apiController.plants[indexPath.row]
+        let plantString = "Plant ID: \(plant.id)"
+        
 
-        cell.textLabel?.text = plant.nickname.capitalized
+        cell.textLabel?.text = plant.nickname?.capitalized
+        cell.detailTextLabel?.text = plantString
 
        
         return cell
@@ -157,21 +160,21 @@ class AddPlantsTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "AddPlantVC" {
-//            guard let plantVC = segue.destination as?
-//            AddPlantsDetailsViewController,
-//            let indexPath = tableView.indexPathForSelectedRow?.first else { return }
-//            plantVC.apiController = apiController
-//            plantVC.plant1 = apiController.plants[indexPath]
-//        }
-//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "AddPlantDetailSegue" {
-               guard let AddPlantVC = segue.destination as? AddPlantsDetailsViewController else { return }
-               AddPlantVC.plantController = plantController
-           }
-       }
+        if segue.identifier == "AddPlantSegue" {
+            guard let plantVC = segue.destination as?
+            AddPlantsDetailsViewController,
+            let indexPath = tableView.indexPathForSelectedRow?.first else { return }
+            plantVC.apiController = apiController
+            plantVC.plant1 = apiController.plants[indexPath]
+        }
+    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//           if segue.identifier == "AddPlantSegue" {
+//               guard let AddPlantVC = segue.destination as? AddPlantsDetailsViewController else { return }
+//               AddPlantVC.plantController = plantController
+//           }
+//       }
     
  
 

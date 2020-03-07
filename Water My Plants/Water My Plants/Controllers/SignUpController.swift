@@ -9,6 +9,7 @@
 import Foundation
 
 class SignUpController {
+    static var shared = SignUpController()
     typealias CompletionHandler = (Error?) -> Void
     
     private let baseURL = URL(string: "https://webpt9-water-my-plants.herokuapp.com/api")!
@@ -50,7 +51,8 @@ class SignUpController {
                                    token: user.token ?? "",
                                    message: user.message,
                                    user_id: user.user_id)
-                print(self.token!)
+                
+                print(self.token)
             } catch {
                 print("Error decoding token \(error)")
                 completion(error)
