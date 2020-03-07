@@ -53,7 +53,6 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
         guard let nickname = self.plantNicknameTextField.text, !nickname.isEmpty,
             let species = self.plantSpeciesTextField.text, !species.isEmpty,
             let image = self.plantLabel.text,
-            let id = plant1?.id,
             let h2ofrequency = self.h2oFrequencyPerWeekTextLabel.text, !h2ofrequency.isEmpty else {
 //            let newH2ofrequency = Int(h2ofrequency),
                 let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again", preferredStyle: .alert)
@@ -63,8 +62,7 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
 
         }
         self.navigationController?.popViewController(animated: true)
-        self.apiController.addPlant(id: id,
-                                    nickname: nickname,
+        self.apiController.addPlant(nickname: nickname,
                                     species: species,
                                     h2oFrequency: Int(h2ofrequency) ?? 0,
                                     image: image,

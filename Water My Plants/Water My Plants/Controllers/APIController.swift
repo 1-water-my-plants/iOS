@@ -54,8 +54,7 @@ class APIController {
         }.resume()
     }
     
-    func addPlant(id: Int?,
-                  nickname: String,
+    func addPlant(nickname: String,
                   species: String,
                   h2oFrequency: Int,
                   image: String?,
@@ -69,8 +68,7 @@ class APIController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(loginController.token?.token, forHTTPHeaderField: "Authorization")
         
-        let newPlantRequest = PlantRequest(id: id,
-                                           nickname: nickname,
+        let newPlantRequest = PlantRequest(nickname: nickname,
                                            species: species,
                                            h2oFrequency: h2oFrequency,
                                            image: image ?? "",

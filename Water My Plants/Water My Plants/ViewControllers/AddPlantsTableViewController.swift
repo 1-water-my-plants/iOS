@@ -110,7 +110,7 @@ class AddPlantsTableViewController: UITableViewController {
         
         let plant: Plant
         plant = apiController.plants[indexPath.row]
-        let plantString = "Plant ID: \(plant.id)"
+        let plantString = "Plant ID: \(plant.id!)"
         
 
         cell.textLabel?.text = plant.nickname?.capitalized
