@@ -40,7 +40,7 @@ class AddPlantsTableViewController: UITableViewController {
     }()
     
     //end fetch results sal
- 
+    
     
     // Pull to refresh
     @IBAction func refresh(_ sender: Any) {
@@ -49,32 +49,30 @@ class AddPlantsTableViewController: UITableViewController {
         }
     }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData), name: .plantDidSaveNotification, object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData), name: .plantDidSaveNotification, object: nil)
         tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         if loginController.token?.token != nil {
             apiController.fetchAllPlants { result in
                 if let createdPlants = try? result.get() {
                     DispatchQueue.main.async {
                         self.apiController.plants = createdPlants
                         self.tableView.reloadData()
+                        // having it in a viewWillAppear made them load in the tableview
+                        // almost instantly so no waiting for the cells to
+                        // populate
                     }
                 }
             }
         }
     }
-        @IBAction func addButtonTapped(_ sender: Any) {
+    @IBAction func addButtonTapped(_ sender: Any) {
         
     }
     
@@ -90,7 +88,7 @@ class AddPlantsTableViewController: UITableViewController {
             }
         }
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

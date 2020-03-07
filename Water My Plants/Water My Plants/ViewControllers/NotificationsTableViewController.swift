@@ -26,8 +26,8 @@ class NotificationsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if loginController.token?.token != nil {
             apiController.fetchAllPlants { result in
                 if let createdPlants = try? result.get() {
