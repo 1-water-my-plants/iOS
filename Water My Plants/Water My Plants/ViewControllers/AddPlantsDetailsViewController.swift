@@ -53,6 +53,7 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
         guard let nickname = self.plantNicknameTextField.text, !nickname.isEmpty,
             let species = self.plantSpeciesTextField.text, !species.isEmpty,
             let image = self.plantLabel.text,
+            let waterDay = self.wateringDaysPerWeek.text, !waterDay.isEmpty,
             let h2ofrequency = self.h2oFrequencyPerWeekTextLabel.text, !h2ofrequency.isEmpty else {
 //            let newH2ofrequency = Int(h2ofrequency),
                 let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again", preferredStyle: .alert)

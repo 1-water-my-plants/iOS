@@ -106,15 +106,16 @@ class AddPlantsTableViewController: UITableViewController {
 
  
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlantCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddPlantCell", for: indexPath) as? AddPlantsTableViewCell else { return UITableViewCell() }
         
         let plant: Plant
         plant = apiController.plants[indexPath.row]
-        let plantString = "Plant ID: \(plant.id!)"
+        let plantString = "Plant ID: \(plant.id)"
         
-
-        cell.textLabel?.text = plant.nickname?.capitalized
-        cell.detailTextLabel?.text = plantString
+        cell.nicknameLabel?.text = plant.nickname.capitalized
+        cell.idLabel.text = plantString
+//        cell.nicknameLabel?.text = plant.nickname?.capitalized
+//        cell.detailTextLabel?.text = plantString
 
        
         return cell
@@ -159,16 +160,16 @@ class AddPlantsTableViewController: UITableViewController {
  
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddPlantSegue" {
+        if segue.identifier == "DetailSegue" {
             guard let plantVC = segue.destination as?
-            AddPlantsDetailsViewController,
-            let indexPath = tableView.indexPathForSelectedRow?.first else { return }
+            PlantDetailViewController,
+                let indexPath = tableView.indexPathsForSelectedRows?.first else { return }
             plantVC.apiController = apiController
-            plantVC.plant1 = apiController.plants[indexPath]
+            plantVC.plant = apiController.plants[indexPath.row]
         }
     }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //           if segue.identifier == "AddPlantSegue" {
 //               guard let AddPlantVC = segue.destination as? AddPlantsDetailsViewController else { return }

@@ -21,6 +21,7 @@ class MyPlantsTableViewCell: UITableViewCell {
     //IBOutlets
     @IBOutlet weak var plantNickname: UILabel!
     @IBOutlet weak var plantImage: UIImageView!
+    @IBOutlet weak var waterFrequencyLabel: UILabel!
     
 
 //    override func awakeFromNib() {

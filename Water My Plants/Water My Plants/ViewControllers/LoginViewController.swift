@@ -70,12 +70,15 @@ class LoginViewController: UIViewController {
         }
     }
 }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignUpSegue" {
             guard let vc = segue.destination as? RegisterViewController else { return }
             vc.delegate = self
         }
     }
+    
+    
 
     lazy var usernameTF: UITextField = {
         let usernameTextField: UITextField = UITextField(frame: CGRect(x: 17, y: 385, width: signInView.bounds.size.width - 35, height: 50.00))

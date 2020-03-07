@@ -10,6 +10,14 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet private var usernameLabel: UILabel!
+    @IBOutlet private var phoneNumberLabel: UILabel!
+    @IBOutlet private var passwordLabel: UILabel!
+    
+    let registerController = RegisterViewController()
+    var user: User?
+    var apiController: APIController?
+
     @IBAction func signoutTapped(_ sender: Any) {
         let alert = UIAlertController(title: "Success", message: "You have successfully logged out.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
@@ -18,7 +26,9 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        guard let user = user else { return }
+        
+        
         // Do any additional setup after loading the view.
     }
     
