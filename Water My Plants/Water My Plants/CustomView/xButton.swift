@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 @IBDesignable
-open class xButton: UIButton {
+open class XButton: UIButton {
     
     @IBInspectable open var ripplePercent: Float = 0.8 {
         didSet {
@@ -31,7 +31,7 @@ open class xButton: UIButton {
     }
     
     @IBInspectable open var buttonCornerRadius: Float = 0 {
-        didSet{
+        didSet {
             layer.cornerRadius = CGFloat(buttonCornerRadius)
         }
     }
@@ -66,12 +66,12 @@ open class xButton: UIButton {
         self.init(frame: CGRect.zero)
     }
     
-    required public init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    public override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
@@ -92,9 +92,9 @@ open class xButton: UIButton {
     
     fileprivate func setupRippleView() {
         let size: CGFloat = bounds.width * CGFloat(ripplePercent)
-        let x: CGFloat = (bounds.width/2) - (size/2)
-        let y: CGFloat = (bounds.height/2) - (size/2)
-        let corner: CGFloat = size/2
+        let x: CGFloat = (bounds.width / 2) - (size / 2)
+        let y: CGFloat = (bounds.height / 2) - (size / 2)
+        let corner: CGFloat = size / 2
         
         rippleView.backgroundColor = rippleColor
         rippleView.frame = CGRect(x: x, y: y, width: size, height: size)
@@ -124,10 +124,10 @@ open class xButton: UIButton {
             tempShadowRadius = layer.shadowRadius
             tempShadowOpacity = layer.shadowOpacity
             
-            let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
+            let shadowAnim = CABasicAnimation(keyPath: "shadowRadius")
             shadowAnim.toValue = shadowRippleRadius
             
-            let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
+            let opacityAnim = CABasicAnimation(keyPath: "shadowOpacity")
             opacityAnim.toValue = 1
             
             let groupAnim = CAAnimationGroup()
@@ -136,7 +136,7 @@ open class xButton: UIButton {
             groupAnim.isRemovedOnCompletion = false
             groupAnim.animations = [shadowAnim, opacityAnim]
             
-            layer.add(groupAnim, forKey:"shadow")
+            layer.add(groupAnim, forKey: "shadow")
         }
         return super.beginTracking(touch, with: event)
     }
@@ -154,22 +154,25 @@ open class xButton: UIButton {
     fileprivate func animateToNormal() {
         UIView.animate(withDuration: 0.1, delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
             self.rippleBackgroundView.alpha = 1
-            }, completion: {(success: Bool) -> () in
+            }, completion: {(_: Bool) -> Void in
                 UIView.animate(withDuration: self.touchUpAnimationTime, delay: 0, options: UIView.AnimationOptions.allowUserInteraction, animations: {
                     self.rippleBackgroundView.alpha = 0
                     }, completion: nil)
         })
         
         
-        UIView.animate(withDuration: 0.7, delay: 0,
-            options: [.curveEaseOut, .beginFromCurrentState, .allowUserInteraction],
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
+            options: [.curveEaseOut,
+                      .beginFromCurrentState,
+                      .allowUserInteraction],
             animations: {
                 self.rippleView.transform = CGAffineTransform.identity
                 
-                let shadowAnim = CABasicAnimation(keyPath:"shadowRadius")
+                let shadowAnim = CABasicAnimation(keyPath: "shadowRadius")
                 shadowAnim.toValue = self.tempShadowRadius
                 
-                let opacityAnim = CABasicAnimation(keyPath:"shadowOpacity")
+                let opacityAnim = CABasicAnimation(keyPath: "shadowOpacity")
                 opacityAnim.toValue = self.tempShadowOpacity
                 
                 let groupAnim = CAAnimationGroup()
@@ -178,7 +181,7 @@ open class xButton: UIButton {
                 groupAnim.isRemovedOnCompletion = false
                 groupAnim.animations = [shadowAnim, opacityAnim]
                 
-                self.layer.add(groupAnim, forKey:"shadowBack")
+                self.layer.add(groupAnim, forKey: "shadowBack")
             }, completion: nil)
     }
     

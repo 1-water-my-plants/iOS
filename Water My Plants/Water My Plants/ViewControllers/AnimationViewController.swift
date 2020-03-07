@@ -23,7 +23,7 @@ class AnimationViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.7) {
         
             //segue 8 seconds later
 //        let vc = UIViewController()
@@ -37,7 +37,9 @@ class AnimationViewController: UIViewController {
     
     func playAnimation() {
         animationView.animation = Animation.named("grow")
-        animationView.loopMode = .loop
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 4
+        animationView.backgroundColor = .systemTeal
         animationView.play()
     }
 
