@@ -21,9 +21,12 @@ class EditPlantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let plant = plant else { return }
+        let waterFrequencyString = "\(self.plant?.h2oFrequency ?? 0)"
         
+        self.title = "Edit \(plant.nickname)"
         self.speciesTF.text = self.plant?.species
         self.nicknameTF.text = self.plant?.nickname
+        self.wateringFrequencyTF.text = waterFrequencyString
 
         // Do any additional setup after loading the view.
     }

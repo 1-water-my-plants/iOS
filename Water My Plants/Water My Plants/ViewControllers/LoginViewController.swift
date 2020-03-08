@@ -75,6 +75,10 @@ class LoginViewController: UIViewController {
         if segue.identifier == "SignUpSegue" {
             guard let vc = segue.destination as? RegisterViewController else { return }
             vc.delegate = self
+        } else if segue.identifier == "NewSegue" {
+            guard let navVC = segue.destination as? UINavigationController, let welcomeVC = navVC.topViewController as? WelcomeViewController else { return }
+            
+            welcomeVC.user = loginController.user
         }
     }
     

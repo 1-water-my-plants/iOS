@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwJ-zn-udp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2025" y="-1426"/>
+            <point key="canvasLocation" x="2158" y="-1397"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="AX1-qn-chz">
@@ -444,22 +444,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Qx5-F6-y7V">
-                                <rect key="frame" x="16" y="160" width="130" height="172"/>
+                                <rect key="frame" x="16" y="160" width="87.333333333333329" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l8b-vd-tUf">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwO-rd-dY5">
-                                        <rect key="frame" x="0.0" y="74" width="130" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahA-Tz-8Xu">
-                                        <rect key="frame" x="0.0" y="148" width="130" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87.333333333333329" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -467,34 +455,33 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile page" translatesAutoresizingMaskIntoConstraints="NO" id="F9q-lm-twH">
-                                <rect key="frame" x="-19.666666666666657" y="352" width="414.33333333333326" height="475"/>
+                                <rect key="frame" x="-20" y="214" width="461" height="671"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="671" id="1al-Ec-yxk"/>
+                                </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="8U6-Jg-PWP">
-                                <rect key="frame" x="271" y="155" width="88" height="183"/>
+                                <rect key="frame" x="271" y="155" width="88" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oz-1b-eeY">
                                         <rect key="frame" x="0.0" y="0.0" width="88" height="45"/>
                                         <state key="normal" title="Button" image="edit"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-oF-wo3">
-                                        <rect key="frame" x="0.0" y="69" width="88" height="45"/>
-                                        <state key="normal" title="Button" image="edit"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q82-Hl-u7K">
-                                        <rect key="frame" x="0.0" y="138" width="88" height="45"/>
-                                        <state key="normal" title="Button" image="edit"/>
+                                        <connections>
+                                            <segue destination="Okb-NL-G0i" kind="show" identifier="ChangePassword" id="zuk-5j-JSI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="F9q-lm-twH" secondAttribute="trailing" constant="-82" id="0wY-X3-ql9"/>
+                            <constraint firstItem="F9q-lm-twH" firstAttribute="top" secondItem="8U6-Jg-PWP" secondAttribute="bottom" constant="14" id="Nps-or-5tM"/>
+                            <constraint firstItem="F9q-lm-twH" firstAttribute="leading" secondItem="GX7-IJ-09H" secondAttribute="leadingMargin" constant="-36" id="Q05-wg-3gj"/>
                             <constraint firstItem="uBY-5M-HAv" firstAttribute="trailing" secondItem="8U6-Jg-PWP" secondAttribute="trailing" constant="16" id="QeI-WM-Txp"/>
-                            <constraint firstItem="F9q-lm-twH" firstAttribute="top" secondItem="8U6-Jg-PWP" secondAttribute="bottom" constant="14" id="Ton-V1-4wx"/>
                             <constraint firstItem="Qx5-F6-y7V" firstAttribute="top" secondItem="8U6-Jg-PWP" secondAttribute="top" constant="5" id="olo-Ry-99Z"/>
                             <constraint firstItem="Qx5-F6-y7V" firstAttribute="leading" secondItem="GX7-IJ-09H" secondAttribute="leadingMargin" id="x9G-1N-zu2"/>
                             <constraint firstItem="Qx5-F6-y7V" firstAttribute="top" secondItem="uBY-5M-HAv" secondAttribute="top" constant="20" id="xuE-eA-3KZ"/>
-                            <constraint firstItem="F9q-lm-twH" firstAttribute="centerX" secondItem="GX7-IJ-09H" secondAttribute="centerX" id="z1m-NF-ntN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uBY-5M-HAv"/>
                     </view>
@@ -507,15 +494,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="passwordLabel" destination="ahA-Tz-8Xu" id="CuT-tn-TLA"/>
-                        <outlet property="phoneNumberLabel" destination="l8b-vd-tUf" id="dLB-a1-BjT"/>
-                        <outlet property="usernameLabel" destination="bwO-rd-dY5" id="lER-lU-PyP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E18-kw-gJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="-1459"/>
+            <point key="canvasLocation" x="1240.8" y="-1459.3596059113302"/>
         </scene>
         <!--Main-->
         <scene sceneID="RtH-Bj-BMf">
@@ -526,6 +508,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6v-1N-HK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1739" y="-1960"/>
+        </scene>
+        <!--Change Password-->
+        <scene sceneID="ILc-m8-uHd">
+            <objects>
+                <viewController id="Okb-NL-G0i" customClass="PasswordViewController" customModule="Water_My_Plants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IEI-u9-TXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ecS-kL-QCA">
+                                <rect key="frame" x="16" y="149" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile page" translatesAutoresizingMaskIntoConstraints="NO" id="46j-Kc-9fw">
+                                <rect key="frame" x="-111" y="378" width="596" height="434"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNj-O6-Y65">
+                                <rect key="frame" x="119" y="229" width="136" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Save new password">
+                                    <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="passwordSaved:" destination="Okb-NL-G0i" eventType="touchUpInside" id="PXd-9o-5cP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aVX-Wg-jZt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Password" id="edg-TS-WEC"/>
+                    <connections>
+                        <outlet property="passwordTF" destination="ecS-kL-QCA" id="VSc-nR-FPi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkC-gX-fVG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2486" y="-2086"/>
         </scene>
         <!--Add Plants Table View Controller-->
         <scene sceneID="aFS-lH-Yqk">
@@ -582,14 +606,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmR-UW-Qcw">
-                                            <rect key="frame" x="327" y="0.0" width="40" height="45"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="edit"/>
-                                            <connections>
-                                                <segue destination="V5z-yq-6u5" kind="show" identifier="EditPlantSegue" id="sgY-T0-5Z1"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -723,7 +739,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5mO-Gn-8Fr"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Plant Name" id="Vyo-oD-S0N"/>
+                    <navigationItem key="navigationItem" title="Plant Name" id="Vyo-oD-S0N">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="edit" id="Qgp-9v-unn">
+                            <connections>
+                                <segue destination="V5z-yq-6u5" kind="show" identifier="EditSegue" id="17X-PQ-Ts1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nicknameLabel" destination="fr3-g9-RHp" id="2RN-X8-pIF"/>
                         <outlet property="waterDay" destination="7Gn-JV-bht" id="jg8-g3-x2k"/>
@@ -832,7 +854,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XBh-05-3Z2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1990" y="-95"/>
+            <point key="canvasLocation" x="2025" y="-20"/>
         </scene>
         <!--Plant name-->
         <scene sceneID="1ev-Fc-R4M">
@@ -982,11 +1004,12 @@
                     <connections>
                         <outlet property="nicknameTF" destination="Q1h-vZ-Jfa" id="Ozv-Ne-Ayh"/>
                         <outlet property="speciesTF" destination="R8Q-EY-orU" id="rLt-PY-cOk"/>
+                        <outlet property="wateringFrequencyTF" destination="u8B-zb-apr" id="VfI-mk-bAb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwe-45-Bl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2772" y="-95"/>
+            <point key="canvasLocation" x="2926" y="-21"/>
         </scene>
     </scenes>
     <resources>

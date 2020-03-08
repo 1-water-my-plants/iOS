@@ -92,6 +92,12 @@ class PlantDetailViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "EditSegue" {
+            if let nc = segue.destination as? UINavigationController,
+                let editVC = nc.topViewController as? EditPlantViewController {
+                editVC.apiController = self.apiController
+                editVC.plant = plant
+            }
+        }
     }
 }

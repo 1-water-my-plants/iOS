@@ -16,6 +16,7 @@ class APIController {
     var plants: [Plant] = []
     var token: Token?
     var plant: Plant?
+    var user: User?
     var loginController = LoginController.shared
     
     func fetchAllPlants(completion: @escaping (Result<[Plant], NetworkError>) -> Void) {
@@ -175,14 +176,29 @@ class APIController {
     }
     
     
-    func updateUser(completion: @escaping (Result<User, NetworkError>) -> Void) {
-        let requestURL = baseURL.appendingPathComponent("/auth/\(loginController.token?.id)")
+    func updateUser(with password: String, completion: @escaping (Result<User, NetworkError>) -> Void) {
+//        guard let user = user, let id = user.id, let token = loginController.token?.token else { return }
+        let userID = loginController.token?.user_id
+        let requestURL = baseURL.appendingPathComponent("/auth/\(userID!)")
         
         
         var request = URLRequest(url: requestURL)
         
         request.httpMethod = HTTPMethod.put.rawValue
-        request.setValue("application", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("\(token)", forHTTPHeaderField: "Authorization")
+        
+        let json = """
+        {
+        "password": "\(password)"
+        }
+        """
+        let jsonData = json.data(using: .utf8)
+        guard let unwrapped = jsonData else {
+            print("No data")
+            return
+        }
+        request.httpBody = unwrapped
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse,
