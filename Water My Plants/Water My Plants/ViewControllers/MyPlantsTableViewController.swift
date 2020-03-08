@@ -94,10 +94,16 @@ class MyPlantsTableViewController: UITableViewController {
   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyPlantsCell2", for: indexPath) as? MyPlantsTableViewCell else { return UITableViewCell() }
-        let plant: Plant?
+        let plant: Plant
         plant = apiController.plants[indexPath.row]
         
-        cell.plantNickname.text = plant?.nickname
+        var frequencyString = "Water me once a week"
+        if plant.h2oFrequency ?? 0 > 1 {
+             frequencyString = "Water me \(plant.h2oFrequency) times a week"
+        }
+        
+        cell.plantNickname.text = plant.nickname.capitalized
+        cell.waterFrequencyLabel.text = frequencyString
         
 //        cell.plant = fetchedResultsController.object(at: indexPath)
 //        let plant = fetchedResultsController.object(at: indexPath)
@@ -118,15 +124,15 @@ class MyPlantsTableViewController: UITableViewController {
     }
     */
 
-  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            apiController.deletePlant { _ in
-                DispatchQueue.main.async {
-                    
-                }
-            }
-        }
-    }
+//  override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            apiController.deletePlant { _ in
+//                DispatchQueue.main.async {
+//                    
+//                }
+//            }
+//        }
+//    }
 
     /*
     // Override to support rearranging the table view.

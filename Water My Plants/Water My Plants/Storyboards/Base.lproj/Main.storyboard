@@ -161,11 +161,22 @@
                         <outlet property="signInButton" destination="cgu-Xv-9Cq" id="eQ9-sM-jG5"/>
                         <outlet property="signInView" destination="POT-P8-QRa" id="fun-Ql-mqO"/>
                         <segue destination="4f7-9u-Fct" kind="presentation" identifier="DashboardSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Fpw-CW-Cxi"/>
+                        <segue destination="ruZ-cR-G3s" kind="show" identifier="NewSegue" id="VHu-yq-bKS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnb-k5-kz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-9868" y="-635.46798029556658"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="vAS-mi-ecR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="ruZ-cR-G3s" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Y58-Vb-Ce2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gb7-jj-UUr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8466" y="-927"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="r0z-DL-lgy">

@@ -9,6 +9,7 @@
 import Foundation
 
 class SignUpController {
+    var user: User?
     static var shared = SignUpController()
     typealias CompletionHandler = (Error?) -> Void
     
@@ -61,4 +62,6 @@ class SignUpController {
             completion(nil)
         }.resume()
     }
+    
+    
 }

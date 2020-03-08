@@ -13,7 +13,6 @@ class AnimationViewController: UIViewController {
 
     @IBOutlet private var animationView: AnimationView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         playAnimation()

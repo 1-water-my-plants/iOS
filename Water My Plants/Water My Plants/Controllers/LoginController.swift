@@ -13,6 +13,8 @@ class LoginController {
     
     typealias CompletionHandler = (Error?) -> Void
     
+    var user: User?
+    
     private let baseURL = URL(string: "https://webpt9-water-my-plants.herokuapp.com/api")!
     var token: Token?
     

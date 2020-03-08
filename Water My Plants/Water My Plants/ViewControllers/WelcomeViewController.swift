@@ -14,6 +14,9 @@ class WelcomeViewController: UIViewController {
     @IBOutlet private var plant2: UIView!
     @IBOutlet private var plant3: UIView!
     
+    var user: User?
+    var loginController = LoginController.shared
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
