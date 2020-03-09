@@ -160,8 +160,8 @@
                         <outlet property="createAccountButton" destination="6SZ-fj-q7h" id="iRJ-pq-Kx4"/>
                         <outlet property="signInButton" destination="cgu-Xv-9Cq" id="eQ9-sM-jG5"/>
                         <outlet property="signInView" destination="POT-P8-QRa" id="fun-Ql-mqO"/>
-                        <segue destination="4f7-9u-Fct" kind="presentation" identifier="DashboardSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Fpw-CW-Cxi"/>
                         <segue destination="ruZ-cR-G3s" kind="show" identifier="NewSegue" id="VHu-yq-bKS"/>
+                        <segue destination="4f7-9u-Fct" kind="presentation" identifier="DashboardSegue" modalPresentationStyle="fullScreen" id="uvl-km-jQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnb-k5-kz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

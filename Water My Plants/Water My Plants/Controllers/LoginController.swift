@@ -15,7 +15,7 @@ class LoginController {
     
     var user: User?
     
-    private let baseURL = URL(string: "https://webpt9-water-my-plants.herokuapp.com/api")!
+    let baseURL = URL(string: "https://webpt9-water-my-plants.herokuapp.com/api")!
     var token: Token?
     
     func login(with loginData: LoginRequest, completion: @escaping CompletionHandler = { _ in}) {

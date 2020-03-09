@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let user = user else { return }
+        guard user != nil else { return }
         
         
         // Do any additional setup after loading the view.
@@ -44,6 +44,4 @@ class SettingsViewController: UIViewController {
             passwordVC.user = user
         }
     }
-    
-
 }

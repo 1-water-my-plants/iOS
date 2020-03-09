@@ -60,7 +60,7 @@ class APIController {
                   image: String?,
                   user_id: Int,
                   completion: @escaping (Result<Plant, NetworkError>) -> Void) {
-        let requestURL = baseURL.appendingPathComponent("/\(loginController.token?.user_id)/plants")
+        let requestURL = baseURL.appendingPathComponent("/\(loginController.token?.user_id ?? 0)/plants")
         
         var request = URLRequest(url: requestURL)
         
@@ -112,69 +112,6 @@ class APIController {
             }
         }.resume()
     }
-    
-    func updatePlant(id: Int,
-                     nickname: String,
-                     species: String,
-                     h2oFrequency: Int,
-                     image: String,
-                     completion: @escaping (Result<Plant, NetworkError>) -> Void) {
-        guard let index = self.plants.firstIndex(where: { plant in plant.id == id }) else { return }
-        
-        var updatedPlant = self.plants[index]
-        updatedPlant.nickname = nickname
-        updatedPlant.species = species
-        updatedPlant.h2oFrequency = h2oFrequency
-        updatedPlant.image = image
-        
-        self.plants[index] = updatedPlant
-        
-        let requestURL = baseURL.appendingPathComponent("/\(loginController.token?.user_id)/plants/\(loginController.token?.id)")
-        var request = URLRequest(url: requestURL)
-        
-        request.httpMethod = HTTPMethod.put.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(loginController.token?.token, forHTTPHeaderField: "Authorization")
-        
-        let jsonEncoder = JSONEncoder()
-        
-        do {
-            let jsonData = try jsonEncoder.encode(updatedPlant)
-            request.httpBody = jsonData
-        } catch {
-            print("Error encoding updateObject: \(error.localizedDescription)")
-            completion(.failure(.otherError))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(.failure(.badAuth))
-            }
-            
-            if error != nil {
-                completion(.failure(.badData))
-            }
-            
-            guard let data = data else {
-                completion(.failure(.badData))
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            do {
-                let plant = try decoder.decode(Plant.self, from: data)
-                self.plants.append(plant)
-                completion(.success(plant))
-            } catch {
-                print("Error decoding updated plant after updating: \(error)")
-                completion(.failure(.noDecode))
-                return
-            }
-        }.resume()
-    }
-    
     
     func updateUser(with password: String, completion: @escaping (Result<User, NetworkError>) -> Void) {
 //        guard let user = user, let id = user.id, let token = loginController.token?.token else { return }

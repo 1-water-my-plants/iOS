@@ -13,8 +13,6 @@ class UNService: NSObject {
     
     override private init() {}
     static let shared = UNService()
-    
-    
     let unCenter = UNUserNotificationCenter.current()
     
     func authorize() {

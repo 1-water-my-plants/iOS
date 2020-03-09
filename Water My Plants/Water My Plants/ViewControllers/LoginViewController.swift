@@ -92,6 +92,7 @@ class LoginViewController: UIViewController {
         usernameTextField.layer.borderWidth = 0.5
         usernameTextField.layer.cornerRadius = 5
         usernameTextField.layer.borderColor = UIColor.black.cgColor
+        usernameTextField.placeholder = "Username"
         return usernameTextField
     }()
     
@@ -104,6 +105,7 @@ class LoginViewController: UIViewController {
         passwordTextField.layer.borderWidth = 0.5
         passwordTextField.layer.cornerRadius = 5
         passwordTextField.layer.borderColor = UIColor.black.cgColor
+        passwordTextField.placeholder = "Password"
         return passwordTextField
     }()
     

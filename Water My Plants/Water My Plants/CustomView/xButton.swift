@@ -54,7 +54,7 @@ open class XButton: UIButton {
             if !rippleOverBounds {
                 let maskLayer = CAShapeLayer()
                 maskLayer.path = UIBezierPath(roundedRect: bounds,
-                    cornerRadius: layer.cornerRadius).cgPath
+                cornerRadius: layer.cornerRadius).cgPath
                 return maskLayer
             } else {
                 return nil
@@ -115,7 +115,10 @@ open class XButton: UIButton {
         rippleView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         
         
-        UIView.animate(withDuration: 0.7, delay: 0, options: [UIView.AnimationOptions.curveEaseOut, UIView.AnimationOptions.allowUserInteraction],
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
+                       options: [UIView.AnimationOptions.curveEaseOut,
+                                 UIView.AnimationOptions.allowUserInteraction],
             animations: {
                 self.rippleView.transform = CGAffineTransform.identity
             }, completion: nil)
@@ -163,9 +166,9 @@ open class XButton: UIButton {
         
         UIView.animate(withDuration: 0.7,
                        delay: 0,
-            options: [.curveEaseOut,
-                      .beginFromCurrentState,
-                      .allowUserInteraction],
+                       options: [.curveEaseOut,
+                                 .beginFromCurrentState,
+                                 .allowUserInteraction],
             animations: {
                 self.rippleView.transform = CGAffineTransform.identity
                 

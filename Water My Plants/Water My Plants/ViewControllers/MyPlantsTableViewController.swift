@@ -98,7 +98,7 @@ class MyPlantsTableViewController: UITableViewController {
         plant = apiController.plants[indexPath.row]
         
         var frequencyString = "Water me once a week"
-        if plant.h2oFrequency ?? 0 > 1 {
+        if plant.h2oFrequency > 1 {
              frequencyString = "Water me \(plant.h2oFrequency) times a week"
         }
         
@@ -128,7 +128,7 @@ class MyPlantsTableViewController: UITableViewController {
 //        if editingStyle == .delete {
 //            apiController.deletePlant { _ in
 //                DispatchQueue.main.async {
-//                    
+//
 //                }
 //            }
 //        }
@@ -153,15 +153,15 @@ class MyPlantsTableViewController: UITableViewController {
 // MARK: - Navigation
 
      
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditPlantSegue" {
-            if let MyPlantsVC = segue.description as? UINavigationController,
-                let editVC = MyPlantsVC.topViewController as? EditPlantViewController {
-                editVC.apiController = self.apiController
-                editVC.plant = plant
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "EditSegue" {
+//            if let MyPlantsVC = segue.description as? UINavigationController,
+//                let editVC = MyPlantsVC.topViewController as? EditPlantViewController {
+//                editVC.apiController = self.apiController
+//                editVC.plant = plant
+//            }
+//        }
+//    }
 }
 
 

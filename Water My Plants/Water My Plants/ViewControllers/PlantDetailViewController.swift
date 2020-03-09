@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate: AnyObject {
+    func updateModel(plant: Plant)
+}
 class PlantDetailViewController: UIViewController {
     
     @IBOutlet weak var nicknameLabel: UILabel!
@@ -18,6 +21,7 @@ class PlantDetailViewController: UIViewController {
     var apiController = APIController()
     var loginController = LoginController.shared
     var plant: Plant?
+    var plant1 = AddPlantsDetailsViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +35,16 @@ class PlantDetailViewController: UIViewController {
         guard let plant = self.plant else { return }
         
         self.title = plant.species.uppercased()
-        let freqencyString = "\(plant.h2oFrequency)"
-        self.waterFrequencyLabel.text = freqencyString
-        self.nicknameLabel.text = plant.nickname.capitalized
-        self.waterDay.text = "Friday"
+        let frequencyString = "I like to be watered \(plant.h2oFrequency) time(s) a week."
+        self.waterFrequencyLabel.text = frequencyString
+        self.nicknameLabel.text = "My nickname is \(plant.nickname.capitalized)"
+        self.waterDay.text = "I like to be watered on Friday's."
     }
     
     func deletePlant(completion: @escaping (Result<Plant, NetworkError>) -> Void) {
         guard let plant = self.plant else { return }
         
-        let requestURL = apiController.baseURL.appendingPathComponent("/\(loginController.token?.user_id)/plants/\(plant.id)")
+        let requestURL = apiController.baseURL.appendingPathComponent("/\(loginController.token?.user_id ?? 0)/plants/\(plant.id)")
        
         
         var request = URLRequest(url: requestURL)
@@ -80,7 +84,7 @@ class PlantDetailViewController: UIViewController {
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        self.deletePlant { result in
+        self.deletePlant { _ in
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -98,6 +102,14 @@ class PlantDetailViewController: UIViewController {
                 editVC.apiController = self.apiController
                 editVC.plant = plant
             }
+        }
+    }
+}
+
+extension PlantDetailViewController: DetailViewControllerDelegate {
+    func updateModel(plant: Plant) {
+        DispatchQueue.main.async {
+            self.plant = plant
         }
     }
 }

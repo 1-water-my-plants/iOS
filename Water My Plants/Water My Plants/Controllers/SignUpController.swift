@@ -53,7 +53,6 @@ class SignUpController {
                                    message: user.message,
                                    user_id: user.user_id)
                 
-                print(self.token)
             } catch {
                 print("Error decoding token \(error)")
                 completion(error)

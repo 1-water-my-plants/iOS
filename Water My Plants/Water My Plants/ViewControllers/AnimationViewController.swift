@@ -24,7 +24,6 @@ class AnimationViewController: UIViewController {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.7) {
         
-            //segue 8 seconds later
 //        let vc = UIViewController()
 //        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
 //            elf.present(vc, animated: true, completion: nil)
@@ -41,5 +40,4 @@ class AnimationViewController: UIViewController {
         animationView.backgroundColor = .systemTeal
         animationView.play()
     }
-
 }

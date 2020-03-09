@@ -110,25 +110,18 @@ class AddPlantsTableViewController: UITableViewController {
         
         let plant: Plant
         plant = apiController.plants[indexPath.row]
-        let plantString = "Plant ID: \(plant.id)"
         
-        cell.nicknameLabel?.text = plant.nickname.capitalized
-        cell.idLabel.text = plantString
+        cell.nicknameLabel?.text = plant.species.capitalized
 //        cell.nicknameLabel?.text = plant.nickname?.capitalized
 //        cell.detailTextLabel?.text = plantString
 
        
         return cell
     }
-   
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        75
     }
-    */
 
  
     // Override to support editing the table view.

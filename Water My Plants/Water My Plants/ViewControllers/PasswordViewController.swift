@@ -19,7 +19,7 @@ class PasswordViewController: UIViewController {
     @IBAction func passwordSaved(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
         guard let newPassword = passwordTF.text else { return }
-        self.apiController.updateUser(with: newPassword) { (result) in
+        self.apiController.updateUser(with: newPassword) { _ in
             
         }
         let alert = UIAlertController(title: "Success!", message: "Password has been updated", preferredStyle: .alert)

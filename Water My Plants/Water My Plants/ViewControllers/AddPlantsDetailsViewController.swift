@@ -9,26 +9,26 @@
 import UIKit
 import CTPicker
 
-class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTPickerDelegate {
+class AddPlantsDetailsViewController: UIViewController, CTPickerDelegate, UITextFieldDelegate {
     
     var plantController: PlantController!
     var plant1: Plant?
     let loginController = LoginController.shared
     var apiController = APIController()
     let notificationExtension = LocalNotifications()
-   
+    
     var plant: Plant1? {
         didSet {
             updateViews()
         }
     }
-
+    
     
     // CT Picker code for trying to select multiple days.. not working
     weak var ctDelegate: CTPickerDelegate?
     var dayArray: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-
-
+    
+    
     
     // IB Outlets
     @IBOutlet private var plantSpeciesTextField: UITextField!
@@ -46,7 +46,9 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
         UNService.shared.authorize()
         ctDelegate = self
         wateringDaysPerWeek.delegate = self
-         
+//        plantSpeciesTextField.delegate = self
+//        plantNicknameTextField.delegate = self
+//        h2oFrequencyPerWeekTextLabel.delegate = self
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -55,12 +57,12 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
             let image = self.plantLabel.text,
             let waterDay = self.wateringDaysPerWeek.text, !waterDay.isEmpty,
             let h2ofrequency = self.h2oFrequencyPerWeekTextLabel.text, !h2ofrequency.isEmpty else {
-//            let newH2ofrequency = Int(h2ofrequency),
+                //            let newH2ofrequency = Int(h2ofrequency),
                 let alert = UIAlertController(title: "Missing some fields", message: "Check your information and try again", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "👍", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 return
-
+                
         }
         self.navigationController?.popViewController(animated: true)
         self.apiController.addPlant(nickname: nickname,
@@ -69,20 +71,20 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                                     image: image,
                                     user_id: loginController.token?.user_id ?? 0,
                                     completion: { result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let plant):
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
+                                        switch result {
+                                        case .failure(let error):
+                                            print(error)
+                                        case .success(let plant):
+                                            DispatchQueue.main.async {
+                                                self.dismiss(animated: true, completion: nil)
+                                            }
+                                        }
         })
     }
-
-  
-
- // UpdateView
+    
+    
+    
+    // UpdateView
     
     private func updateViews() {
         guard isViewLoaded else { return } //check to see if views are there
@@ -90,7 +92,7 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
         
         plantSpeciesTextField.text = plant?.species
         plantNicknameTextField.text = plant?.nickname
-//        howManyPlantsTextField.text = plant.howManyPlants  -- NEED to ADD in CoreData Model
+        //        howManyPlantsTextField.text = plant.howManyPlants  -- NEED to ADD in CoreData Model
         h2oFrequencyPerWeekTextLabel.text = plant?.h2oFrequencyPerWeek
         
     }
@@ -138,8 +140,8 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
             !species.isEmpty else { return }
         let nickname = plantNicknameTextField.text
         let waterFrequency = h2oFrequencyPerWeekTextLabel.text
-//        let plantImage = imageView.image
-//        let data = plantImage?.jpegData(compressionQuality: 0.8)
+        //        let plantImage = imageView.image
+        //        let data = plantImage?.jpegData(compressionQuality: 0.8)
         
         CoreDataStack.shared.mainContext.perform {
             if let plant = self.plant {
@@ -147,37 +149,46 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                 plant.species = species
                 plant.nickname = nickname
                 plant.h2oFrequencyPerWeek = waterFrequency
-//                plant.plantImage = data
+                //                plant.plantImage = data
                 plant.time = Date()
-//                self.plantController.sendPlantToServer(plant: plant)
+                //                self.plantController.sendPlantToServer(plant: plant)
             } else {
                 //create new plant object
-                let plant = Plant1(nickname: nickname ?? "Unnamed Plant", species: species, h2oFrequencyPerWeek: waterFrequency ?? "2", startingDayOfWeek: "Sunday")
-//                self.plantController.sendPlantToServer(plant: plant)
+                let _ = Plant1(nickname: nickname ?? "Unnamed Plant", species: species, h2oFrequencyPerWeek: waterFrequency ?? "2", startingDayOfWeek: "Sunday")
+                //                self.plantController.sendPlantToServer(plant: plant)
             }
             
-                // Added notifications every 60 seconds for Demo Only
-                var components = DateComponents()
-                components.second = 0
-                UNService.shared.dateRequest(with: components)
-//            self.notificationExtension.requestAuthorizationStatus { success in
-//                if success == true {
-//                    self.notificationExtension.scheduleDailyReminderNotification(name: self.plant?.nickname ?? "House Plant", times: self.plant?.time ?? Date(), calendar: Calendar.current)
-//                }
-//            }
+            // Added notifications every 60 seconds for Demo Only
+            var components = DateComponents()
+            components.second = 0
+            UNService.shared.dateRequest(with: components)
+            //            self.notificationExtension.requestAuthorizationStatus { success in
+            //                if success == true {
+            //                    self.notificationExtension.scheduleDailyReminderNotification(name: self.plant?.nickname ?? "House Plant", times: self.plant?.time ?? Date(), calendar: Calendar.current)
+            //                }
+            //            }
         }
- // Use persistent Store coordinator2
+        // Use persistent Store coordinator2
         do {
             let moc = CoreDataStack.shared.mainContext
             try moc.save()
         } catch {
             print("Print Error Saving Plant: \(error)")
         }
-//        navigationController?.popViewController(animated: true)
-
+        //        navigationController?.popViewController(animated: true)
+        
     }
     
- 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextTextField = self.view.viewWithTag(textField.tag + 1) {
+            nextTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    
     
     // for CTPickerDelagate
     func setField(value: String, selectedTextField: UITextField, new: Bool) {
@@ -191,17 +202,17 @@ class AddPlantsDetailsViewController: UIViewController, UITextFieldDelegate, CTP
                 break
             }
         }
-       }
+    }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
-        switch textField {
-        case wateringDaysPerWeek:
-            CTPicker.presentCTPicker(on: self, textField: textField, items: dayArray)
-        default:
-            break
-        }
-      }
+        func textFieldDidBeginEditing(_ textField: UITextField) {
+            textField.resignFirstResponder()
+            switch textField {
+            case wateringDaysPerWeek:
+                CTPicker.presentCTPicker(on: self, textField: textField, items: dayArray)
+            default:
+                break
+            }
+          }
     
 }
 
